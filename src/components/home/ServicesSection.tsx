@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 
 export function ServicesSection() {
@@ -44,9 +43,6 @@ export function ServicesSection() {
               <div className="service-card-title">
                 <span className="block font-bold text-base leading-snug">
                   {service.shortName}
-                </span>
-                <span className="flex items-center gap-1 text-teal-300 text-xs font-medium mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Learn more <ArrowRight size={12} />
                 </span>
               </div>
             </Link>

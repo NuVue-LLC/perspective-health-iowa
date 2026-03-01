@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { PROVIDERS } from "@/lib/constants";
 import { CTABanner } from "@/components/home/CTABanner";
 
@@ -174,16 +172,9 @@ export default function AboutPage() {
                     {provider.specialty}
                   </p>
                   <div className="w-12 h-1 bg-teal rounded-full mb-5" />
-                  <p className="text-gray-600 leading-relaxed mb-6">
+                  <p className="text-gray-600 leading-relaxed">
                     {provider.bio}
                   </p>
-                  <Link
-                    href="/contact"
-                    className="btn-teal inline-flex items-center gap-2"
-                  >
-                    Schedule with {provider.name.split(" ")[0]}{" "}
-                    <ArrowRight size={16} />
-                  </Link>
                 </div>
               </article>
             ))}

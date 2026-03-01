@@ -15,8 +15,11 @@ export function Header() {
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  const isHomepage = pathname === "/";
+  const isTransparent = isHomepage && !isScrolled && !mobileMenuOpen;
+
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -41,37 +44,42 @@ export function Header() {
 
   return (
     <>
-      {/* Top utility bar */}
-      <div className="bg-charcoal text-white text-sm py-2 hidden md:block">
-        <div className="section-container flex justify-between items-center">
-          <div className="flex items-center gap-1 text-gray-300">
-            {SERVICES.map((service, i) => (
-              <span key={service.slug} className="flex items-center">
-                {i > 0 && <span className="mx-1.5">&bull;</span>}
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="hover:text-teal transition-colors"
-                >
-                  {service.shortName}
-                </Link>
-              </span>
-            ))}
+      {/* Top utility bar — only on non-homepage pages */}
+      {!isHomepage && (
+        <div className="bg-charcoal text-white text-sm py-2 hidden md:block">
+          <div className="section-container flex justify-between items-center">
+            <div className="flex items-center gap-1 text-gray-300">
+              {SERVICES.map((service, i) => (
+                <span key={service.slug} className="flex items-center">
+                  {i > 0 && <span className="mx-1.5">&bull;</span>}
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="hover:text-teal transition-colors"
+                  >
+                    {service.shortName}
+                  </Link>
+                </span>
+              ))}
+            </div>
+            <a
+              href={`tel:${SITE_CONFIG.phoneRaw}`}
+              className="flex items-center gap-2 text-teal hover:text-teal-300 transition-colors font-medium"
+            >
+              <Phone size={14} />
+              {SITE_CONFIG.phone}
+            </a>
           </div>
-          <a
-            href={`tel:${SITE_CONFIG.phoneRaw}`}
-            className="flex items-center gap-2 text-teal hover:text-teal-300 transition-colors font-medium"
-          >
-            <Phone size={14} />
-            {SITE_CONFIG.phone}
-          </a>
         </div>
-      </div>
+      )}
 
       {/* Main header */}
       <header
         className={cn(
-          "sticky top-0 z-50 bg-white transition-shadow duration-300",
-          isScrolled ? "shadow-md" : "shadow-sm"
+          "z-50 transition-all duration-300",
+          isHomepage ? "fixed top-0 left-0 right-0" : "sticky top-0",
+          isTransparent
+            ? "bg-transparent"
+            : "bg-white/95 backdrop-blur-sm shadow-md"
         )}
       >
         <div className="section-container">
@@ -84,10 +92,22 @@ export function Header() {
             >
               <PinwheelLogo className="w-12 h-12" />
               <div className="hidden sm:block">
-                <span className="block font-bold text-charcoal text-lg leading-tight">
+                <span
+                  className={cn(
+                    "block font-bold text-lg leading-tight transition-colors duration-300",
+                    isTransparent ? "text-white" : "text-charcoal"
+                  )}
+                >
                   Perspective Health
                 </span>
-                <span className="block text-teal text-sm font-medium">Iowa</span>
+                <span
+                  className={cn(
+                    "block text-sm font-medium transition-colors duration-300",
+                    isTransparent ? "text-white/80" : "text-teal"
+                  )}
+                >
+                  Iowa
+                </span>
               </div>
             </Link>
 
@@ -107,10 +127,16 @@ export function Header() {
                         )
                       }
                       className={cn(
-                        "nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm",
-                        pathname.startsWith(link.href) && link.href !== "/"
-                          ? "text-teal"
-                          : "text-charcoal"
+                        "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-300",
+                        isTransparent
+                          ? "text-white/90 hover:text-white"
+                          : cn(
+                              "nav-link",
+                              pathname.startsWith(link.href) &&
+                                link.href !== "/"
+                                ? "text-teal"
+                                : "text-charcoal"
+                            )
                       )}
                       aria-expanded={activeDropdown === link.href}
                       aria-haspopup="true"
@@ -128,12 +154,17 @@ export function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "nav-link px-3 py-2 rounded-lg text-sm block",
-                        (pathname === link.href ||
-                          (link.href !== "/" &&
-                            pathname.startsWith(link.href)))
-                          ? "text-teal"
-                          : "text-charcoal"
+                        "px-3 py-2 rounded-lg text-sm block font-medium transition-colors duration-300",
+                        isTransparent
+                          ? "text-white/90 hover:text-white"
+                          : cn(
+                              "nav-link",
+                              pathname === link.href ||
+                                (link.href !== "/" &&
+                                  pathname.startsWith(link.href))
+                                ? "text-teal"
+                                : "text-charcoal"
+                            )
                       )}
                     >
                       {link.label}
@@ -162,13 +193,23 @@ export function Header() {
             <div className="flex items-center gap-3">
               <Link
                 href="/contact"
-                className="hidden md:inline-flex btn-primary text-sm px-5 py-2.5"
+                className={cn(
+                  "hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300",
+                  isTransparent
+                    ? "border-2 border-white text-white hover:bg-white hover:text-purple"
+                    : "text-white bg-purple hover:bg-purple-600 shadow-md hover:shadow-lg"
+                )}
               >
                 Start Your Health Journey
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-charcoal hover:bg-gray-100 transition-colors"
+                className={cn(
+                  "lg:hidden p-2 rounded-lg transition-colors duration-300",
+                  isTransparent
+                    ? "text-white hover:bg-white/10"
+                    : "text-charcoal hover:bg-gray-100"
+                )}
                 aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={mobileMenuOpen}
               >
@@ -181,7 +222,10 @@ export function Header() {
         {/* Mobile menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-gray-100 bg-white">
-            <nav className="section-container py-4 space-y-1" aria-label="Mobile navigation">
+            <nav
+              className="section-container py-4 space-y-1"
+              aria-label="Mobile navigation"
+            >
               {NAVIGATION_LINKS.map((link) => (
                 <div key={link.href}>
                   <Link
