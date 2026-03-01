@@ -12,6 +12,7 @@ export interface ServiceData {
   benefits: string[];
   faqs: { question: string; answer: string }[];
   relatedServices: string[];
+  gallery?: { src: string; alt: string }[];
 }
 
 export const servicesData: ServiceData[] = [
@@ -304,6 +305,80 @@ export const servicesData: ServiceData[] = [
       "integrative-functional-medicine",
       "digestive-metabolic-health",
       "comprehensive-primary-care",
+    ],
+  },
+  {
+    slug: "hocatt",
+    name: "HOCATT Ozone Sauna",
+    headline: "HOCATT Ozone Sauna Therapy in Iowa",
+    metaDescription:
+      "Experience HOCATT ozone sauna therapy in Iowa at Perspective Health. A single 30-minute session delivers up to 10 therapeutic modalities to support detox, immunity, pain relief, and recovery.",
+    heroImage: "/images/service-hocatt.jpg",
+    heroImageAlt: "HOCATT ozone sauna therapy session at Perspective Health Iowa",
+    intro:
+      "The HOCATT (Hyperthermic Ozone and Carbonic Acid Transdermal Technology) is the only device in the world that simultaneously delivers up to 10 evidence-informed therapeutic modalities in a single session. At Perspective Health, we use the HOCATT as a powerful tool to support detoxification, immune function, circulation, and whole-body wellness.",
+    whatItIs:
+      "The HOCATT is a personal steam sauna capsule that combines transdermal ozone therapy, carbonic acid therapy, whole-body hyperthermia, far infrared energy, electrotherapy (TENS), aromatherapy, photon light therapy, ultraviolet irradiation, and pure humidified oxygen breathing into one 30-minute session. You sit comfortably inside the capsule with your head outside, breathing pure oxygen while the combination of steam, ozone, and other modalities work synergistically to promote circulation, stimulate the immune system, support the body's natural detoxification pathways, and aid recovery.",
+    whoItsFor: [
+      "Individuals seeking whole-body detoxification and immune support",
+      "Those managing chronic fatigue, low energy, or brain fog",
+      "Patients dealing with chronic pain, inflammation, or joint stiffness",
+      "Athletes or active individuals looking to speed recovery and improve performance",
+      "People with skin conditions who may benefit from ozone and steam therapy",
+      "Anyone looking to complement their integrative or functional medicine care plan",
+    ],
+    whatToExpect: [
+      "A brief health screening and intake to ensure the HOCATT is appropriate for you",
+      "You'll sit comfortably inside the capsule with your head and neck outside at all times",
+      "A 30-minute session as the HOCATT cycles through its therapeutic modalities automatically",
+      "You'll breathe pure humidified oxygen through a nasal cannula during the session",
+      "Mild sweating and warmth — most patients find the experience deeply relaxing",
+      "A cool-down period with hydration after your session before heading home",
+    ],
+    benefits: [
+      "Supports the body's natural detoxification and elimination pathways",
+      "May help improve circulation, oxygen delivery, and cellular energy production",
+      "Often associated with reduced inflammation and relief from chronic pain",
+      "Can support immune system function and resilience",
+      "Promotes relaxation, stress relief, and improved sleep quality",
+      "May enhance skin health and appearance through ozone and steam exposure",
+    ],
+    faqs: [
+      {
+        question: "Is the HOCATT safe?",
+        answer:
+          "The HOCATT has been used safely in clinics worldwide. Your head remains outside the capsule at all times, and you breathe pure oxygen throughout the session. Our team monitors each session and tailors settings to your comfort level. However, the HOCATT is not appropriate for everyone — we complete a health screening before your first session to ensure it is safe for you.",
+      },
+      {
+        question: "How long is a HOCATT session and how often should I come?",
+        answer:
+          "Each session lasts approximately 30 minutes. For general wellness, many patients start with 2–3 sessions per week for the first few weeks, then transition to weekly or biweekly maintenance. Your provider will recommend a frequency based on your individual health goals.",
+      },
+      {
+        question: "Who should not use the HOCATT?",
+        answer:
+          "The HOCATT may not be appropriate for individuals who are pregnant, have uncontrolled high blood pressure, active bleeding disorders, organ transplant recipients on immunosuppressants, or those with certain cardiac conditions. We screen every patient before their first session to ensure safety.",
+      },
+      {
+        question: "Does insurance cover HOCATT therapy?",
+        answer:
+          "HOCATT therapy is generally not covered by insurance as it is considered a wellness and complementary therapy. We offer competitive self-pay pricing and package options. HSA and FSA funds may be eligible — check with your plan administrator.",
+      },
+    ],
+    relatedServices: [
+      "integrative-functional-medicine",
+      "supplementary-services",
+      "digestive-metabolic-health",
+    ],
+    gallery: [
+      {
+        src: "/images/hocatt-open.jpg",
+        alt: "Patient sitting comfortably inside the HOCATT ozone sauna with the capsule open",
+      },
+      {
+        src: "/images/hocatt-closed.png",
+        alt: "HOCATT ozone sauna capsule during a therapy session",
+      },
     ],
   },
 ];

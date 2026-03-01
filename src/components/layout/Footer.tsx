@@ -135,8 +135,8 @@ export function Footer() {
                   className="mt-0.5 flex-shrink-0 text-teal"
                 />
                 <div className="text-sm">
-                  <p>Mon–Thu: 8:00 AM – 5:00 PM</p>
-                  <p>Fri: 8:00 AM – 4:00 PM</p>
+                  <p>Mon, Tue, Thu, Fri: 8:00 AM – 5:00 PM</p>
+                  <p>Wed: 8:00 AM – 12:00 PM</p>
                   <p>Sat–Sun: Closed</p>
                 </div>
               </li>

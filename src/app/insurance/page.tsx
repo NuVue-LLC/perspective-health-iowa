@@ -49,21 +49,30 @@ export default function InsurancePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 mb-10">
+          <div className="flex flex-wrap justify-center gap-5 max-w-4xl mx-auto mb-10">
             {INSURANCE_PARTNERS.map((partner) => (
               <div
                 key={partner.name}
-                className="bg-white rounded-xl p-4 flex flex-col items-center justify-center h-24 shadow-sm border border-gray-100 hover:border-teal/30 hover:shadow-md transition-all"
+                className="bg-white rounded-xl p-5 flex flex-col items-center justify-center w-[calc(50%-10px)] sm:w-[calc(25%-15px)] h-28 shadow-sm border border-gray-100 hover:border-teal/30 hover:shadow-md transition-all"
               >
-                <div className="relative w-full h-10 mb-1">
-                  <Image
+                {partner.logo.endsWith(".svg") ? (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
                     src={partner.logo}
                     alt={`${partner.name} — accepted at Perspective Health Iowa`}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                    className="max-h-12 max-w-full object-contain mb-1"
                   />
-                </div>
+                ) : (
+                  <div className="relative w-full h-12 mb-1">
+                    <Image
+                      src={partner.logo}
+                      alt={`${partner.name} — accepted at Perspective Health Iowa`}
+                      fill
+                      className="object-contain"
+                      sizes="180px"
+                    />
+                  </div>
+                )}
                 <p className="text-xs text-gray-500 text-center mt-1 leading-tight">
                   {partner.name}
                 </p>

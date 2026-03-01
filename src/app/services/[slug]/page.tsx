@@ -116,7 +116,30 @@ export default function ServicePage({ params }: Props) {
               <p className="text-gray-600 leading-relaxed">{service.whatItIs}</p>
             </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {/* Gallery */}
+            {service.gallery && service.gallery.length > 0 && (
+              <section className="mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {service.gallery.map((img, i) => (
+                    <div
+                      key={i}
+                      className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md"
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        quality={85}
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
               {/* Who It's For */}
               <section className="bg-white rounded-2xl border border-gray-200 shadow-sm p-7">
                 <div className="flex items-center gap-3 mb-5">

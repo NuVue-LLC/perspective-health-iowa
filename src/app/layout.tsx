@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ChatWidget } from "@/components/chat/ChatWidget";
+import SchemaMarkup from "@/components/seo/SchemaMarkup";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -83,6 +84,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${dancingScript.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <SchemaMarkup />
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

@@ -19,11 +19,14 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />
       </div>
 
-      {/* "Be Seen." script text */}
+      {/* "Be Seen." signature text */}
       <div className="relative z-10 flex flex-col items-start justify-end pb-0 px-6 sm:px-12 lg:px-20 pt-32">
-        <p className="font-script text-6xl sm:text-7xl lg:text-8xl text-white mb-6 drop-shadow-lg">
-          Be Seen.
-        </p>
+        <div className="inline-block">
+          <p className="font-script italic text-7xl sm:text-8xl lg:text-9xl text-white mb-2 drop-shadow-lg -rotate-2 tracking-tight">
+            Be Seen.
+          </p>
+          <div className="h-[2px] w-3/4 bg-white/60 ml-2 -mt-1 rounded-full" />
+        </div>
       </div>
 
       {/* Color-blocked headline bars */}

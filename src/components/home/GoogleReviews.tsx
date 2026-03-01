@@ -5,30 +5,30 @@ import { PinwheelLogo } from "@/components/ui/PinwheelLogo";
 const reviews = [
   {
     id: 1,
-    initials: "JM",
-    name: "Jennifer M.",
+    initials: "EH",
+    name: "E.H.",
     rating: 5,
-    date: "2 months ago",
+    date: "Google Review",
     excerpt:
-      "I've never felt so heard by a healthcare provider. Audrey took over an hour to go through my history and we came up with a real plan. My hormones are finally balanced and I feel like myself again.",
+      "My first appointment was wonderful! I felt very listened to and understood. Clear expectations and plans were discussed. The prices are given ahead of time and they work with your income and specific needs. The office was very clean and smells wonderful! I had a great experience and look forward to working with all of the providers at Perspective Health to get well and stay well!",
   },
   {
     id: 2,
-    initials: "RK",
-    name: "Robert K.",
+    initials: "LW",
+    name: "L.W.",
     rating: 5,
-    date: "4 months ago",
+    date: "Google Review",
     excerpt:
-      "After years of being told my labs were 'normal' while I felt terrible, Stephanie actually dug deeper. She found the root cause of my fatigue and I have more energy than I've had in a decade.",
+      "I came to see Tara for nutritional guidance to avoid the middle age issues of prediabetes. She lent such wisdom and support that it does feel freeing instead of overwhelming. I\u2019m also working with Audrey on a health issue that cropped up. She is so protective and supportive. I am all in to working with all these practitioners to live a more healthy and resilient lifestyle in retirement.",
   },
   {
     id: 3,
-    initials: "SL",
-    name: "Sarah L.",
+    initials: "MG",
+    name: "M.G.",
     rating: 5,
-    date: "1 month ago",
+    date: "Google Review",
     excerpt:
-      "Tara completely changed how I think about nutrition and gut health. Her knowledge and genuine care for her patients is exceptional. I can't recommend Perspective Health enough.",
+      "Absolutely stunning office, unreal staff. I came here as a referral from a doctor. I was so incredibly anxious with a new environment and the unknown. Walking in and immediately greeted by staff who is incredibly detailed!",
   },
 ];
 

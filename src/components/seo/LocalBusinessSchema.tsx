@@ -24,21 +24,21 @@ export function LocalBusinessSchema() {
     geo: {
       "@type": "GeoCoordinates",
       // Coordinates for Urbandale, IA (8860 Northpark Dr)
-      latitude: 41.6328,
+      latitude: 41.6528,
       longitude: -93.7614,
     },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        dayOfWeek: ["Monday", "Tuesday", "Thursday", "Friday"],
         opens: "08:00",
         closes: "17:00",
       },
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Friday"],
+        dayOfWeek: ["Wednesday"],
         opens: "08:00",
-        closes: "16:00",
+        closes: "12:00",
       },
     ],
     sameAs: [

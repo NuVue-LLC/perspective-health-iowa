@@ -20,13 +20,13 @@ export function ServicesSection() {
           <div className="w-16 h-1 bg-white/60 rounded-full mx-auto mt-6" />
         </div>
 
-        {/* 5-column service grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        {/* 3-column service grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICES.map((service) => (
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="service-card group block h-72 sm:h-80 lg:h-72"
+              className="service-card group block h-72 sm:h-80"
             >
               {/* Image */}
               <Image
@@ -34,7 +34,7 @@ export function ServicesSection() {
                 alt={service.imageAlt}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
 
               {/* Gradient overlay */}

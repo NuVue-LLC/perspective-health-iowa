@@ -4,26 +4,27 @@ export const SITE_CONFIG = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://perspectivehealthiowa.com",
   phone: "(515) 724-0377",
   phoneRaw: "15157240377",
+  fax: "515-724-7018",
   email: "info@perspectivehealthiowa.com",
   address: {
-    street: "8860 Northpark Dr, Suite 200",
+    street: "8860 Northpark Dr., Suite 200",
     city: "Urbandale",
     state: "IA",
     zip: "50131",
-    full: "8860 Northpark Dr, Suite 200, Urbandale, IA 50131",
+    full: "8860 Northpark Dr., Suite 200, Urbandale, IA 50131",
   },
   hours: {
     monday: "8:00 AM – 5:00 PM",
     tuesday: "8:00 AM – 5:00 PM",
-    wednesday: "8:00 AM – 5:00 PM",
+    wednesday: "8:00 AM – 12:00 PM",
     thursday: "8:00 AM – 5:00 PM",
-    friday: "8:00 AM – 4:00 PM",
+    friday: "8:00 AM – 5:00 PM",
     saturday: "Closed",
     sunday: "Closed",
   },
   social: {
-    facebook: "https://www.facebook.com/perspectivehealthiowa",
-    instagram: "https://www.instagram.com/perspectivehealthiowa",
+    facebook: "https://www.facebook.com/profile.php?id=61566951063111",
+    instagram: "https://www.instagram.com/perspective_health_iowa/",
     google:
       "https://www.google.com/maps/place/Perspective+Health+Iowa",
   },
@@ -79,6 +80,15 @@ export const SERVICES = [
     image: "/images/service-supplementary.jpg",
     imageAlt: "Supplementary health services in Iowa",
   },
+  {
+    slug: "hocatt",
+    name: "HOCATT Ozone Sauna",
+    shortName: "HOCATT",
+    description:
+      "Advanced ozone therapy sauna that delivers up to 10 therapeutic modalities in a single 30-minute session — supporting detoxification, circulation, immune function, and whole-body recovery.",
+    image: "/images/service-hocatt.jpg",
+    imageAlt: "HOCATT ozone sauna therapy at Perspective Health Iowa",
+  },
 ];
 
 export const PROVIDERS = [
@@ -117,15 +127,15 @@ export const PROVIDERS = [
 export const INSURANCE_PARTNERS = [
   {
     name: "Wellmark BlueCross BlueShield",
-    logo: "/images/insurance-wellmark.png",
+    logo: "/images/insurance-wellmark.webp",
   },
   {
     name: "Optum / UnitedHealthcare",
-    logo: "/images/insurance-optum.png",
+    logo: "/images/insurance-optum.webp",
   },
   {
-    name: "MidlandsChoice",
-    logo: "/images/insurance-midlandschoice.png",
+    name: "Midlands Choice",
+    logo: "/images/insurance-midlandschoice.jpeg",
   },
   {
     name: "Medicare",
@@ -133,11 +143,15 @@ export const INSURANCE_PARTNERS = [
   },
   {
     name: "Aetna",
-    logo: "/images/insurance-aetna.png",
+    logo: "/images/insurance-aetna.webp",
   },
   {
     name: "Cigna",
     logo: "/images/insurance-cigna.png",
+  },
+  {
+    name: "Humana",
+    logo: "/images/insurance-humana.svg",
   },
 ];
 
@@ -154,5 +168,6 @@ export const NAVIGATION_LINKS = [
   { label: "Our Team", href: "/about" },
   { label: "For Our Patients", href: "/for-patients" },
   { label: "Insurance", href: "/insurance" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: "/contact" },
 ];
