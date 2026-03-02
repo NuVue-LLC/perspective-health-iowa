@@ -10,7 +10,7 @@ export interface ContactEmailData {
 export function buildEmailHtml(data: ContactEmailData): string {
   return `
     <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-      <h2 style="color: #00B5B8;">New Contact Form Submission</h2>
+      <h2 style="color: #5BBCD6;">New Contact Form Submission</h2>
       <table style="width: 100%; border-collapse: collapse;">
         <tr><td style="padding: 8px; font-weight: bold; width: 40%;">Name:</td><td style="padding: 8px;">${data.name}</td></tr>
         <tr><td style="padding: 8px; font-weight: bold;">Email:</td><td style="padding: 8px;"><a href="mailto:${data.email}">${data.email}</a></td></tr>

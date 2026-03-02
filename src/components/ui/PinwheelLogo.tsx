@@ -15,12 +15,12 @@ export function PinwheelLogo({ className }: PinwheelLogoProps) {
       {/* Teal petal - top-right */}
       <path
         d="M50 50 C55 35 65 25 80 20 C75 35 65 45 50 50 Z"
-        fill="#00B5B8"
+        fill="#5BBCD6"
       />
       {/* Teal petal - bottom-left */}
       <path
         d="M50 50 C45 65 35 75 20 80 C25 65 35 55 50 50 Z"
-        fill="#00B5B8"
+        fill="#5BBCD6"
       />
       {/* Purple petal - top-left */}
       <path

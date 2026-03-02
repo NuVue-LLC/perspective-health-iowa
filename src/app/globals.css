@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --color-teal: #00B5B8;
+  --color-teal: #5BBCD6;
   --color-purple: #7B4F9E;
   --color-charcoal: #2C2C2C;
   --color-sage: #E8F0E9;
@@ -106,7 +106,7 @@
   }
 
   .geometric-pattern-light {
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300B5B8' fill-opacity='0.07'%3E%3Cpath d='M40 0 L42 18 L50 10 L44 22 L60 20 L48 28 L58 38 L44 34 L46 52 L40 40 L34 52 L36 34 L22 38 L32 28 L20 20 L36 22 L30 10 L38 18 Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235BBCD6' fill-opacity='0.07'%3E%3Cpath d='M40 0 L42 18 L50 10 L44 22 L60 20 L48 28 L58 38 L44 34 L46 52 L40 40 L34 52 L36 34 L22 38 L32 28 L20 20 L36 22 L30 10 L38 18 Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
   /* Card styles */
@@ -192,12 +192,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00B5B8;
+  background: #5BBCD6;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #009194;
+  background: #4AABCA;
 }
 
 /* Print styles */
