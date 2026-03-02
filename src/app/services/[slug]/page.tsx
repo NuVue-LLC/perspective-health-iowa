@@ -566,9 +566,6 @@ export default function ServicePage({ params }: Props) {
                   </h2>
                   <div className="space-y-6 mb-10">
                     {service.benefits.map((benefit, i) => {
-                      const colonIndex = benefit.indexOf(" to ");
-                      const dashIndex = benefit.indexOf(" — ");
-                      const splitAt = dashIndex > -1 ? dashIndex : (colonIndex > -1 ? colonIndex : -1);
                       return (
                         <div key={i} className="flex items-start gap-3">
                           <span className="text-teal font-bold text-lg mt-0.5 flex-shrink-0">&raquo;</span>
