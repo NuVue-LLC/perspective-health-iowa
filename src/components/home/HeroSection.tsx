@@ -20,8 +20,8 @@ export function HeroSection() {
 
       {/* Hero text */}
       <div className="relative z-10 px-6 sm:px-12 lg:px-20 pb-16 sm:pb-20 lg:pb-24 pt-32">
-        {/* "Be Seen." — handwritten on the image, overlapping into headline */}
-        <p className="font-script text-6xl sm:text-7xl lg:text-8xl text-white -rotate-2 tracking-tight font-light mb-[-0.3em] ml-1 sm:ml-2 relative z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]">
+        {/* "Be Seen." — large handwritten headline floating above blocks */}
+        <p className="font-script text-8xl sm:text-9xl lg:text-[10rem] text-white -rotate-2 tracking-tight font-light mb-[-0.15em] ml-1 sm:ml-2 relative z-10 drop-shadow-[0_2px_8px_rgba(255,255,255,0.15)] [text-shadow:_0_2px_12px_rgba(255,255,255,0.2),_0_4px_20px_rgba(0,0,0,0.3)]">
           Be Seen.
         </p>
 
