@@ -119,7 +119,7 @@ export default function InsurancePage() {
       </section>
 
       {/* HSA / FSA */}
-      <section className="section-padding bg-teal-gradient geometric-pattern">
+      <section className="section-padding bg-teal geometric-pattern">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[

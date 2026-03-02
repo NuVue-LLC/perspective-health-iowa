@@ -12,7 +12,7 @@ export function CTABanner({
   subtext = "Take the first step — our team is ready to listen.",
 }: CTABannerProps) {
   return (
-    <section className="bg-teal-gradient geometric-pattern py-12 sm:py-14">
+    <section className="bg-teal geometric-pattern py-12 sm:py-14">
       <div className="section-container">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight mb-2">

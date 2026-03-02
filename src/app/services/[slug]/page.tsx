@@ -597,7 +597,7 @@ export default function ServicePage({ params }: Props) {
           </section>
 
               {/* Section 2 — Teal bg: Our Approach + service cards grid */}
-          <section className="bg-teal-gradient geometric-pattern">
+          <section className="bg-teal geometric-pattern">
             <div className="section-container py-16 sm:py-20 lg:py-24 relative z-10">
               <div className="mb-12">
                 <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white leading-tight mb-4">
@@ -809,7 +809,7 @@ export default function ServicePage({ params }: Props) {
           </section>
 
               {/* Section 2 — Teal: Interactive Modality Explorer */}
-          <section className="bg-teal-gradient geometric-pattern">
+          <section className="bg-teal geometric-pattern">
             <div className="section-container py-16 sm:py-20 lg:py-24 relative z-10">
               <div className="text-center mb-12">
                 <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white leading-tight mb-4">

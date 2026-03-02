@@ -96,7 +96,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-teal-gradient geometric-pattern">
+      <section className="section-padding bg-teal geometric-pattern">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
