@@ -36,7 +36,7 @@ export function OurApproach() {
   const [openItem, setOpenItem] = useState<string | null>("collaborative");
 
   return (
-    <section className="section-padding bg-teal geometric-pattern">
+    <section className="section-padding bg-teal-gradient geometric-pattern">
       <div className="section-container">
         {/* Section heading */}
         <div className="text-center mb-14">
