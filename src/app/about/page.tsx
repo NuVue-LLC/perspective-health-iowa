@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PROVIDERS } from "@/lib/constants";
 import { CTABanner } from "@/components/home/CTABanner";
-import { SectionDivider } from "@/components/ui/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -47,8 +46,6 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-
-      <SectionDivider />
 
       {/* Mission */}
       <section className="section-padding bg-white">
@@ -98,8 +95,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <SectionDivider />
-
       {/* Values */}
       <section className="section-padding bg-sage/40 geometric-pattern-light">
         <div className="section-container">
@@ -148,8 +143,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider />
 
       {/* Providers */}
       <section className="section-padding bg-white">

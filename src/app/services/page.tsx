@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SERVICES, INSURANCE_PARTNERS } from "@/lib/constants";
 import { CTABanner } from "@/components/home/CTABanner";
-import { SectionDivider } from "@/components/ui/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -50,8 +49,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <SectionDivider />
-
       {/* Services grid */}
       <section className="section-padding bg-white">
         <div className="section-container">
@@ -92,8 +89,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider />
 
       {/* Insurance note */}
       <section className="py-16 bg-sage/40">

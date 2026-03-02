@@ -5,7 +5,6 @@ import { ArrowRight, Tag } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
 import { CTABanner } from "@/components/home/CTABanner";
-import { SectionDivider } from "@/components/ui/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -52,8 +51,6 @@ export default async function BlogPage() {
           </p>
         </div>
       </section>
-
-      <SectionDivider />
 
       {/* Posts */}
       <section className="section-padding bg-white">

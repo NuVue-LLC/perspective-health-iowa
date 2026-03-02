@@ -8,7 +8,6 @@ import { getPostBySlug, getAllPostSlugs } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
 import { ArticleSchema } from "@/components/seo/ArticleSchema";
 import { SITE_CONFIG } from "@/lib/constants";
-import { SectionDivider } from "@/components/ui/SectionDivider";
 
 interface Props {
   params: { slug: string };
@@ -108,8 +107,6 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </section>
 
-      <SectionDivider />
-
       {/* Article body */}
       <article className="section-padding bg-white">
         <div className="section-container">
@@ -157,8 +154,6 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </div>
       </article>
-
-      <SectionDivider />
 
       {/* CTA */}
       <section className="bg-sage/40 section-padding">

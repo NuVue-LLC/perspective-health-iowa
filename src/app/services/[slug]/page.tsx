@@ -13,7 +13,6 @@ import { FAQSchema } from "@/components/seo/FAQSchema";
 import SymptomExplorer from "@/components/SymptomExplorer";
 import ModalityExplorer from "@/components/ModalityExplorer";
 import { CTABanner } from "@/components/home/CTABanner";
-import { SectionDivider } from "@/components/ui/SectionDivider";
 
 interface Props {
   params: { slug: string };
@@ -197,8 +196,6 @@ export default function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <SectionDivider />
-
       {/* Content */}
       {service.slug === "comprehensive-primary-care" && service.accordionSections ? (
         /* ── Primary Care layout ── */
@@ -372,9 +369,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* Section 2 — Functional Medicine vs. Integrative Medicine */}
+              {/* Section 2 — Functional Medicine vs. Integrative Medicine */}
           <section className="bg-sage/40 geometric-pattern-light">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -435,9 +430,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* Section 3 — White: Image LEFT, headline + accordion RIGHT */}
+              {/* Section 3 — White: Image LEFT, headline + accordion RIGHT */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -492,9 +485,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* CTA + Related Services */}
+              {/* CTA + Related Services */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               {blogNudge}
@@ -605,9 +596,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* Section 2 — Teal bg: Our Approach + service cards grid */}
+              {/* Section 2 — Teal bg: Our Approach + service cards grid */}
           <section className="bg-teal geometric-pattern">
             <div className="section-container py-16 sm:py-20 lg:py-24 relative z-10">
               <div className="mb-12">
@@ -668,9 +657,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* Section 3 — White: Benefits left with bullets, image right */}
+              {/* Section 3 — White: Benefits left with bullets, image right */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -712,9 +699,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* CTA + Related Services */}
+              {/* CTA + Related Services */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               {blogNudge}
@@ -823,9 +808,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* Section 2 — Teal: Interactive Modality Explorer */}
+              {/* Section 2 — Teal: Interactive Modality Explorer */}
           <section className="bg-teal geometric-pattern">
             <div className="section-container py-16 sm:py-20 lg:py-24 relative z-10">
               <div className="text-center mb-12">
@@ -840,9 +823,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* Section 3 — White: Gallery left, What to Expect right */}
+              {/* Section 3 — White: Gallery left, What to Expect right */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -888,9 +869,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* Section 4 — Sage: Benefits left, image right */}
+              {/* Section 4 — Sage: Benefits left, image right */}
           <section className="bg-sage/30">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -925,9 +904,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* CTA + Related Services */}
+              {/* CTA + Related Services */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               {blogNudge}
@@ -1039,9 +1016,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* Section 2 — White: Text left about BHRT, image right */}
+              {/* Section 2 — White: Text left about BHRT, image right */}
           <section className="bg-white border-t border-gray-200">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -1079,9 +1054,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* Section 3 — Sage: Interactive Symptom Explorer */}
+              {/* Section 3 — Sage: Interactive Symptom Explorer */}
           <section className="bg-sage/30">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="max-w-4xl mx-auto text-center mb-10">
@@ -1099,9 +1072,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* CTA + Related Services */}
+              {/* CTA + Related Services */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               {blogNudge}
@@ -1223,9 +1194,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* Section 2 — Supplement Delivery (Fullscript) */}
+              {/* Section 2 — Supplement Delivery (Fullscript) */}
           <section className="bg-white border-t border-gray-200">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -1252,9 +1221,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* Section 3 — Supplemental Services: image left with pattern, text right */}
+              {/* Section 3 — Supplemental Services: image left with pattern, text right */}
           <section className="bg-white border-t border-gray-200">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -1286,9 +1253,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* Section 4 — Patient Packages */}
+              {/* Section 4 — Patient Packages */}
           <section className="bg-sage/30 geometric-pattern-light">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -1312,9 +1277,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          <SectionDivider />
-
-          {/* CTA + Related Services */}
+              {/* CTA + Related Services */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               {blogNudge}

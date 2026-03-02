@@ -4,7 +4,6 @@ import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { SITE_CONFIG } from "@/lib/constants";
-import { SectionDivider } from "@/components/ui/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -58,8 +57,6 @@ export default function ContactPage() {
           </p>
         </div>
       </section>
-
-      <SectionDivider />
 
       {/* Main content */}
       <section className="section-padding bg-white">
@@ -203,8 +200,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider />
 
       {/* Visit us CTA */}
       <section className="relative h-96 overflow-hidden" aria-label="Office location">
