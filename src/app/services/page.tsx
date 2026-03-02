@@ -129,7 +129,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <CTABanner />
+      <CTABanner heading="Not Sure Where to Start?" subtext="Our team can help you find the right service for your needs." />
     </>
   );
 }

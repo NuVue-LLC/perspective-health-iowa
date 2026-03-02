@@ -131,7 +131,7 @@ export default async function BlogPage() {
         </div>
       </section>
 
-      <CTABanner />
+      <CTABanner heading="Ready to Take the Next Step?" subtext="Schedule a consultation and put what you've learned into action." />
     </>
   );
 }

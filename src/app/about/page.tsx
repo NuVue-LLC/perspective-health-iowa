@@ -199,7 +199,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CTABanner />
+      <CTABanner heading="Like What You See? Let's Meet." subtext="Our providers are ready to partner with you on your health journey." />
     </>
   );
 }

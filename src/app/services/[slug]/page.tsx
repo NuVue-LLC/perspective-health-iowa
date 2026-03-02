@@ -91,6 +91,34 @@ export default function ServicePage({ params }: Props) {
     }],
   };
 
+  const ctaMap: Record<string, { heading: string; subtext: string }> = {
+    "comprehensive-primary-care": {
+      heading: "Ready for a Primary Care Provider Who Actually Listens?",
+      subtext: "Schedule your first visit and experience the difference.",
+    },
+    "hormone-health": {
+      heading: "Think Your Hormones Might Be Out of Balance?",
+      subtext: "Let's find out together — book a hormone health consultation.",
+    },
+    "integrative-functional-medicine": {
+      heading: "Looking for Answers Beyond Conventional Medicine?",
+      subtext: "Our integrative approach could be what you've been searching for.",
+    },
+    "digestive-metabolic-health": {
+      heading: "Tired of Living With Digestive Issues?",
+      subtext: "Let's get to the root cause — schedule a consultation today.",
+    },
+    "supplementary-services": {
+      heading: "Ready to Explore What Else Is Possible?",
+      subtext: "Discover how our supplementary services can support your wellness.",
+    },
+    "hocatt": {
+      heading: "Curious About HOCATT Therapy?",
+      subtext: "Book a session and experience it for yourself.",
+    },
+  };
+  const ctaProps = ctaMap[service.slug] || {};
+
   const blogLinks = blogLinksMap[service.slug] || [];
   const blogNudge = blogLinks.length > 0 ? (
     <div className="bg-sage/30 border border-sage/50 rounded-2xl p-6 sm:p-8 mb-12">
@@ -1558,7 +1586,7 @@ export default function ServicePage({ params }: Props) {
         </article>
       )}
 
-      <CTABanner />
+      <CTABanner heading={ctaProps.heading} subtext={ctaProps.subtext} />
     </>
   );
 }

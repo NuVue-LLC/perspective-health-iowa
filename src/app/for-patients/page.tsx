@@ -258,7 +258,7 @@ export default function ForPatientsPage() {
         </div>
       </section>
 
-      <CTABanner />
+      <CTABanner heading="Ready to Get Started?" subtext="Schedule your first appointment — we can't wait to meet you." />
     </>
   );
 }

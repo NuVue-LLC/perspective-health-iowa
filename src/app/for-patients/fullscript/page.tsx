@@ -215,7 +215,7 @@ export default function FullscriptPage() {
         </div>
       </section>
 
-      <CTABanner />
+      <CTABanner heading="Need Help With Your Supplement Plan?" subtext="Talk to your provider about a personalized recommendation." />
     </>
   );
 }

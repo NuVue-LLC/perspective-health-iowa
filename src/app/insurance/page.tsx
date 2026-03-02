@@ -226,7 +226,7 @@ export default function InsurancePage() {
         </div>
       </section>
 
-      <CTABanner />
+      <CTABanner heading="Questions About Your Coverage?" subtext="Contact us and we'll verify your benefits before your first visit." />
     </>
   );
 }
