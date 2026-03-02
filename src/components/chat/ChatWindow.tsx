@@ -41,7 +41,7 @@ function QuickReplies({
           key={text}
           onClick={() => onSelect(text)}
           disabled={disabled}
-          className="rounded-full border border-teal-300 bg-teal-50 px-3 py-1 text-xs font-medium text-teal-700 transition-colors hover:bg-teal-100 hover:border-teal-400 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="rounded-full border border-purple/30 bg-purple/5 px-3 py-1 text-xs font-medium text-purple transition-colors hover:bg-purple/10 hover:border-purple/50 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {text}
         </button>
@@ -78,7 +78,7 @@ function parseMessageContent(text: string, isUser: boolean): ReactNode[] {
         key={match.index}
         href={path}
         className={`underline font-medium ${
-          isUser ? "text-white" : "text-teal-600 hover:text-teal-700"
+          isUser ? "text-white" : "text-purple hover:text-purple/80"
         }`}
       >
         {pageName} →
@@ -102,7 +102,7 @@ function MessageBubble({ message }: { message: ChatMessage }) {
       <div
         className={`rounded-2xl px-4 py-2.5 max-w-[80%] text-sm leading-relaxed whitespace-pre-line ${
           isUser
-            ? "bg-teal-500 text-white rounded-tr-sm"
+            ? "bg-purple text-white rounded-tr-sm"
             : "bg-sage-100 text-charcoal rounded-tl-sm"
         }`}
       >
@@ -245,14 +245,14 @@ export function ChatWindow({ onClose, pathname }: ChatWindowProps) {
       </div>
 
       {/* Header */}
-      <div className="flex items-center justify-between bg-teal-500 text-white px-4 py-3 rounded-t-2xl flex-shrink-0">
+      <div className="flex items-center justify-between bg-purple text-white px-4 py-3 rounded-t-2xl flex-shrink-0">
         <div>
           <h2 className="font-semibold text-sm" id="chat-title">Perspective Health</h2>
-          <p className="text-xs text-teal-100">Ask us anything</p>
+          <p className="text-xs text-white/70">Ask us anything</p>
         </div>
         <button
           onClick={onClose}
-          className="rounded-full p-1 hover:bg-teal-600 transition-colors"
+          className="rounded-full p-1 hover:bg-purple/80 transition-colors"
           aria-label="Close chat"
         >
           <X className="h-5 w-5" />

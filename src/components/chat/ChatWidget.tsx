@@ -53,11 +53,6 @@ export function ChatWidget() {
     setNudgeDismissed(true);
   };
 
-  const dismissNudge = () => {
-    setShowNudge(false);
-    setNudgeDismissed(true);
-  };
-
   return (
     <>
       {isOpen && (
@@ -72,17 +67,10 @@ export function ChatWidget() {
         <div className="fixed bottom-20 right-4 z-50 animate-slide-up">
           <div className="relative bg-white rounded-xl shadow-lg border border-gray-200 px-4 py-3 max-w-[220px]">
             <button
-              onClick={dismissNudge}
-              className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition-colors"
-              aria-label="Dismiss"
-            >
-              <X className="h-3 w-3 text-gray-500" />
-            </button>
-            <button
               onClick={handleOpen}
               className="text-sm text-charcoal text-left leading-snug"
             >
-              <span className="font-medium text-teal-600">{getNudgeMessage(pathname)}</span>
+              <span className="font-medium text-purple">{getNudgeMessage(pathname)}</span>
             </button>
             {/* Triangle pointer */}
             <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-r border-b border-gray-200 transform rotate-45" />
@@ -101,7 +89,7 @@ export function ChatWidget() {
         className={`fixed bottom-4 right-4 z-50 flex h-16 w-16 items-center justify-center rounded-full shadow-lg transition-all duration-300 ${
           isOpen
             ? "bg-charcoal hover:bg-charcoal-light"
-            : "bg-teal-500 hover:bg-teal-600 animate-pulse-soft"
+            : "bg-purple hover:bg-purple/90 animate-pulse-soft"
         }`}
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
