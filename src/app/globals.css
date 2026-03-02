@@ -66,16 +66,26 @@
 
   .btn-teal {
     @apply inline-flex items-center justify-center px-8 py-3 rounded-full
-           font-semibold text-white bg-teal hover:bg-teal-600
-           transition-all duration-200 shadow-md hover:shadow-lg
-           focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2;
+           font-semibold text-white transition-all duration-200 shadow-md hover:shadow-lg
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background-color: #1ABC9C;
+    --tw-ring-color: #1ABC9C;
+  }
+  .btn-teal:hover {
+    background-color: #17a689;
   }
 
   .btn-outline-teal {
     @apply inline-flex items-center justify-center px-8 py-3 rounded-full
-           font-semibold text-teal border-2 border-teal hover:bg-teal hover:text-white
-           transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2;
+           font-semibold transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    color: #1ABC9C;
+    border: 2px solid #1ABC9C;
+    --tw-ring-color: #1ABC9C;
+  }
+  .btn-outline-teal:hover {
+    background-color: #1ABC9C;
+    color: white;
   }
 
   .btn-outline-white {
