@@ -13,6 +13,7 @@ interface FaqPattern {
   patterns: RegExp[];
   answer: string;
   suggestions?: string[];
+  showLeadForm?: boolean;
 }
 
 function buildFaqPatterns(): FaqPattern[] {
@@ -181,6 +182,13 @@ function buildFaqPatterns(): FaqPattern[] {
       suggestions: ["What services do you offer?", "How do I become a new patient?"],
     },
 
+    // --- Lead capture ---
+    {
+      patterns: [/\b(call me|call me back|callback|reach out to me|contact me|have someone call|get back to me|want a call|request.?a.?call)\b/i],
+      answer: `Absolutely! I'd be happy to have our team reach out to you. Just fill out the quick form below and someone will get back to you within 1 business day!`,
+      showLeadForm: true,
+    },
+
     // --- Our approach & values ---
     {
       patterns: [/\b(approach|philosophy|different|why.*choose|what sets|values|mission|believe)\b/i],
@@ -209,13 +217,18 @@ function getFaqPatterns(): FaqPattern[] {
 export interface FaqMatch {
   answer: string;
   suggestions?: string[];
+  showLeadForm?: boolean;
 }
 
 export function matchFaq(userMessage: string): FaqMatch | null {
   const patterns = getFaqPatterns();
   for (const faq of patterns) {
     if (faq.patterns.some((p) => p.test(userMessage))) {
-      return { answer: faq.answer, suggestions: faq.suggestions };
+      return {
+        answer: faq.answer,
+        suggestions: faq.suggestions,
+        showLeadForm: faq.showLeadForm,
+      };
     }
   }
   return null;
@@ -421,6 +434,19 @@ You may acknowledge what service area might be relevant (e.g., "It sounds like o
 
 ## Emergency Protocol
 For urgent or emergency matters, IMMEDIATELY instruct the person to call 911 or go to the nearest emergency room. Do not attempt to triage or assess urgency.
+
+## Lead Capture
+After you've answered 2–3 questions for a user in the conversation, naturally offer to have the team reach out. Use the EXACT trigger phrase "have our team reach out" in your response — this phrase activates a contact form in the chat interface.
+
+Examples of natural lead capture:
+- "I'm glad I could help with that! If you'd like, I'd be happy to have our team reach out to you directly — they can answer more specific questions and help you get scheduled."
+- "Great question! I'd love to have our team reach out and walk you through the next steps."
+
+Rules for lead capture:
+- NEVER offer lead capture on the very first exchange — wait until you've been helpful first.
+- Only offer ONCE per conversation. If the user declines or ignores it, do not bring it up again.
+- Keep the offer brief and natural — don't make it feel salesy.
+- Do NOT collect any health information through the lead form — the form only collects contact info and service interest.
 
 ## General Conversation Guidelines
 1. Be warm, friendly, professional, and encouraging. Use a conversational tone — not robotic or overly clinical.

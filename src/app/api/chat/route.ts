@@ -47,6 +47,8 @@ const FALLBACK_MESSAGE = `I'm not fully connected yet, but I'd love to help! Ple
 const SMART_FALLBACK_MESSAGE = `I'm not sure I have the answer to that one, but I can help with a lot of other things! Try one of the topics below, or call us at ${SITE_CONFIG.phone} for anything specific.`;
 const SMART_FALLBACK_SUGGESTIONS = ["Our Services", "Hours & Location", "Insurance & Payment", "New Patient Info", "Meet Our Providers"];
 
+const LEAD_CAPTURE_TRIGGER = "have our team reach out";
+
 export async function POST(request: NextRequest) {
   try {
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
@@ -80,11 +82,12 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({
           message: faqMatch.answer,
           suggestions: faqMatch.suggestions,
+          showLeadForm: faqMatch.showLeadForm || false,
         });
       }
     }
 
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey = process.env.ANTHROPIC_API_KEY;
 
     if (!apiKey) {
       return NextResponse.json({
@@ -93,38 +96,44 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // When API key is available, forward to OpenAI
     const systemPrompt = buildSystemPrompt();
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    // Count user messages to determine if we should nudge lead capture
+    const userMessageCount = messages.filter((m) => m.role === "user").length;
+
+    // Build system prompt with lead capture nudge if appropriate
+    let fullSystemPrompt = systemPrompt;
+    if (userMessageCount >= 4) {
+      fullSystemPrompt += `\n\n[Internal note: The user has asked ${userMessageCount} questions now. If you haven't already offered, this would be a natural time to offer to "have our team reach out" to them. Keep it brief and natural — only if it fits the conversation flow.]`;
+    }
+
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
       },
       body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [
-          { role: "system", content: systemPrompt },
-          ...messages.map((m: ChatMessage) => ({
-            role: m.role,
-            content: m.content,
-          })),
-        ],
+        model: "claude-haiku-4-5-20251001",
         max_tokens: 500,
-        temperature: 0.7,
+        system: fullSystemPrompt,
+        messages: messages.map((m: ChatMessage) => ({
+          role: m.role,
+          content: m.content,
+        })),
       }),
     });
 
     if (!response.ok) {
-      console.error("OpenAI API error:", response.status);
+      console.error("Anthropic API error:", response.status);
       return NextResponse.json({
         message: FALLBACK_MESSAGE,
       });
     }
 
     const data = await response.json();
-    const assistantMessage = data.choices?.[0]?.message?.content;
+    const assistantMessage = data.content?.[0]?.text;
 
     if (!assistantMessage) {
       return NextResponse.json({
@@ -132,7 +141,13 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    return NextResponse.json({ message: assistantMessage });
+    // Detect lead capture trigger phrase in response
+    const showLeadForm = assistantMessage.toLowerCase().includes(LEAD_CAPTURE_TRIGGER);
+
+    return NextResponse.json({
+      message: assistantMessage,
+      showLeadForm,
+    });
   } catch (error) {
     console.error("Chat API error:", error);
     return NextResponse.json({

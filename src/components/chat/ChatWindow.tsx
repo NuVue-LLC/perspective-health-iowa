@@ -2,8 +2,9 @@
 
 import { useState, useRef, useEffect, useCallback, type ReactNode } from "react";
 import Link from "next/link";
-import { X } from "lucide-react";
+import { X, Phone } from "lucide-react";
 import { ChatInput } from "./ChatInput";
+import { LeadCaptureCard } from "./LeadCaptureCard";
 import { getWelcomeMessage, type ChatMessage } from "@/lib/chatbot";
 
 interface ChatWindowProps {
@@ -121,8 +122,14 @@ export function ChatWindow({ onClose, pathname }: ChatWindowProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [liveMessage, setLiveMessage] = useState("");
+  const [showLeadForm, setShowLeadForm] = useState(false);
+  const [leadSubmitted, setLeadSubmitted] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const windowRef = useRef<HTMLDivElement>(null);
+
+  // Count user messages (excluding welcome)
+  const userMessageCount = messages.filter((m) => m.role === "user").length;
+  const showCallbackPill = userMessageCount >= 1 && !showLeadForm && !leadSubmitted;
 
   const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -130,7 +137,7 @@ export function ChatWindow({ onClose, pathname }: ChatWindowProps) {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages, isLoading, scrollToBottom]);
+  }, [messages, isLoading, showLeadForm, scrollToBottom]);
 
   // Escape key to close
   useEffect(() => {
@@ -152,7 +159,7 @@ export function ChatWindow({ onClose, pathname }: ChatWindowProps) {
       if (e.key !== "Tab") return;
 
       const focusable = el.querySelectorAll<HTMLElement>(
-        'button, [href], input, textarea, [tabindex]:not([tabindex="-1"])'
+        'button, [href], input, textarea, select, [tabindex]:not([tabindex="-1"])'
       );
       if (focusable.length === 0) return;
 
@@ -222,6 +229,11 @@ export function ChatWindow({ onClose, pathname }: ChatWindowProps) {
       } else {
         setSuggestions([]);
       }
+
+      // Show lead form if API says so and hasn't been submitted already
+      if (data.showLeadForm && !leadSubmitted) {
+        setShowLeadForm(true);
+      }
     } catch {
       setError(
         "I'm having trouble connecting. Please try again or call our office for immediate help."
@@ -229,6 +241,41 @@ export function ChatWindow({ onClose, pathname }: ChatWindowProps) {
       setSuggestions([]);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleLeadSubmitSuccess = () => {
+    setShowLeadForm(false);
+    setLeadSubmitted(true);
+    const confirmMessage: ChatMessage = {
+      role: "assistant",
+      content:
+        "Your request has been sent! A member of our team will be in touch within 1 business day. Is there anything else I can help you with in the meantime?",
+    };
+    setMessages((prev) => [...prev, confirmMessage]);
+    setSuggestions(["Our Services", "Hours & Location", "New Patient Info"]);
+  };
+
+  const handleLeadDismiss = () => {
+    setShowLeadForm(false);
+    const dismissMessage: ChatMessage = {
+      role: "assistant",
+      content:
+        "No problem at all! Feel free to keep asking questions — I'm here to help. You can also reach us anytime at (515) 724-0377.",
+    };
+    setMessages((prev) => [...prev, dismissMessage]);
+    setSuggestions(["Our Services", "Hours & Location", "Insurance"]);
+  };
+
+  const handleRequestCallback = () => {
+    if (!leadSubmitted) {
+      setShowLeadForm(true);
+      const offerMessage: ChatMessage = {
+        role: "assistant",
+        content: "I'd be happy to have our team reach out! Just fill out the quick form below.",
+      };
+      setMessages((prev) => [...prev, offerMessage]);
+      setSuggestions([]);
     }
   };
 
@@ -265,12 +312,18 @@ export function ChatWindow({ onClose, pathname }: ChatWindowProps) {
           <MessageBubble key={i} message={msg} />
         ))}
         {isLoading && <TypingIndicator />}
+        {showLeadForm && (
+          <LeadCaptureCard
+            onSubmitSuccess={handleLeadSubmitSuccess}
+            onDismiss={handleLeadDismiss}
+          />
+        )}
         {error && (
           <div className="mb-3 rounded-lg bg-red-50 border border-red-200 px-3 py-2 text-xs text-red-700">
             {error}
           </div>
         )}
-        {suggestions.length > 0 && !isLoading && (
+        {suggestions.length > 0 && !isLoading && !showLeadForm && (
           <QuickReplies
             suggestions={suggestions}
             onSelect={handleSend}
@@ -280,8 +333,21 @@ export function ChatWindow({ onClose, pathname }: ChatWindowProps) {
         <div ref={messagesEndRef} />
       </div>
 
+      {/* Request a Callback pill */}
+      {showCallbackPill && (
+        <div className="px-3 pb-1 flex justify-center">
+          <button
+            onClick={handleRequestCallback}
+            className="flex items-center gap-1.5 rounded-full border border-purple/20 bg-purple/5 px-3 py-1 text-[11px] font-medium text-purple transition-colors hover:bg-purple/10 hover:border-purple/40"
+          >
+            <Phone className="h-3 w-3" />
+            Request a Callback
+          </button>
+        </div>
+      )}
+
       {/* Input */}
-      <ChatInput onSend={handleSend} disabled={isLoading} />
+      <ChatInput onSend={handleSend} disabled={isLoading || showLeadForm} />
     </div>
   );
 }
