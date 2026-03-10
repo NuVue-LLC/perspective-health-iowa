@@ -135,7 +135,7 @@ function buildFaqPatterns(): FaqPattern[] {
       suggestions: ["What insurance do you accept?", "Do you offer telehealth?", "What to bring"],
     },
     {
-      patterns: [/\b(bring|prepare|before.*visit|what.*need)\b/i],
+      patterns: [/\b(what.*bring|prepare.*visit|before.*visit|what.*need.*visit|what.*need.*appointment)\b/i],
       answer: `Please bring your photo ID, insurance card, current medications and supplements, any recent lab work, and a list of your health goals. Arrive 15 minutes early for your first visit!`,
       suggestions: ["How long is the first visit?", "Do you offer telehealth?"],
     },
