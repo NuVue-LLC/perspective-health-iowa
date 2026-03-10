@@ -130,6 +130,11 @@ function buildFaqPatterns(): FaqPattern[] {
       suggestions: ["What services do you offer?", "How do I schedule?"],
     },
     {
+      patterns: [/\b(telehealth|virtual|video|remote|online visit)\b/i],
+      answer: `Yes! We offer telehealth for established patients. Call ${SITE_CONFIG.phone} to see if your visit qualifies.`,
+      suggestions: ["How do I become a new patient?", "What are your hours?"],
+    },
+    {
       patterns: [/\b(services?|offers?|do you do|what do you|treat|speciali)/i],
       answer: `We offer:\n${serviceList}\n\nWant details on a specific service?`,
       suggestions: ["Hormone Health", "Primary Care", "Digestive Health", "Functional Medicine"],
@@ -157,11 +162,6 @@ function buildFaqPatterns(): FaqPattern[] {
       patterns: [/\b(how long|duration|appointment length|follow.?up)\b/i],
       answer: `Initial visits are 60–90 minutes and follow-ups are 30–45 minutes. We take the time upfront to really understand your health!`,
       suggestions: ["How do I become a new patient?", "What should I bring?"],
-    },
-    {
-      patterns: [/\b(telehealth|virtual|video|remote|online visit)\b/i],
-      answer: `Yes! We offer telehealth for established patients. Call ${SITE_CONFIG.phone} to see if your visit qualifies.`,
-      suggestions: ["How do I become a new patient?", "What are your hours?"],
     },
     {
       patterns: [/\b(schedule|book|appointment|make.*visit)\b/i],
