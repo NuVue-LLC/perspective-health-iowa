@@ -103,7 +103,7 @@ function buildFaqPatterns(): FaqPattern[] {
       suggestions: ["Who are the providers?", "How do I schedule?", "Insurance"],
     },
     {
-      patterns: [/\b(gut|digest|bloat|ibs|sibo|metaboli|weight|insulin|leaky gut|microbiome)\b/i],
+      patterns: [/\b(gut|digest|bloat|ibs|sibo|metaboli|weight|insulin|leaky gut|microbiome|stomach|nausea|constipat|diarrhea|acid reflux|heartburn|gerd)\b/i],
       answer: `Our Digestive & Metabolic Health services address everything from IBS, SIBO, and bloating to metabolic syndrome, insulin resistance, and weight management.\n\nWe use advanced testing like microbiome analysis, SIBO breath testing, and intestinal permeability markers to find root causes. Treatment includes personalized nutrition plans, food sensitivity guidance, targeted probiotic and supplement recommendations.\n\nLearn more: /services/digestive-metabolic-health`,
       suggestions: ["What insurance do you accept?", "How do I schedule?"],
     },
