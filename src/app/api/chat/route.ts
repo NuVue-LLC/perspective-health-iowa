@@ -103,8 +103,8 @@ export async function POST(request: NextRequest) {
 
     // Build system prompt with lead capture nudge if appropriate
     let fullSystemPrompt = systemPrompt;
-    if (userMessageCount >= 4) {
-      fullSystemPrompt += `\n\n[Internal note: The user has asked ${userMessageCount} questions now. If you haven't already offered, this would be a natural time to offer to "have our team reach out" to them. Keep it brief and natural — only if it fits the conversation flow.]`;
+    if (userMessageCount >= 2) {
+      fullSystemPrompt += `\n\n[Internal note: The user has asked ${userMessageCount} questions. When they show ANY interest or say things like "okay", "sure", "sounds good", "I need that", etc., ALWAYS offer to "have our team reach out" instead of telling them to call. The lead form is easier for them.]`;
     }
 
     const response = await fetch("https://api.anthropic.com/v1/messages", {
