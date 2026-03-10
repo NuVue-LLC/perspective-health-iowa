@@ -55,12 +55,12 @@ function buildFaqPatterns(): FaqPattern[] {
     },
     {
       patterns: [/\b(pay|cost|price|how much|afford|self.?pay|cash)\b/i],
-      answer: `We believe in transparent pricing. We accept most insurance plans, HSA/FSA funds, and CareCredit. If you don't have insurance or your plan doesn't cover a specific service, we offer fair self-pay rates.\n\nSelf-pay services include:\n• New Patient Comprehensive Visit (60–90 min)\n• Follow-Up Visit (30 min)\n• Hormone Evaluation & Consultation\n• Functional Medicine Consultation\n• Nutrition Counseling Session\n• Lab Processing (in addition to lab fees)\n\nPricing varies by service — call ${SITE_CONFIG.phone} for a personalized quote before your visit!`,
+      answer: `We accept most insurance plans, HSA/FSA funds, and CareCredit. Self-pay rates are available too. Pricing varies by service — call ${SITE_CONFIG.phone} for a quote before your visit!`,
       suggestions: ["What insurance do you accept?", "HSA/FSA info"],
     },
     {
       patterns: [/\b(hsa|fsa|health savings|flexible spending|pre.?tax)\b/i],
-      answer: `Yes, we accept both HSA and FSA!\n\nHSA (Health Savings Account):\n• Use pre-tax dollars for eligible healthcare expenses\n• Accepted for most services at our clinic\n• Bring your HSA debit card or reimbursement form\n• Great for services with cost-sharing or deductibles\n\nFSA (Flexible Spending Account):\n• Employer-sponsored pre-tax healthcare spending account\n• Use for copays, deductibles, and eligible services\n• Check your FSA plan for covered services\n\nWe also accept CareCredit!`,
+      answer: `Yes! We accept both HSA and FSA — just bring your card or reimbursement form. We also accept CareCredit and most major insurance plans.`,
       suggestions: ["What insurance do you accept?", "Self-pay options"],
     },
     {
@@ -99,44 +99,44 @@ function buildFaqPatterns(): FaqPattern[] {
     },
     {
       patterns: [/\b(hormone|menopause|testosterone|thyroid|perimenopause|hot flash|libido|andropause|estrogen|progesterone)\b/i],
-      answer: `Our Hormone Health services include thorough evaluation of your hormonal landscape — thyroid, sex hormones (estrogen, progesterone, testosterone), adrenal hormones, and metabolic markers.\n\nCommon signs of hormonal imbalance include fatigue that won't respond to rest, unexplained weight changes, mood disturbances, brain fog, sleep disruption, libido changes, irregular cycles, and hair loss.\n\nWe offer personalized treatment plans that may include bioidentical hormone therapy, targeted nutrition, and lifestyle modifications. We treat both men and women — including perimenopause, menopause, and low testosterone.\n\nLearn more: /services/hormone-health`,
+      answer: `We offer personalized hormone evaluation and treatment for both men and women — including thyroid, menopause, perimenopause, and low testosterone. Our providers find root causes and create custom plans.\n\nLearn more: /services/hormone-health`,
       suggestions: ["Who are the providers?", "How do I schedule?", "Insurance"],
     },
     {
       patterns: [/\b(gut|digest|bloat|ibs|sibo|metaboli|weight|insulin|leaky gut|microbiome|stomach|nausea|constipat|diarrhea|acid reflux|heartburn|gerd)\b/i],
-      answer: `Our Digestive & Metabolic Health services address everything from IBS, SIBO, and bloating to metabolic syndrome, insulin resistance, and weight management.\n\nWe use advanced testing like microbiome analysis, SIBO breath testing, and intestinal permeability markers to find root causes. Treatment includes personalized nutrition plans, food sensitivity guidance, targeted probiotic and supplement recommendations.\n\nLearn more: /services/digestive-metabolic-health`,
+      answer: `We help with digestive issues like IBS, SIBO, bloating, and metabolic concerns like insulin resistance and weight management. We use advanced testing to find root causes and build personalized treatment plans.\n\nLearn more: /services/digestive-metabolic-health`,
       suggestions: ["What insurance do you accept?", "How do I schedule?"],
     },
     {
       patterns: [/\b(functional medicine|integrative|root cause|holistic|complementary)\b/i],
-      answer: `Our Integrative and Functional Medicine approach views the body as an interconnected whole. Rather than simply managing symptoms, we ask why — exploring genetic, environmental, lifestyle, and biological factors.\n\nWe use advanced diagnostic testing (microbiome, nutrient status, inflammation markers, toxin load), detailed health timelines, and personalized treatment protocols. This includes nutrition therapy, targeted supplementation, mind-body practices, and lifestyle medicine.\n\nIntegrative medicine is not anti-science — evidence is the foundation. We integrate multiple evidence-based approaches.\n\nLearn more: /services/integrative-functional-medicine`,
+      answer: `Our Functional Medicine approach looks at the whole picture — instead of just managing symptoms, we dig into root causes using advanced testing and personalized treatment plans.\n\nLearn more: /services/integrative-functional-medicine`,
       suggestions: ["What insurance do you accept?", "Tell me about your providers"],
     },
     {
       patterns: [/\b(primary care|annual|checkup|physical|preventive)\b/i],
-      answer: `Our Comprehensive Primary Care goes far beyond annual checkups. We integrate conventional medicine with a root-cause, functional lens — evaluating how all aspects of your health (physical, hormonal, metabolic, and lifestyle) connect.\n\nWe provide preventive care, chronic disease management, acute illness treatment, and health optimization. Initial visits are 60–90 minutes with comprehensive lab work beyond standard panels.\n\nLearn more: /services/comprehensive-primary-care`,
+      answer: `Our Primary Care goes beyond typical checkups — we combine conventional medicine with a root-cause approach. Initial visits are 60–90 minutes so we can really understand your health.\n\nLearn more: /services/comprehensive-primary-care`,
       suggestions: ["What insurance do you accept?", "How do I become a new patient?"],
     },
     {
       patterns: [/\b(supplements?|iv therap|nutrition counseling|adrenal|immune)/i],
-      answer: `Our Supplementary Services include personalized nutrition counseling, targeted supplement protocols, adrenal health support, and immune optimization. These complement your primary care or integrative treatment plan.\n\nServices are designed for patients looking to enhance outcomes, address nutrient deficiencies, support stress resilience, or boost immune function.\n\nLearn more: /services/supplementary-services`,
+      answer: `We offer nutrition counseling, targeted supplements, adrenal support, and immune optimization to complement your care plan.\n\nLearn more: /services/supplementary-services`,
       suggestions: ["What services do you offer?", "How do I schedule?"],
     },
 
     // --- New patient & scheduling ---
     {
       patterns: [/\b(new patient|first visit|first time|get started|become a patient|sign up|onboard)\b/i],
-      answer: `Welcome! Here's how to get started:\n\n1. Reach Out — Call ${SITE_CONFIG.phone}, email ${SITE_CONFIG.email}, or use our Contact page\n2. Complete Paperwork — We'll send intake forms to complete before your visit\n3. Your First Visit — Arrive 15 minutes early for your 60–90 minute appointment\n4. Your Care Plan — You'll receive a personalized plan with next steps and testing recommendations\n\nPlease bring: photo ID, insurance card, current medications & supplements with dosages, recent lab work/medical records, a list of symptoms and health goals, and emergency contact info.`,
+      answer: `Getting started is easy! Just call ${SITE_CONFIG.phone}, email ${SITE_CONFIG.email}, or use our Contact page. We'll send you intake forms, and your first visit will be a thorough 60–90 minute appointment. Bring your ID, insurance card, and current medications.`,
       suggestions: ["What insurance do you accept?", "Do you offer telehealth?", "What to bring"],
     },
     {
       patterns: [/\b(bring|prepare|before.*visit|what.*need)\b/i],
-      answer: `Here's what to bring to your appointment:\n\n• Photo ID\n• Insurance card(s)\n• Current medications with dosages\n• Current supplements\n• Recent lab work or medical records\n• List of symptoms and health concerns\n• Health goals and questions\n• Emergency contact info\n\nThe more information you can share upfront, the more productive your visit will be! Arrive 15 minutes early for your first visit.`,
+      answer: `Please bring your photo ID, insurance card, current medications and supplements, any recent lab work, and a list of your health goals. Arrive 15 minutes early for your first visit!`,
       suggestions: ["How long is the first visit?", "Do you offer telehealth?"],
     },
     {
       patterns: [/\b(how long|duration|appointment length|follow.?up)\b/i],
-      answer: `Initial appointments are typically 60–90 minutes — we invest this time to thoroughly review your health history, symptoms, goals, and concerns. Follow-up appointments are generally 30–45 minutes. We believe taking the time upfront leads to better outcomes!`,
+      answer: `Initial visits are 60–90 minutes and follow-ups are 30–45 minutes. We take the time upfront to really understand your health!`,
       suggestions: ["How do I become a new patient?", "What should I bring?"],
     },
     {
