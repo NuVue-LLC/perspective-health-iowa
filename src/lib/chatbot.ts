@@ -128,6 +128,13 @@ function buildFaqPatterns(): FaqPattern[] {
       suggestions: ["Hormone Health", "Primary Care", "Digestive Health", "Functional Medicine"],
     },
 
+    // --- Lead capture (before scheduling so "yes" and "interested" get caught) ---
+    {
+      patterns: [/\b(call me|call me back|callback|reach out to me|contact me|have someone call|get back to me|want a call|request.?a.?call|sign me up|i'?m interested|yes please|yes i would|yes i do)\b/i],
+      answer: `I'd love to help get that set up! Just fill out the quick form below and our team will reach out within 1 business day.`,
+      showLeadForm: true,
+    },
+
     // --- New patient & scheduling ---
     {
       patterns: [/\b(new patient|first visit|first time|get started|become a patient|sign up|onboard)\b/i],
@@ -185,13 +192,6 @@ function buildFaqPatterns(): FaqPattern[] {
       patterns: [/\b(other doctor|existing doctor|current doctor|alongside|collaborative|coordinate|work with)\b/i],
       answer: `Absolutely! We're happy to work alongside your existing doctors and coordinate care with your consent.`,
       suggestions: ["What services do you offer?", "How do I become a new patient?"],
-    },
-
-    // --- Lead capture ---
-    {
-      patterns: [/\b(call me|call me back|callback|reach out to me|contact me|have someone call|get back to me|want a call|request.?a.?call)\b/i],
-      answer: `Absolutely! I'd be happy to have our team reach out to you. Just fill out the quick form below and someone will get back to you within 1 business day!`,
-      showLeadForm: true,
     },
 
     // --- Our approach & values ---
