@@ -7,7 +7,7 @@ export function LocalBusinessSchema() {
     "@id": `${SITE_CONFIG.url}/#organization`,
     name: SITE_CONFIG.name,
     url: SITE_CONFIG.url,
-    logo: `${SITE_CONFIG.url}/images/logo.png`,
+    logo: `${SITE_CONFIG.url}/images/brand/phi-logo-horizontal.jpg`,
     image: `${SITE_CONFIG.url}/images/og-default.jpg`,
     description:
       "Perspective Health is an integrative medical clinic in Iowa offering comprehensive primary care, hormone health, functional medicine, and digestive health services.",

@@ -34,7 +34,7 @@ export function ArticleSchema({
       name: SITE_CONFIG.name,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_CONFIG.url}/images/logo.png`,
+        url: `${SITE_CONFIG.url}/images/brand/phi-logo-horizontal.jpg`,
       },
     },
     datePublished,

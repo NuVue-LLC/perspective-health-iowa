@@ -7,56 +7,24 @@ interface PinwheelLogoProps {
 export function PinwheelLogo({ className }: PinwheelLogoProps) {
   return (
     <svg
-      viewBox="0 0 100 100"
+      viewBox="159 66 113 113"
       xmlns="http://www.w3.org/2000/svg"
       className={cn("w-10 h-10", className)}
-      aria-hidden="true"
+      role="img"
+      aria-label="Perspective Health"
     >
-      {/* Teal petal - top-right */}
-      <path
-        d="M50 50 C55 35 65 25 80 20 C75 35 65 45 50 50 Z"
-        fill="#00BCD4"
-      />
-      {/* Teal petal - bottom-left */}
-      <path
-        d="M50 50 C45 65 35 75 20 80 C25 65 35 55 50 50 Z"
-        fill="#00BCD4"
-      />
-      {/* Purple petal - top-left */}
-      <path
-        d="M50 50 C35 45 25 35 20 20 C35 25 45 35 50 50 Z"
-        fill="#7B4F9E"
-      />
-      {/* Purple petal - bottom-right */}
-      <path
-        d="M50 50 C65 55 75 65 80 80 C65 75 55 65 50 50 Z"
-        fill="#7B4F9E"
-      />
-      {/* Green petal - top */}
-      <path
-        d="M50 50 C50 35 55 20 50 5 C45 20 50 35 50 50 Z"
-        fill="#5BAD6F"
-      />
-      {/* Green petal - bottom */}
-      <path
-        d="M50 50 C50 65 45 80 50 95 C55 80 50 65 50 50 Z"
-        fill="#5BAD6F"
-      />
-      {/* Green petal - right */}
-      <path
-        d="M50 50 C65 50 80 45 95 50 C80 55 65 50 50 50 Z"
-        fill="#5BAD6F"
-        opacity="0.7"
-      />
-      {/* Green petal - left */}
-      <path
-        d="M50 50 C35 50 20 55 5 50 C20 45 35 50 50 50 Z"
-        fill="#5BAD6F"
-        opacity="0.7"
-      />
-      {/* Center circle */}
-      <circle cx="50" cy="50" r="6" fill="white" />
-      <circle cx="50" cy="50" r="3.5" fill="#2C2C2C" />
+      <polygon fill="#03ab8e" points="176.31 121.03 211.18 121.03 199.89 109.75 161.22 105.95 176.31 121.03" />
+      <polygon fill="#81c44d" points="213.57 118.65 213.57 83.78 198.48 68.69 202.28 107.36 213.57 118.65" />
+      <polygon fill="#894c9e" points="216.94 118.65 228.23 107.36 232.03 68.69 216.94 83.78 216.94 118.65" />
+      <polygon fill="#21c1dc" points="254.2 121.03 269.28 105.95 230.62 109.75 219.33 121.03 254.2 121.03" />
+      <polygon fill="#21c1dc" points="211.18 124.41 176.31 124.41 161.22 139.5 199.89 135.7 211.18 124.41" />
+      <polygon fill="#03ab8e" points="254.2 124.41 219.33 124.41 230.62 135.7 269.28 139.5 254.2 124.41" />
+      <polygon fill="#81c44d" points="216.94 126.8 216.94 161.67 232.03 176.75 228.23 138.09 216.94 126.8" />
+      <polygon fill="#894c9e" points="213.57 126.8 202.28 138.09 198.48 176.75 213.57 161.67 213.57 126.8" />
+      <polygon fill="#81c44d" points="196.4 166.94 199.18 138.81 171.04 141.58 196.4 166.94" />
+      <polygon fill="#81c44d" points="234.11 78.51 231.33 106.64 259.47 103.87 234.11 78.51" />
+      <polygon fill="#21c1dc" points="259.47 141.58 231.34 138.8 234.11 166.94 259.47 141.58" />
+      <polygon fill="#21c1dc" points="171.04 103.87 199.17 106.65 196.4 78.51 171.04 103.87" />
     </svg>
   );
 }

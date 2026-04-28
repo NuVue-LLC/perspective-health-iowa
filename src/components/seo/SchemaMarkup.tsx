@@ -33,7 +33,7 @@ export default function SchemaMarkup() {
     "description":
       "Perspective Health Iowa is an integrative medical clinic in Urbandale, IA offering primary care, hormone health, functional medicine, digestive and metabolic health services. Our experienced team blends conventional medicine with evidence-based complementary therapies for personalized, whole-person care.",
     "url": "https://perspectivehealthiowa.com",
-    "logo": "https://perspectivehealthiowa.com/images/logo.png", // UPDATE with actual logo URL
+    "logo": "https://perspectivehealthiowa.com/images/brand/phi-logo-horizontal.jpg",
     "image": "https://perspectivehealthiowa.com/images/hero-bg.jpg", // UPDATE with actual hero image URL
     "telephone": "+1-515-724-0377",
     "faxNumber": "+1-515-724-7018",
