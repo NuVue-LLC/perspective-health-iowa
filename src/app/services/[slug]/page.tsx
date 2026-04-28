@@ -44,53 +44,6 @@ export default function ServicePage({ params }: Props) {
     .map((slug) => SERVICES.find((s) => s.slug === slug))
     .filter(Boolean);
 
-  const blogLinksMap: Record<string, { slug: string; title: string; teaser: string; linkText: string }[]> = {
-    "comprehensive-primary-care": [{
-      slug: "preventive-primary-care-foundation-lifelong-health",
-      title: "Why Preventive Primary Care Is the Foundation of Lifelong Health",
-      teaser: "Most people only visit the doctor when something goes wrong. But proactive, preventive primary care is the real key to long-term health. Learn how an integrative approach can help you stay ahead of illness and build a foundation for lifelong wellness.",
-      linkText: "Learn More About Preventive Primary Care",
-    }],
-    "hormone-health": [{
-      slug: "signs-hormones-out-of-balance",
-      title: "5 Signs Your Hormones May Be Out of Balance",
-      teaser: "Fatigue, weight changes, mood swings, and sleep disruptions could all be signs of a hormonal imbalance. Discover the most common symptoms and learn how integrative hormone therapy can help restore balance.",
-      linkText: "Learn More About Hormone Balance",
-    }],
-    "integrative-functional-medicine": [
-      {
-        slug: "functional-medicine-vs-traditional-medicine",
-        title: "Functional Medicine vs Traditional Medicine: What's the Difference?",
-        teaser: "Wondering what sets functional medicine apart from conventional care? Learn how a root-cause approach can uncover the deeper reasons behind your symptoms and lead to lasting results.",
-        linkText: "Learn More About Functional Medicine",
-      },
-      {
-        slug: "what-is-integrative-medicine",
-        title: "What Is Integrative Medicine? A Guide for Urbandale & Des Moines Area Residents",
-        teaser: "Integrative medicine combines the best of conventional and holistic care. Learn what it means and how it could change your health journey.",
-        linkText: "Learn More About Integrative Medicine",
-      },
-    ],
-    "digestive-metabolic-health": [{
-      slug: "gut-health-connection-digestive-system",
-      title: "The Gut-Health Connection: How Your Digestive System Affects Everything",
-      teaser: "Your gut does far more than digest food — it influences your mood, immune system, and overall health. Explore the gut-health connection and discover how functional nutrition can make a difference.",
-      linkText: "Learn More About the Gut-Health Connection",
-    }],
-    "supplementary-services": [{
-      slug: "supplementary-wellness-services-support-health",
-      title: "Beyond Conventional Care: Supplementary Wellness Services That Support Your Health Journey",
-      teaser: "Sometimes your body needs extra support beyond routine care. Learn how supplementary wellness services like IV therapy, injections, and practitioner-grade supplements can complement your health plan.",
-      linkText: "Learn More About Supplementary Wellness",
-    }],
-    "hocatt": [{
-      slug: "what-is-hocatt-therapy-benefits",
-      title: "What Is HOCATT Therapy? Benefits, Process, and What to Expect",
-      teaser: "HOCATT ozone sauna therapy delivers 10 therapeutic modalities in a single 30-minute session. Learn how it works, what to expect, and who benefits most from this advanced wellness therapy.",
-      linkText: "Learn More About HOCATT Therapy",
-    }],
-  };
-
   const ctaMap: Record<string, { heading: string; subtext: string }> = {
     "comprehensive-primary-care": {
       heading: "Ready for a Primary Care Provider Who Actually Listens?",
@@ -118,8 +71,6 @@ export default function ServicePage({ params }: Props) {
     },
   };
   const ctaProps = ctaMap[service.slug] || {};
-
-  const blogLinks = blogLinksMap[service.slug] || [];
 
   return (
     <>
@@ -190,15 +141,6 @@ export default function ServicePage({ params }: Props) {
                 <p className="text-gray-600 leading-relaxed mb-8">
                   {service.whatItIs}
                 </p>
-                {blogLinks.length > 0 && (
-                  <div className="flex flex-wrap gap-3">
-                    {blogLinks.map((blog, i) => (
-                      <Link key={i} href={`/blog/${blog.slug}`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-green-accent hover:opacity-90 transition-all shadow-md">
-                        {blog.linkText} <ArrowRight size={14} />
-                      </Link>
-                    ))}
-                  </div>
-                )}
               </div>
             </div>
 
@@ -367,15 +309,6 @@ export default function ServicePage({ params }: Props) {
                     Everyone deserves to &ldquo;Be Seen.&rdquo; We&apos;d love to partner
                     with you to help you meet your health needs.
                   </p>
-                  {blogLinks.length > 0 && (
-                    <div className="flex flex-wrap gap-3">
-                      {blogLinks.map((blog, i) => (
-                        <Link key={i} href={`/blog/${blog.slug}`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-green-accent hover:opacity-90 transition-all shadow-md">
-                          {blog.linkText} <ArrowRight size={14} />
-                        </Link>
-                      ))}
-                    </div>
-                  )}
                 </div>
                 <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-lg">
                   <Image
@@ -615,15 +548,6 @@ export default function ServicePage({ params }: Props) {
                     </Link>{" "}
                     to learn more about how our services can help you thrive.
                   </p>
-                  {blogLinks.length > 0 && (
-                    <div className="flex flex-wrap gap-3">
-                      {blogLinks.map((blog, i) => (
-                        <Link key={i} href={`/blog/${blog.slug}`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-green-accent hover:opacity-90 transition-all shadow-md">
-                          {blog.linkText} <ArrowRight size={14} />
-                        </Link>
-                      ))}
-                    </div>
-                  )}
                 </div>
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
                   <Image
@@ -802,15 +726,6 @@ export default function ServicePage({ params }: Props) {
                   <p className="text-teal italic text-lg leading-relaxed mb-8">
                     Experience the power of 10 therapies working together. Your body&apos;s potential for healing is extraordinary &mdash; the HOCATT helps unlock it.
                   </p>
-                  {blogLinks.length > 0 && (
-                    <div className="flex flex-wrap gap-3">
-                      {blogLinks.map((blog, i) => (
-                        <Link key={i} href={`/blog/${blog.slug}`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-green-accent hover:opacity-90 transition-all shadow-md">
-                          {blog.linkText} <ArrowRight size={14} />
-                        </Link>
-                      ))}
-                    </div>
-                  )}
                 </div>
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
                   <Image
@@ -926,12 +841,6 @@ export default function ServicePage({ params }: Props) {
                   <p className="text-gray-600 leading-relaxed mb-8">
                     Our comprehensive hormone health program empowers you to restore balance, vitality, and optimal well-being from the inside out. Regain your zest for living and thrive through every life stage by achieving hormonal harmony.
                   </p>
-                  <Link
-                    href="/blog/signs-hormones-out-of-balance"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-green-accent hover:opacity-90 transition-all shadow-md"
-                  >
-                    Read About Hormonal Imbalance Signs <ArrowRight size={14} />
-                  </Link>
                 </div>
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
                   <Image
@@ -1114,15 +1023,6 @@ export default function ServicePage({ params }: Props) {
                   <p className="text-gray-600 leading-relaxed mb-8">
                     {service.whatItIs}
                   </p>
-                  {blogLinks.length > 0 && (
-                    <div className="flex flex-wrap gap-3">
-                      {blogLinks.map((blog, i) => (
-                        <Link key={i} href={`/blog/${blog.slug}`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-green-accent hover:opacity-90 transition-all shadow-md">
-                          {blog.linkText} <ArrowRight size={14} />
-                        </Link>
-                      ))}
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
@@ -1321,16 +1221,6 @@ export default function ServicePage({ params }: Props) {
                   ))}
                 </div>
               </section>
-
-              {blogLinks.length > 0 && (
-                <div className="flex flex-wrap gap-3 mb-12">
-                  {blogLinks.map((blog, i) => (
-                    <Link key={i} href={`/blog/${blog.slug}`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-green-accent hover:opacity-90 transition-all shadow-md">
-                      {blog.linkText} <ArrowRight size={14} />
-                    </Link>
-                  ))}
-                </div>
-              )}
 
               {/* FAQs */}
               <section className="mb-12">

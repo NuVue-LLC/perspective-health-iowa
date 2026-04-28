@@ -29,7 +29,6 @@ export default function NotFound() {
               { label: "About Us", href: "/about" },
               { label: "Our Services", href: "/services" },
               { label: "Insurance", href: "/insurance" },
-              { label: "Blog", href: "/blog" },
               ...SERVICES.slice(0, 3).map((s) => ({
                 label: s.shortName,
                 href: `/services/${s.slug}`,
