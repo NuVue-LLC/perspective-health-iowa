@@ -38,28 +38,33 @@ export function ChatInput({ onSend, disabled }: ChatInputProps) {
   };
 
   return (
-    <div className="border-t border-gray-200 p-3 flex items-end gap-2">
-      <textarea
-        ref={textareaRef}
-        value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-          handleInput();
-        }}
-        onKeyDown={handleKeyDown}
-        placeholder="Type a message..."
-        disabled={disabled}
-        rows={1}
-        className="flex-1 resize-none rounded-lg border border-gray-300 px-3 py-2 text-sm text-charcoal placeholder:text-gray-400 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500 disabled:opacity-50 disabled:cursor-not-allowed"
-      />
-      <button
-        onClick={handleSend}
-        disabled={disabled || !value.trim()}
-        className="flex-shrink-0 rounded-lg bg-teal-500 p-2 text-white transition-colors hover:bg-teal-600 disabled:opacity-50 disabled:cursor-not-allowed"
-        aria-label="Send message"
-      >
-        <Send className="h-4 w-4" />
-      </button>
+    <div className="border-t border-gray-200">
+      <div className="p-3 flex items-end gap-2">
+        <textarea
+          ref={textareaRef}
+          value={value}
+          onChange={(e) => {
+            setValue(e.target.value);
+            handleInput();
+          }}
+          onKeyDown={handleKeyDown}
+          placeholder="Type a message..."
+          disabled={disabled}
+          rows={1}
+          className="flex-1 resize-none rounded-lg border border-gray-300 px-3 py-2 text-sm text-charcoal placeholder:text-gray-400 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500 disabled:opacity-50 disabled:cursor-not-allowed"
+        />
+        <button
+          onClick={handleSend}
+          disabled={disabled || !value.trim()}
+          className="flex-shrink-0 rounded-lg bg-teal-500 p-2 text-white transition-colors hover:bg-teal-600 disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-label="Send message"
+        >
+          <Send className="h-4 w-4" />
+        </button>
+      </div>
+      <p className="px-3 pb-2 text-[10px] text-gray-400 text-center leading-tight">
+        Not a secure channel — please don&apos;t share health details. AI-assisted; messages aren&apos;t part of your medical record.
+      </p>
     </div>
   );
 }

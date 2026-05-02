@@ -49,6 +49,42 @@ const SMART_FALLBACK_SUGGESTIONS = ["Our Services", "Hours & Location", "Insuran
 
 const LEAD_CAPTURE_TRIGGER = "have our team reach out";
 
+// --- PHI Pre-filter ---
+// If a user message looks like they're disclosing personal health info, return a
+// canned redirect *without* forwarding the message to the LLM. This keeps PHI
+// from being transmitted to a third-party API. Tuned to be specific — only fires
+// on clear first-person disclosure, not general questions about a service.
+const PHI_PATTERNS: RegExp[] = [
+  // First-person disclosure of conditions / symptoms
+  /\bi\s*(?:'?ve|have|am|was|got|started|keep|been)\b[^.!?]*\b(diagnosed|diabetes|cancer|thyroid|depress|anxiety|adhd|ibs|sibo|menopaus|migraine|insomnia|fatigue|pain|hurts?|sick|sore|infection|hypertens|cholesterol|pregnan|miscarriag|asthma|allerg|eczema|lupus|arthriti|fibromyalg)\b/i,
+  // First-person symptom statements
+  /\b(my|i)\s+(blood pressure|blood sugar|a1c|cholesterol|tsh|t3|t4|hormone|estrogen|testosterone|periods?|cycle|labs?|test results?|mri|ct scan|x.?ray|biopsy|prescription)\b/i,
+  // Medication / dosage disclosures
+  /\b(i\s*(?:take|'?m\s+on|started|stopped|tried)|prescribed me)\s+\w+\s*(\d+\s*(mg|mcg|iu|ml|units?))/i,
+  // Direct symptom reporting ("I feel/have ...")
+  /\bi\s*(?:feel|felt|am feeling|'?m feeling)\s+(nauseous|dizzy|short of breath|chest pain|numb|tingl|swollen|bleeding|cramping|depressed|suicidal|hopeless)/i,
+  // Sensitive identifiers
+  /\b(ssn|social security|member id|policy number|insurance id)[:\s#]+\w+/i,
+  // Asking for medical advice on personal symptoms
+  /\b(what|why|should i|do i have|could i have|is it)\b[^.!?]*\b(my\s+(symptom|pain|condition|diagnosis|rash|lump|spot|bleeding))/i,
+];
+
+const EMERGENCY_PATTERNS: RegExp[] = [
+  /\b(chest pain|can'?t breathe|trouble breathing|stroke|heart attack|overdose|suicid|kill myself|bleeding (a lot|heavily|won'?t stop)|unconscious|seizure)\b/i,
+];
+
+function isLikelyPhi(text: string): boolean {
+  return PHI_PATTERNS.some((p) => p.test(text));
+}
+
+function isEmergency(text: string): boolean {
+  return EMERGENCY_PATTERNS.some((p) => p.test(text));
+}
+
+const PHI_REDIRECT_MESSAGE = `Thank you for trusting us with that. To protect your privacy, I can't discuss specific health concerns through this chat — but our providers would love to help you personally. Please call us at ${SITE_CONFIG.phone} or use our Contact page to schedule.`;
+
+const EMERGENCY_MESSAGE = `If this is a medical emergency, please call 911 or go to the nearest emergency room right away. For non-urgent concerns, call our office at ${SITE_CONFIG.phone}.`;
+
 export async function POST(request: NextRequest) {
   try {
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
@@ -75,8 +111,24 @@ export async function POST(request: NextRequest) {
     const { messages } = parsed.data;
     const lastMessage = messages[messages.length - 1];
 
-    // FAQ shortcut — instant answers for common questions (works without API key)
     if (lastMessage.role === "user") {
+      // Emergency check first — overrides everything else
+      if (isEmergency(lastMessage.content)) {
+        return NextResponse.json({
+          message: EMERGENCY_MESSAGE,
+          suggestions: ["Call the office", "Hours & Location"],
+        });
+      }
+
+      // PHI pre-filter — short-circuit before forwarding to the LLM
+      if (isLikelyPhi(lastMessage.content)) {
+        return NextResponse.json({
+          message: PHI_REDIRECT_MESSAGE,
+          suggestions: ["How do I schedule?", "What insurance do you accept?", "Hours & Location"],
+        });
+      }
+
+      // FAQ shortcut — instant answers for common questions (works without API key)
       const faqMatch = matchFaq(lastMessage.content);
       if (faqMatch) {
         return NextResponse.json({
