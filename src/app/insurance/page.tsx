@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, Phone, ArrowRight } from "lucide-react";
+import { CheckCircle, Phone, ArrowRight, PiggyBank, Wallet } from "lucide-react";
 import { INSURANCE_PARTNERS, SITE_CONFIG } from "@/lib/constants";
 import { CTABanner } from "@/components/home/CTABanner";
 
@@ -122,18 +122,19 @@ export default function InsurancePage() {
       <section className="section-padding geometric-pattern-green">
         <div className="section-container">
           <div className="text-center mb-12">
+            <p className="font-script text-3xl text-white/90 mb-2">Tax-Advantaged Options</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white uppercase tracking-tight">
               Pay With <span className="text-white/80">HSA or FSA</span>
             </h2>
-            <div className="w-16 h-1 bg-white/40 rounded-full mx-auto mt-4" />
+            <div className="w-16 h-1 bg-white rounded-full mx-auto mt-4" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
                 title: "HSA",
                 subtitle: "Health Savings Account",
-                icon: "💰",
-                accent: "teal",
+                Icon: PiggyBank,
+                accent: "teal" as const,
                 points: [
                   "Use pre-tax dollars to pay for eligible healthcare expenses",
                   "Accepted for most services at Perspective Health",
@@ -144,8 +145,8 @@ export default function InsurancePage() {
               {
                 title: "FSA",
                 subtitle: "Flexible Spending Account",
-                icon: "💳",
-                accent: "purple",
+                Icon: Wallet,
+                accent: "purple" as const,
                 points: [
                   "Employer-sponsored pre-tax healthcare spending account",
                   "Use for copays, deductibles, and eligible services",
@@ -153,41 +154,55 @@ export default function InsurancePage() {
                   "Check your FSA plan for covered services",
                 ],
               },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl ${
-                    item.accent === "teal" ? "bg-teal/10" : "bg-purple/10"
-                  }`}>
-                    {item.icon}
+            ].map(({ title, subtitle, Icon, accent, points }) => {
+              const accentClasses = {
+                teal: {
+                  border: "border-t-4 border-teal",
+                  badge: "bg-teal/10",
+                  icon: "text-teal",
+                  title: "text-teal",
+                  badgeHover: "group-hover:bg-teal",
+                  iconHover: "group-hover:text-white",
+                },
+                purple: {
+                  border: "border-t-4 border-purple",
+                  badge: "bg-purple/10",
+                  icon: "text-purple",
+                  title: "text-purple",
+                  badgeHover: "group-hover:bg-purple",
+                  iconHover: "group-hover:text-white",
+                },
+              }[accent];
+              return (
+                <div
+                  key={title}
+                  className={`group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${accentClasses.border}`}
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all ${accentClasses.badge} ${accentClasses.badgeHover} group-hover:scale-105`}>
+                      <Icon size={26} strokeWidth={2} className={`transition-colors ${accentClasses.icon} ${accentClasses.iconHover}`} />
+                    </div>
+                    <div>
+                      <h3 className={`text-2xl font-extrabold ${accentClasses.title}`}>
+                        {title}
+                      </h3>
+                      <p className="text-gray-500 text-sm">{subtitle}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className={`text-2xl font-extrabold ${
-                      item.accent === "teal" ? "text-teal" : "text-purple"
-                    }`}>
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm">{item.subtitle}</p>
-                  </div>
+                  <ul className="space-y-3">
+                    {points.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle
+                          size={18}
+                          className={`flex-shrink-0 mt-0.5 ${accentClasses.icon}`}
+                        />
+                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-3">
-                  {item.points.map((point, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle
-                        size={18}
-                        className={`flex-shrink-0 mt-0.5 ${
-                          item.accent === "teal" ? "text-teal" : "text-purple"
-                        }`}
-                      />
-                      <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
