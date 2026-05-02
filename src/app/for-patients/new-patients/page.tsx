@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, ArrowRight, FileText, Phone } from "lucide-react";
+import {
+  ChevronDown,
+  ArrowRight,
+  Phone,
+  IdCard,
+  CreditCard,
+  Pill,
+  Leaf,
+  FlaskConical,
+  ClipboardList,
+  Target,
+  PhoneCall,
+} from "lucide-react";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { CTABanner } from "@/components/home/CTABanner";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -165,36 +177,45 @@ export default function NewPatientsPage() {
       {/* What to bring */}
       <section className="section-padding bg-sage/40">
         <div className="section-container">
-          <div className="text-center mb-10">
-            <div className="w-14 h-14 rounded-2xl bg-teal flex items-center justify-center mx-auto mb-4">
-              <FileText size={24} className="text-white" />
-            </div>
+          <div className="text-center mb-12">
+            <p className="font-script text-3xl text-teal mb-2">Come Prepared</p>
             <h2 className="text-3xl font-extrabold text-charcoal">
-              What to Bring to Your Appointment
+              WHAT TO BRING TO YOUR <span className="text-teal">APPOINTMENT</span>
             </h2>
-            <p className="text-gray-500 mt-2 max-w-lg mx-auto">
-              Being prepared helps us make the most of your time together.
+            <div className="w-16 h-1 bg-teal rounded-full mx-auto mt-4" />
+            <p className="text-gray-500 mt-4 max-w-lg mx-auto">
+              A little prep goes a long way — these help us make the most of your time together.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
             {[
-              { item: "Photo ID", icon: "🪪" },
-              { item: "Insurance card(s)", icon: "💳" },
-              { item: "Current medications with dosages", icon: "💊" },
-              { item: "Current supplements", icon: "🌿" },
-              { item: "Recent lab work or medical records", icon: "🧪" },
-              { item: "Symptoms and health concerns", icon: "📋" },
-              { item: "Health goals and questions", icon: "🎯" },
-              { item: "Emergency contact info", icon: "📞" },
-            ].map(({ item, icon }) => (
-              <div
-                key={item}
-                className="bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex items-start gap-3 hover:shadow-md hover:border-teal/30 transition-all"
-              >
-                <span className="text-xl flex-shrink-0 mt-0.5">{icon}</span>
-                <span className="text-sm text-gray-700 font-medium leading-relaxed">{item}</span>
-              </div>
-            ))}
+              { item: "Photo ID", detail: "Driver's license or state ID", Icon: IdCard, accent: "teal" as const },
+              { item: "Insurance Card(s)", detail: "Front and back, if applicable", Icon: CreditCard, accent: "purple" as const },
+              { item: "Current Medications", detail: "Including names and dosages", Icon: Pill, accent: "teal" as const },
+              { item: "Current Supplements", detail: "Vitamins, herbs, and OTC items", Icon: Leaf, accent: "green" as const },
+              { item: "Recent Lab Work", detail: "Or any medical records you have", Icon: FlaskConical, accent: "purple" as const },
+              { item: "Symptoms & Concerns", detail: "Helpful to write them down ahead of time", Icon: ClipboardList, accent: "teal" as const },
+              { item: "Health Goals", detail: "What outcomes matter most to you", Icon: Target, accent: "green" as const },
+              { item: "Emergency Contact", detail: "Name and phone number", Icon: PhoneCall, accent: "purple" as const },
+            ].map(({ item, detail, Icon, accent }) => {
+              const accentClasses = {
+                teal: { badge: "bg-teal/10 text-teal", border: "group-hover:border-teal/40" },
+                purple: { badge: "bg-purple/10 text-purple", border: "group-hover:border-purple/40" },
+                green: { badge: "bg-green-accent/10 text-green-accent", border: "group-hover:border-green-accent/40" },
+              }[accent];
+              return (
+                <div
+                  key={item}
+                  className={`group bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-lg transition-all duration-200 ${accentClasses.border}`}
+                >
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${accentClasses.badge} group-hover:scale-105 transition-transform`}>
+                    <Icon size={22} strokeWidth={2} />
+                  </div>
+                  <h3 className="font-bold text-charcoal text-base mb-1.5 leading-snug">{item}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{detail}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
