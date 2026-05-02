@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Eye, Sprout, Handshake, Microscope } from "lucide-react";
 import { PROVIDERS } from "@/lib/constants";
 import { CTABanner } from "@/components/home/CTABanner";
 
@@ -99,6 +100,7 @@ export default function AboutPage() {
       <section className="section-padding geometric-pattern-green">
         <div className="section-container">
           <div className="text-center mb-12">
+            <p className="font-script text-3xl text-white/90 mb-2">What We Stand For</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
               OUR <span className="text-white/80">VALUES</span>
             </h2>
@@ -107,36 +109,38 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
             {[
               {
-                icon: "👁",
+                Icon: Eye,
                 title: "See the Whole Person",
                 body: "We evaluate physical, hormonal, metabolic, and lifestyle factors together — never in isolation.",
               },
               {
-                icon: "🌿",
+                Icon: Sprout,
                 title: "Root-Cause Focus",
                 body: "We invest time to understand why — not just what — treating root causes rather than managing symptoms.",
               },
               {
-                icon: "🤝",
+                Icon: Handshake,
                 title: "True Partnership",
                 body: "Your care plan is built with you, not for you. We listen, collaborate, and adjust as your needs evolve.",
               },
               {
-                icon: "🔬",
+                Icon: Microscope,
                 title: "Evidence-Based",
                 body: "Integrative doesn't mean unscientific. We use proven diagnostics and therapies, always informed by the latest research.",
               },
-            ].map((value) => (
+            ].map(({ Icon, title, body }) => (
               <div
-                key={value.title}
-                className="bg-white/95 rounded-2xl p-6 shadow-md text-center"
+                key={title}
+                className="group bg-white rounded-2xl p-7 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 border-t-4 border-teal"
               >
-                <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="font-bold text-charcoal text-lg mb-2">
-                  {value.title}
+                <div className="w-14 h-14 rounded-2xl bg-teal/10 flex items-center justify-center mb-5 group-hover:bg-teal group-hover:scale-105 transition-all">
+                  <Icon size={26} strokeWidth={2} className="text-teal group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="font-bold text-charcoal text-lg mb-2 leading-snug">
+                  {title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  {value.body}
+                  {body}
                 </p>
               </div>
             ))}
