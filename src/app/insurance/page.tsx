@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, Phone, ArrowRight, PiggyBank, Wallet } from "lucide-react";
+import {
+  CheckCircle,
+  Phone,
+  ArrowRight,
+  PiggyBank,
+  Wallet,
+  Stethoscope,
+  CalendarCheck,
+  HeartPulse,
+  Compass,
+  Apple,
+  FlaskConical,
+} from "lucide-react";
 import { INSURANCE_PARTNERS, SITE_CONFIG } from "@/lib/constants";
 import { CTABanner } from "@/components/home/CTABanner";
 
@@ -209,8 +221,9 @@ export default function InsurancePage() {
 
       {/* Self-pay / Pricing */}
       <section className="section-padding bg-white">
-        <div className="section-container max-w-4xl">
-          <div className="text-center mb-10">
+        <div className="section-container max-w-5xl">
+          <div className="text-center mb-12">
+            <p className="font-script text-3xl text-teal mb-2">No Insurance? No Problem</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-charcoal mb-4">
               SELF-PAY <span className="text-teal">PRICING</span>
             </h2>
@@ -222,48 +235,57 @@ export default function InsurancePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
             {[
-              { service: "New Patient Comprehensive Visit", detail: "60–90 min" },
-              { service: "Follow-Up Visit", detail: "30 min" },
-              { service: "Hormone Evaluation & Consultation", detail: null },
-              { service: "Functional Medicine Consultation", detail: null },
-              { service: "Nutrition Counseling Session", detail: null },
-              { service: "Lab Processing", detail: "in addition to lab fees" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:shadow-md hover:border-teal/30 hover:-translate-y-0.5 transition-all duration-300"
-              >
-                <div className="flex items-start gap-3">
-                  <CheckCircle size={18} className="text-teal flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-sm font-semibold text-charcoal leading-snug">{item.service}</p>
-                    {item.detail && (
-                      <p className="text-xs text-gray-400 mt-1">{item.detail}</p>
-                    )}
+              { service: "New Patient Comprehensive Visit", detail: "60–90 min", Icon: Stethoscope, accent: "teal" as const },
+              { service: "Follow-Up Visit", detail: "30 min", Icon: CalendarCheck, accent: "purple" as const },
+              { service: "Hormone Evaluation & Consultation", detail: "Custom quote", Icon: HeartPulse, accent: "green" as const },
+              { service: "Functional Medicine Consultation", detail: "Custom quote", Icon: Compass, accent: "teal" as const },
+              { service: "Nutrition Counseling Session", detail: "Per session", Icon: Apple, accent: "purple" as const },
+              { service: "Lab Processing", detail: "In addition to lab fees", Icon: FlaskConical, accent: "green" as const },
+            ].map(({ service, detail, Icon, accent }) => {
+              const accentClasses = {
+                teal: { badge: "bg-teal/10", icon: "text-teal", pill: "bg-teal/10 text-teal", border: "group-hover:border-teal/40", hoverFill: "group-hover:bg-teal" },
+                purple: { badge: "bg-purple/10", icon: "text-purple", pill: "bg-purple/10 text-purple", border: "group-hover:border-purple/40", hoverFill: "group-hover:bg-purple" },
+                green: { badge: "bg-green-accent/10", icon: "text-green-accent", pill: "bg-green-accent/10 text-green-accent", border: "group-hover:border-green-accent/40", hoverFill: "group-hover:bg-green-accent" },
+              }[accent];
+              return (
+                <div
+                  key={service}
+                  className={`group bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 ${accentClasses.border}`}
+                >
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all ${accentClasses.badge} ${accentClasses.hoverFill} group-hover:scale-105`}>
+                    <Icon size={22} strokeWidth={2} className={`transition-colors ${accentClasses.icon} group-hover:text-white`} />
                   </div>
+                  <h3 className="font-bold text-charcoal text-base mb-2 leading-snug">{service}</h3>
+                  <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full ${accentClasses.pill}`}>
+                    {detail}
+                  </span>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          <div className="bg-teal/10 border border-teal/20 rounded-2xl p-6 text-center mb-8">
-            <p className="text-charcoal font-semibold mb-1">
-              Contact us for current self-pay rates
-            </p>
-            <p className="text-gray-500 text-sm">
-              Pricing varies by service. Lab fees are billed separately. We&apos;re happy to provide a quote before your visit.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact#contact-form" className="btn-teal">
-              Get Pricing Info
-            </Link>
-            <Link href="/for-patients" className="btn-outline-teal inline-flex items-center gap-2">
-              Patient Resources <ArrowRight size={16} />
-            </Link>
+          <div className="bg-gradient-to-br from-teal/10 to-purple/5 border border-teal/20 rounded-2xl p-8 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <div className="w-14 h-14 rounded-2xl bg-teal flex items-center justify-center flex-shrink-0">
+              <Phone size={24} className="text-white" />
+            </div>
+            <div className="flex-grow">
+              <p className="font-bold text-charcoal text-lg mb-1">
+                Get a quote before your visit
+              </p>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Pricing varies by service and lab fees are billed separately. Call or message us — we&apos;ll give you a clear estimate up front, no surprises.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+              <Link href="/contact#contact-form" className="btn-teal text-sm">
+                Get Pricing Info
+              </Link>
+              <Link href="/for-patients" className="btn-outline-teal text-sm inline-flex items-center gap-2">
+                Patient Resources <ArrowRight size={14} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
