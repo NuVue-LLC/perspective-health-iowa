@@ -138,11 +138,15 @@ export default function ServicePage({ params }: Props) {
         /* ── Primary Care layout ── */
         <article className="bg-white">
           <div className="section-container py-16 sm:py-20 lg:py-24">
-            {/* Large uppercase headline */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight mb-14 max-w-4xl">
-              <span className="text-teal">Comprehensive</span>{" "}
-              <span className="text-charcoal">Primary Care — Your Health, Our Priority</span>
-            </h2>
+            {/* Section header — script + headline + accent line, matches the rest of the site */}
+            <div className="mb-14 max-w-4xl">
+              <p className="font-script text-3xl text-teal mb-2">The Foundation of Your Care</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-charcoal">
+                <span className="text-teal">Comprehensive</span> Primary Care
+              </h2>
+              <p className="text-gray-500 mt-3 text-lg">Your health, our priority.</p>
+              <div className="w-16 h-1 bg-teal rounded-full mt-5" />
+            </div>
 
             {/* Two-column intro: image left, text right */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 mb-16">
@@ -163,6 +167,14 @@ export default function ServicePage({ params }: Props) {
                 <p className="text-gray-600 leading-relaxed mb-8">
                   {service.whatItIs}
                 </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link href="/contact#contact-form" className="btn-teal inline-flex items-center justify-center gap-2">
+                    Schedule a Visit <ArrowRight size={16} />
+                  </Link>
+                  <Link href="/insurance" className="btn-outline-teal inline-flex items-center justify-center gap-2">
+                    Insurance & Pricing
+                  </Link>
+                </div>
               </div>
             </div>
 
