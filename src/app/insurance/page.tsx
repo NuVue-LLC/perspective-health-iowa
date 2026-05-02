@@ -122,9 +122,10 @@ export default function InsurancePage() {
             </div>
             <a
               href={`tel:${SITE_CONFIG.phoneRaw}`}
-              className="btn-teal whitespace-nowrap flex-shrink-0"
+              className="btn-teal whitespace-nowrap flex-shrink-0 inline-flex items-center gap-2"
             >
-              {SITE_CONFIG.phone}
+              <Phone size={16} />
+              Call Us
             </a>
           </div>
         </div>

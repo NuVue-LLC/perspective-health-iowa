@@ -2,7 +2,29 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import {
+  CheckCircle,
+  ArrowRight,
+  ChevronDown,
+  HeartPulse,
+  Activity,
+  Stethoscope,
+  FlaskConical,
+  Pill,
+  Quote,
+} from "lucide-react";
+
+// Maps a primary-care accordion title to a Lucide icon. Lookup is case-insensitive
+// and matches on a substring so minor wording changes don't drop the icon.
+function getPrimaryCareSectionIcon(title: string) {
+  const t = title.toLowerCase();
+  if (t.includes("wellness")) return HeartPulse;
+  if (t.includes("chronic")) return Activity;
+  if (t.includes("acute")) return Stethoscope;
+  if (t.includes("lab")) return FlaskConical;
+  if (t.includes("medication") || t.includes("supplement")) return Pill;
+  return CheckCircle;
+}
 import {
   getServiceBySlug,
   getAllServiceSlugs,
@@ -147,40 +169,64 @@ export default function ServicePage({ params }: Props) {
           </div>
           <section className="geometric-pattern-light">
             <div className="section-container py-16 sm:py-20 lg:py-24">
+            {/* Section header */}
+            <div className="text-center mb-10">
+              <p className="font-script text-3xl text-teal mb-2">What&apos;s Included</p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-charcoal">
+                EXPLORE OUR <span className="text-teal">PRIMARY CARE SERVICES</span>
+              </h2>
+              <div className="w-16 h-1 bg-teal rounded-full mx-auto mt-4" />
+            </div>
+
             {/* Two-column: Accordions left, sidebar right */}
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 lg:gap-14 items-start">
-              <div>
-                <div>
-                  {service.accordionSections.map((section, i) => (
-                    <details key={i} className="group border-b border-gray-200">
-                      <summary className="flex items-center justify-between cursor-pointer py-6 list-none [&::-webkit-details-marker]:hidden">
-                        <span className="text-lg sm:text-xl font-bold text-charcoal uppercase tracking-wide">
+              <div className="space-y-3">
+                {service.accordionSections.map((section, i) => {
+                  const SectionIcon = getPrimaryCareSectionIcon(section.title);
+                  return (
+                    <details
+                      key={i}
+                      className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+                    >
+                      <summary className="flex items-center gap-4 cursor-pointer p-5 sm:p-6 list-none [&::-webkit-details-marker]:hidden">
+                        <div className="w-11 h-11 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0 group-hover:bg-teal group-open:bg-teal transition-all">
+                          <SectionIcon
+                            size={22}
+                            strokeWidth={2}
+                            className="text-teal group-hover:text-white group-open:text-white transition-colors"
+                          />
+                        </div>
+                        <span className="flex-grow text-base sm:text-lg font-bold text-charcoal uppercase tracking-wide">
                           {section.title}
                         </span>
-                        <span className="flex-shrink-0 ml-4 text-2xl text-charcoal/60 font-light select-none">
-                          <span className="group-open:hidden">+</span>
-                          <span className="hidden group-open:inline">&minus;</span>
-                        </span>
+                        <ChevronDown
+                          size={20}
+                          className="flex-shrink-0 text-teal transition-transform duration-200 group-open:rotate-180"
+                        />
                       </summary>
-                      <ul className="pb-6 pl-1 space-y-2">
+                      <ul className="px-5 sm:px-6 pb-6 pl-[76px] sm:pl-[88px] space-y-3 border-t border-gray-100 pt-4">
                         {section.items.map((item, j) => (
-                          <li key={j} className="flex items-start gap-3 text-gray-600 leading-relaxed">
-                            <span className="w-1.5 h-1.5 rounded-full bg-teal mt-2.5 flex-shrink-0" />
-                            {item}
+                          <li key={j} className="flex items-start gap-3 text-gray-600 leading-relaxed text-sm sm:text-base">
+                            <CheckCircle size={16} className="text-teal flex-shrink-0 mt-1" />
+                            <span>{item}</span>
                           </li>
                         ))}
                       </ul>
                     </details>
-                  ))}
-                </div>
+                  );
+                })}
               </div>
 
               <aside className="space-y-6 lg:sticky lg:top-8">
-                <div className="bg-sage/40 rounded-2xl p-7">
-                  <p className="text-teal italic leading-relaxed">
-                    &ldquo;At Perspective Health, we believe in going beyond symptom management.
+                <div className="relative bg-white rounded-2xl p-7 shadow-md border-l-4 border-teal">
+                  <Quote size={28} className="text-teal/30 mb-3" />
+                  <p className="text-charcoal italic leading-relaxed text-sm">
+                    At Perspective Health, we believe in going beyond symptom management.
                     Our team takes the time to listen, understand your full health picture,
-                    and create a care plan built around you.&rdquo;
+                    and create a care plan built around you.
+                  </p>
+                  <p className="text-teal text-xs font-semibold mt-4 uppercase tracking-wider">
+                    — Our Care Team
                   </p>
                 </div>
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
