@@ -88,7 +88,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
-        <ChatWidget />
+        {process.env.NEXT_PUBLIC_CHATBOT_ENABLED === "true" && <ChatWidget />}
       </body>
     </html>
   );

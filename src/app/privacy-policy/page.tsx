@@ -164,8 +164,8 @@ export default function PrivacyPolicyPage() {
           <ul>
             <li>
               Contact our Privacy Officer:{" "}
-              <a href="mailto:privacy@perspectivehealth.com">
-                privacy@perspectivehealth.com
+              <a href="mailto:privacy@perspectivehealthiowa.com">
+                privacy@perspectivehealthiowa.com
               </a>
             </li>
             <li>
@@ -178,6 +178,49 @@ export default function PrivacyPolicyPage() {
                 www.hhs.gov/ocr
               </a>{" "}
               or 1-800-368-1019
+            </li>
+          </ul>
+
+          <h2>Website Chatbot &amp; AI-Assisted Communications</h2>
+          <p>
+            Our website includes a virtual assistant chatbot that helps answer
+            general questions about our services, providers, hours, insurance,
+            and scheduling. Please review the following before using it:
+          </p>
+          <ul>
+            <li>
+              <strong>Not a secure channel for PHI.</strong> The chatbot is{" "}
+              <em>not</em> a secure channel for Protected Health Information.
+              Please do not share symptoms, diagnoses, medications, lab results,
+              insurance ID numbers, or other personal health details in the
+              chat. For anything medical, please call us at{" "}
+              <a href="tel:5157240377">515-724-0377</a>.
+            </li>
+            <li>
+              <strong>AI-assisted responses.</strong> Responses are generated
+              with the help of a third-party large-language-model service
+              (Anthropic). Messages you send to the chatbot are transmitted to
+              that service to produce a response. The chatbot is not a medical
+              provider and does not provide medical advice, diagnosis, or
+              treatment.
+            </li>
+            <li>
+              <strong>Not part of your medical record.</strong> Conversations
+              with the chatbot are not stored in your patient chart and are not
+              part of your designated record set under HIPAA.
+            </li>
+            <li>
+              <strong>Optional lead form.</strong> If you choose to use the
+              &ldquo;Talk to Our Team&rdquo; form inside the chat, the
+              information you submit (name, email, optional phone, service
+              interest, and an optional short message) is sent to our team by
+              email so we can follow up. The form is for contact purposes only
+              — please do not include health details in the message field.
+            </li>
+            <li>
+              <strong>Emergencies.</strong> The chatbot cannot triage
+              emergencies. If you are experiencing a medical emergency, call
+              911 or go to the nearest emergency room.
             </li>
           </ul>
 
@@ -202,8 +245,8 @@ export default function PrivacyPolicyPage() {
             <br />
             <a href="tel:5157240377">515-724-0377</a>
             <br />
-            <a href="mailto:info@perspectivehealth.com">
-              info@perspectivehealth.com
+            <a href="mailto:info@perspectivehealthiowa.com">
+              info@perspectivehealthiowa.com
             </a>
           </p>
           <p>

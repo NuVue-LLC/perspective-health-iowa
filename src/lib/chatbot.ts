@@ -256,12 +256,15 @@ export function matchFaq(userMessage: string): FaqMatch | null {
 
 // --- Page-aware welcome messages ---
 
+const PRIVACY_NOTICE =
+  "Heads up: this chat isn't a secure channel — please don't share personal health details here. For anything medical, call us at (515) 724-0377.";
+
 export function getWelcomeMessage(pathname?: string): { content: string; suggestions: string[] } {
   const defaultSuggestions = ["Our Services", "Hours & Location", "Insurance", "New Patient Info"];
 
   if (!pathname || pathname === "/") {
     return {
-      content: "Hi! I'm the Perspective Health assistant. I can help with questions about our services, providers, hours, insurance, and scheduling. What can I help you with?",
+      content: `Hi! I'm the Perspective Health assistant. I can help with questions about our services, providers, hours, insurance, and scheduling. What can I help you with?\n\n${PRIVACY_NOTICE}`,
       suggestions: defaultSuggestions,
     };
   }
@@ -271,7 +274,7 @@ export function getWelcomeMessage(pathname?: string): { content: string; suggest
     const service = servicesData.find((s) => s.slug === slug);
     if (service) {
       return {
-        content: `Hi! I see you're looking at our ${service.name} services. I'd be happy to answer any questions about what to expect, who it's for, or how to get started!`,
+        content: `Hi! I see you're looking at our ${service.name} services. I'd be happy to answer any questions about what to expect, who it's for, or how to get started!\n\n${PRIVACY_NOTICE}`,
         suggestions: ["Who is this for?", "How do I schedule?", "Insurance", "Other Services"],
       };
     }
@@ -279,41 +282,41 @@ export function getWelcomeMessage(pathname?: string): { content: string; suggest
 
   if (pathname === "/services") {
     return {
-      content: "Hi! You're browsing our services. I can help you find the right fit — whether it's primary care, hormone health, functional medicine, or something else. What are you looking for?",
+      content: `Hi! You're browsing our services. I can help you find the right fit — whether it's primary care, hormone health, functional medicine, or something else. What are you looking for?\n\n${PRIVACY_NOTICE}`,
       suggestions: ["Hormone Health", "Primary Care", "Digestive Health", "Functional Medicine"],
     };
   }
 
   if (pathname === "/about") {
     return {
-      content: "Hi! You're checking out our team. Want to know more about one of our providers, or how our integrative approach works?",
+      content: `Hi! You're checking out our team. Want to know more about one of our providers, or how our integrative approach works?\n\n${PRIVACY_NOTICE}`,
       suggestions: ["Tell me about Audrey", "Tell me about Stephanie", "Tell me about Tara", "Your Approach"],
     };
   }
 
   if (pathname === "/insurance") {
     return {
-      content: "Hi! I can help with insurance and payment questions. We accept most major plans, plus HSA/FSA and CareCredit. What would you like to know?",
+      content: `Hi! I can help with insurance and payment questions. We accept most major plans, plus HSA/FSA and CareCredit. What would you like to know?\n\n${PRIVACY_NOTICE}`,
       suggestions: ["Which plans?", "Cash-pay options", "HSA/FSA", "CareCredit"],
     };
   }
 
   if (pathname === "/contact") {
     return {
-      content: "Hi! Looking to get in touch? I can help with scheduling info, directions, or any quick questions while you're here.",
+      content: `Hi! Looking to get in touch? I can help with scheduling info, directions, or any quick questions while you're here.\n\n${PRIVACY_NOTICE}`,
       suggestions: ["Hours & Location", "New Patient Info", "Telehealth", "Our Services"],
     };
   }
 
   if (pathname === "/for-patients") {
     return {
-      content: "Hi! I can help answer questions about what to expect as a patient — from your first visit to insurance and telehealth options.",
+      content: `Hi! I can help answer questions about what to expect as a patient — from your first visit to insurance and telehealth options.\n\n${PRIVACY_NOTICE}`,
       suggestions: ["New Patient Info", "Insurance", "Telehealth", "Hours & Location"],
     };
   }
 
   return {
-    content: "Hi! I'm the Perspective Health assistant. I can help with questions about our services, providers, hours, insurance, and scheduling. What can I help you with?",
+    content: `Hi! I'm the Perspective Health assistant. I can help with questions about our services, providers, hours, insurance, and scheduling. What can I help you with?\n\n${PRIVACY_NOTICE}`,
     suggestions: defaultSuggestions,
   };
 }
