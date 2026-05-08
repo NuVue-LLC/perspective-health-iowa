@@ -13,18 +13,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-3 mb-4" aria-label="Perspective Health Iowa">
+            <Link href="/" className="inline-flex items-center mb-4" aria-label="Perspective Health Iowa">
               <Image
-                src="/images/brand/phi-icon.svg"
-                alt=""
-                width={113}
-                height={113}
-                className="h-14 w-14"
+                src="/images/brand/phi-logo-horizontal-light.png"
+                alt="Perspective Health Iowa"
+                width={2000}
+                height={714}
+                className="h-16 w-auto"
               />
-              <span className="flex items-baseline gap-2 whitespace-nowrap text-2xl font-bold tracking-wide">
-                <span className="text-[#21c1dc]">PERSPECTIVE</span>
-                <span className="text-white">HEALTH</span>
-              </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Integrative healthcare that sees the whole person — not just the
