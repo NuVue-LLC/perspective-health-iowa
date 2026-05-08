@@ -68,7 +68,7 @@ export function Header() {
             : "bg-charcoal/95 backdrop-blur-sm shadow-lg"
         )}
       >
-        <div className="section-container">
+        <div className="w-full pl-4 pr-4 sm:pl-6 sm:pr-6 lg:pl-8 lg:pr-8">
           <div className="flex items-center justify-between h-28">
             {/* Logo */}
             <Link
