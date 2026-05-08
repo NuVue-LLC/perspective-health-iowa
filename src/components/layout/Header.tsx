@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { NAVIGATION_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { PinwheelLogo } from "@/components/ui/PinwheelLogo";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -73,18 +73,17 @@ export function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-3 flex-shrink-0"
+              className="flex items-center flex-shrink-0"
               aria-label="Perspective Health Iowa — Home"
             >
-              <PinwheelLogo className="w-12 h-12" />
-              <div className="hidden sm:block">
-                <span className="block font-bold text-lg leading-tight text-white">
-                  Perspective Health
-                </span>
-                <span className="block text-sm font-medium text-teal">
-                  Iowa
-                </span>
-              </div>
+              <Image
+                src="/images/brand/phi-logo-horizontal.jpg"
+                alt="Perspective Health Iowa"
+                width={640}
+                height={224}
+                priority
+                className="h-14 w-auto rounded-md"
+              />
             </Link>
 
             {/* Desktop navigation */}
