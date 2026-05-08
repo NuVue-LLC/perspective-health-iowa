@@ -69,7 +69,7 @@ export function Header() {
         )}
       >
         <div className="w-full pl-4 pr-4 sm:pl-6 sm:pr-6 lg:pl-8 lg:pr-8">
-          <div className="flex items-center justify-between h-28">
+          <div className="flex items-center justify-between h-32">
             {/* Logo */}
             <Link
               href="/"
@@ -82,7 +82,7 @@ export function Header() {
                 width={2000}
                 height={714}
                 priority
-                className="h-20 w-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
+                className="h-24 w-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
               />
             </Link>
 
