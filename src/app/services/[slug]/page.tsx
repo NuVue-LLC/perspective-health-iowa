@@ -72,8 +72,8 @@ export default function ServicePage({ params }: Props) {
   // HOCATT keeps its hero image (per request).
   const firstBelowImageMap: Record<string, { src: string; alt: string }> = {
     "comprehensive-primary-care": {
-      src: "/images/welcome-1.jpg",
-      alt: "Patients connecting at home — supported by Perspective Health Iowa primary care",
+      src: "/images/consultation-care.jpg",
+      alt: "Provider in consultation with a patient at Perspective Health Iowa",
     },
     "hormone-health": {
       src: "/images/professional-woman-confident.jpg",
@@ -272,8 +272,8 @@ export default function ServicePage({ params }: Props) {
                 </div>
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                    src={service.heroImage}
-                    alt={service.heroImageAlt}
+                    src="/images/welcome-1.jpg"
+                    alt="Patients connecting at home — supported by Perspective Health Iowa primary care"
                     fill
                     quality={85}
                     className="object-cover"
@@ -399,8 +399,8 @@ export default function ServicePage({ params }: Props) {
                 </div>
                 <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-lg">
                   <Image
-                    src="/images/approach-1.jpg"
-                    alt="Functional and integrative medicine at Perspective Health"
+                    src="/images/welcome-2.jpg"
+                    alt="Couple supported through whole-person integrative care at Perspective Health Iowa"
                     fill
                     quality={85}
                     className="object-cover"
@@ -638,8 +638,8 @@ export default function ServicePage({ params }: Props) {
                 </div>
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
                   <Image
-                    src="/images/approach-1.jpg"
-                    alt="Digestive health care at Perspective Health Iowa"
+                    src="/images/wellness-balance.jpg"
+                    alt="Whole-body digestive and metabolic wellness at Perspective Health Iowa"
                     fill
                     quality={85}
                     className="object-cover"
@@ -931,8 +931,8 @@ export default function ServicePage({ params }: Props) {
                 </div>
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
                   <Image
-                    src="/images/approach-1.jpg"
-                    alt="Hormone health specialist at Perspective Health"
+                    src="/images/hero-services.jpg"
+                    alt="Restored vitality through hormone health at Perspective Health Iowa"
                     fill
                     quality={85}
                     className="object-cover"
@@ -1091,8 +1091,8 @@ export default function ServicePage({ params }: Props) {
                   <div className="absolute -left-4 -top-4 w-24 h-full opacity-20 geometric-pattern-light rounded-l-2xl" />
                   <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg w-full max-w-md">
                     <Image
-                      src="/images/approach-1.jpg"
-                      alt="Supplemental health services at Perspective Health"
+                      src="/images/hero-fullscript.jpg"
+                      alt="Personalized supplemental nutrition and wellness at Perspective Health Iowa"
                       fill
                       quality={85}
                       className="object-cover"
@@ -1127,8 +1127,8 @@ export default function ServicePage({ params }: Props) {
                 </div>
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
                   <Image
-                    src={service.heroImage}
-                    alt="Patient packages at Perspective Health"
+                    src="/images/consultation-care.jpg"
+                    alt="Personalized supplemental care consultation at Perspective Health Iowa"
                     fill
                     quality={85}
                     className="object-cover"
