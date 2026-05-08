@@ -130,6 +130,16 @@ export default function ServicePage({ params }: Props) {
           <p className="text-white/80 text-lg max-w-xl mt-4">
             {service.heroSubtitle}
           </p>
+          {service.slug === "hocatt" && (
+            <a
+              href={SITE_CONFIG.hocattBookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-teal text-base px-8 py-3.5 inline-block mt-6"
+            >
+              Book &amp; Pay Online
+            </a>
+          )}
         </div>
       </section>
 
