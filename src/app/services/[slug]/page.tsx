@@ -66,6 +66,36 @@ export default function ServicePage({ params }: Props) {
     .map((slug) => SERVICES.find((s) => s.slug === slug))
     .filter(Boolean);
 
+  // First image displayed below each hero — intentionally different from the
+  // service's own hero so the page doesn't open with the same photo twice.
+  // HOCATT keeps its hero image (per request).
+  const firstBelowImageMap: Record<string, { src: string; alt: string }> = {
+    "comprehensive-primary-care": {
+      src: "/images/service-hormone-health.jpg",
+      alt: "Hormone health support at Perspective Health Iowa",
+    },
+    "hormone-health": {
+      src: "/images/service-integrative-medicine.jpg",
+      alt: "Integrative medicine consultation at Perspective Health Iowa",
+    },
+    "integrative-functional-medicine": {
+      src: "/images/service-digestive-metabolic.jpg",
+      alt: "Digestive and metabolic health care at Perspective Health Iowa",
+    },
+    "digestive-metabolic-health": {
+      src: "/images/service-supplementary.jpg",
+      alt: "Supplementary services at Perspective Health Iowa",
+    },
+    "supplementary-services": {
+      src: "/images/service-primary-care.jpg",
+      alt: "Primary care at Perspective Health Iowa",
+    },
+  };
+  const firstBelow = firstBelowImageMap[service.slug] ?? {
+    src: service.heroImage,
+    alt: service.heroImageAlt,
+  };
+
   const ctaMap: Record<string, { heading: string; subtext: string }> = {
     "comprehensive-primary-care": {
       heading: "Ready for a Primary Care Provider Who Actually Listens?",
@@ -158,8 +188,8 @@ export default function ServicePage({ params }: Props) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 mb-16">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src={service.heroImage}
-                  alt={service.heroImageAlt}
+                  src={firstBelow.src}
+                  alt={firstBelow.alt}
                   fill
                   quality={85}
                   className="object-cover"
@@ -298,8 +328,8 @@ export default function ServicePage({ params }: Props) {
                   </h2>
                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src={service.heroImage}
-                      alt={service.heroImageAlt}
+                      src={firstBelow.src}
+                      alt={firstBelow.alt}
                       fill
                       quality={85}
                       className="object-cover"
@@ -496,8 +526,8 @@ export default function ServicePage({ params }: Props) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
                   <Image
-                    src={service.heroImage}
-                    alt={service.heroImageAlt}
+                    src={firstBelow.src}
+                    alt={firstBelow.alt}
                     fill
                     quality={85}
                     className="object-cover"
@@ -857,8 +887,8 @@ export default function ServicePage({ params }: Props) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
                   <Image
-                    src={service.heroImage}
-                    alt={service.heroImageAlt}
+                    src={firstBelow.src}
+                    alt={firstBelow.alt}
                     fill
                     quality={85}
                     className="object-cover"
@@ -992,8 +1022,8 @@ export default function ServicePage({ params }: Props) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg w-full max-w-md">
                   <Image
-                    src={service.heroImage}
-                    alt={service.heroImageAlt}
+                    src={firstBelow.src}
+                    alt={firstBelow.alt}
                     fill
                     quality={85}
                     className="object-cover"
