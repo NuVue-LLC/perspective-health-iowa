@@ -15,11 +15,11 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-flex items-center mb-4" aria-label="Perspective Health Iowa">
               <Image
-                src="/images/brand/phi-logo-horizontal.jpg"
+                src="/images/brand/phi-logo-horizontal-light.png"
                 alt="Perspective Health Iowa"
-                width={640}
-                height={224}
-                className="h-16 w-auto rounded-md"
+                width={2000}
+                height={714}
+                className="h-16 w-auto"
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
