@@ -77,12 +77,12 @@ export function Header() {
               aria-label="Perspective Health Iowa — Home"
             >
               <Image
-                src="/images/brand/phi-logo-horizontal.jpg"
+                src="/images/brand/phi-logo-horizontal-light.png"
                 alt="Perspective Health Iowa"
-                width={640}
-                height={224}
+                width={2000}
+                height={714}
                 priority
-                className="h-14 w-auto rounded-md"
+                className="h-14 w-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
               />
             </Link>
 
