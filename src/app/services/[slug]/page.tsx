@@ -135,7 +135,7 @@ export default function ServicePage({ params }: Props) {
               href={SITE_CONFIG.hocattBookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-teal text-base px-8 py-3.5 inline-block mt-6"
+              className="btn-purple text-base px-8 py-3.5 inline-block mt-6"
             >
               Book &amp; Pay Online
             </a>
