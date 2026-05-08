@@ -76,8 +76,8 @@ export default function ServicePage({ params }: Props) {
       alt: "Patients connecting at home — supported by Perspective Health Iowa primary care",
     },
     "hormone-health": {
-      src: "/images/about-clinic.jpg",
-      alt: "Relaxed wellness moment at Perspective Health Iowa",
+      src: "/images/professional-woman-confident.jpg",
+      alt: "Confident woman thriving with balanced hormone health",
     },
     "integrative-functional-medicine": {
       src: "/images/approach-1.jpg",
