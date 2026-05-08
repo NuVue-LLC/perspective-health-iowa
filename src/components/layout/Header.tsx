@@ -73,21 +73,17 @@ export function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-3 flex-shrink-0"
+              className="flex items-center flex-shrink-0"
               aria-label="Perspective Health Iowa — Home"
             >
               <Image
-                src="/images/brand/phi-icon.svg"
-                alt=""
-                width={113}
-                height={113}
+                src="/images/brand/phi-logo-horizontal-light.png"
+                alt="Perspective Health Iowa"
+                width={2000}
+                height={714}
                 priority
-                className="h-16 w-16 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
+                className="h-20 w-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
               />
-              <span className="hidden sm:flex items-baseline gap-2 whitespace-nowrap text-2xl md:text-3xl font-bold tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
-                <span className="text-[#21c1dc]">PERSPECTIVE</span>
-                <span className="text-white">HEALTH</span>
-              </span>
             </Link>
 
             {/* Desktop navigation */}
@@ -107,7 +103,7 @@ export function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "flex items-center gap-1 px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:underline underline-offset-4",
+                        "flex items-center gap-1 px-4 py-2 rounded-lg text-lg font-medium transition-all duration-300 hover:underline underline-offset-4",
                         pathname.startsWith(link.href) && link.href !== "/"
                           ? "text-teal"
                           : "text-white/90 hover:text-teal"
@@ -127,7 +123,7 @@ export function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "px-4 py-2 rounded-lg text-base block font-medium transition-all duration-300 hover:underline underline-offset-4",
+                        "px-4 py-2 rounded-lg text-lg block font-medium transition-all duration-300 hover:underline underline-offset-4",
                         pathname === link.href ||
                           (link.href !== "/" && pathname.startsWith(link.href))
                           ? "text-teal"
@@ -173,7 +169,7 @@ export function Header() {
               <Link
                 href="/contact#contact-form"
                 className={cn(
-                  "hidden md:inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-base transition-all duration-300",
+                  "hidden md:inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-lg transition-all duration-300",
                   isTransparent
                     ? "border-2 border-white text-white hover:bg-white hover:text-purple"
                     : "text-white bg-purple hover:bg-purple/90 shadow-md hover:shadow-lg"
