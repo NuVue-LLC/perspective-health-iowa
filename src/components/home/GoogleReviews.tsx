@@ -5,24 +5,24 @@ import { PinwheelLogo } from "@/components/ui/PinwheelLogo";
 const reviews = [
   {
     id: 1,
-    initials: "MS",
-    name: "M.S.",
+    initials: "M",
+    name: "Megan S.",
     rating: 5,
     excerpt:
       "I have NEVER met a more caring, thorough doctor than Audrey. She cares and is devoted to making sure your concerns are heard and looked into. So thankful for her!!!",
   },
   {
     id: 2,
-    initials: "AU",
-    name: "A.U.",
+    initials: "A",
+    name: "Amy U.",
     rating: 5,
     excerpt:
       "I had a wonderful experience with Stephanie and the entire staff. Stephanie was incredibly understanding, thorough, and took the time to really listen to my concerns. I felt heard and supported throughout my visit. The rest of the team was also kind, professional, and helpful from start to finish. I highly recommend this office to anyone looking for compassionate and attentive care!",
   },
   {
     id: 3,
-    initials: "AS",
-    name: "A.S.",
+    initials: "A",
+    name: "Alexa S.",
     rating: 5,
     excerpt:
       "The motto here is \u201cBe Seen\u201d and they truly do see you as a person! I have never felt so heard than at any other medical practice. I recommend this practice to anyone who wills listen \ud83d\ude00",
