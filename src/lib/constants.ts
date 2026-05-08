@@ -178,5 +178,5 @@ export const NAVIGATION_LINKS = [
     ],
   },
   { label: "Insurance", href: "/insurance" },
-  { label: "Reach Out", href: "/contact#contact-form" },
+  { label: "Contact Us", href: "/contact#contact-form" },
 ];

@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 import { SITE_CONFIG, SERVICES, NAVIGATION_LINKS } from "@/lib/constants";
-import { PinwheelLogo } from "@/components/ui/PinwheelLogo";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,14 +13,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-4" aria-label="Perspective Health Iowa">
-              <PinwheelLogo className="w-12 h-12" />
-              <div>
-                <span className="block font-bold text-white text-lg leading-tight">
-                  Perspective Health
-                </span>
-                <span className="block text-teal text-sm font-medium">Iowa</span>
-              </div>
+            <Link href="/" className="inline-flex items-center mb-4" aria-label="Perspective Health Iowa">
+              <Image
+                src="/images/brand/phi-logo-horizontal.jpg"
+                alt="Perspective Health Iowa"
+                width={640}
+                height={224}
+                className="h-16 w-auto rounded-md"
+              />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Integrative healthcare that sees the whole person — not just the
