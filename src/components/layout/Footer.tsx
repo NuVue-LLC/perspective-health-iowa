@@ -151,6 +151,12 @@ export function Footer() {
               Privacy Policy
             </Link>
             <Link
+              href="/hipaa-notice"
+              className="hover:text-teal transition-colors"
+            >
+              HIPAA Notice
+            </Link>
+            <Link
               href="/terms"
               className="hover:text-teal transition-colors"
             >

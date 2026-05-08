@@ -21,7 +21,7 @@ export function WelcomeSection() {
             <div className="rounded-xl overflow-hidden shadow-lg w-2/3 mt-4 ml-auto image-zoom">
               <Image
                 src="/images/welcome-2.jpg"
-                alt="Integrative health care team at Perspective Health Iowa"
+                alt="Whole-body wellness at Perspective Health Iowa"
                 width={400}
                 height={280}
                 className="object-cover w-full h-48 object-center"

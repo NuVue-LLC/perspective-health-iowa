@@ -145,7 +145,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Personalized hormone evaluation and balancing in Iowa at Perspective Health. We help men and women experiencing hormonal imbalances reclaim their energy, mood, and vitality.",
     heroImage: "/images/service-hormone-health.jpg",
-    heroImageAlt: "Hormone health consultation at Perspective Health Iowa",
+    heroImageAlt: "Woman embracing balanced hormone health at Perspective Health Iowa",
     intro:
       "Hormones are the body's chemical messengers — when they're out of balance, virtually every system in your body can feel the impact. At Perspective Health, we take a comprehensive, personalized approach to hormone evaluation and optimization, helping you reclaim your energy, mood, libido, and overall vitality.",
     whatItIs:
@@ -212,7 +212,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Evidence-based integrative and functional medicine in Iowa at Perspective Health. We identify root causes of chronic illness using advanced testing and personalized treatment plans.",
     heroImage: "/images/service-integrative-medicine.jpg",
-    heroImageAlt: "Functional medicine consultation at Perspective Health Iowa",
+    heroImageAlt: "Family supported through whole-person integrative care at Perspective Health Iowa",
     intro:
       "Integrative and functional medicine represents a paradigm shift in how we think about health and disease. Rather than simply treating symptoms, we ask why — exploring the complex web of genetic, environmental, lifestyle, and biological factors that influence your health and using that understanding to create lasting, meaningful change.",
     whatItIs:
@@ -495,8 +495,12 @@ export const servicesData: ServiceData[] = [
         alt: "Patient sitting comfortably inside the HOCATT ozone sauna with the capsule open",
       },
       {
-        src: "/images/hocatt-closed.png",
+        src: "/images/hocatt-closed.jpg",
         alt: "HOCATT ozone sauna capsule during a therapy session",
+      },
+      {
+        src: "/images/hocatt-experience-poster.jpg",
+        alt: "The HOCATT Experience — phases of a session: Heat & Infrared, Carbonic Acid, and Ozone",
       },
     ],
   },
