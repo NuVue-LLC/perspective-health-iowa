@@ -66,29 +66,30 @@ export default function ServicePage({ params }: Props) {
     .map((slug) => SERVICES.find((s) => s.slug === slug))
     .filter(Boolean);
 
-  // First image displayed below each hero — intentionally different from the
-  // service's own hero so the page doesn't open with the same photo twice.
+  // First image displayed below each hero — pulls from imagery across the
+  // site (not just service heroes) so the page doesn't open with the same
+  // photo twice and the service pages don't all reuse the same five photos.
   // HOCATT keeps its hero image (per request).
   const firstBelowImageMap: Record<string, { src: string; alt: string }> = {
     "comprehensive-primary-care": {
-      src: "/images/service-hormone-health.jpg",
-      alt: "Hormone health support at Perspective Health Iowa",
+      src: "/images/welcome-1.jpg",
+      alt: "Patients connecting at home — supported by Perspective Health Iowa primary care",
     },
     "hormone-health": {
-      src: "/images/service-integrative-medicine.jpg",
-      alt: "Integrative medicine consultation at Perspective Health Iowa",
+      src: "/images/about-clinic.jpg",
+      alt: "Relaxed wellness moment at Perspective Health Iowa",
     },
     "integrative-functional-medicine": {
-      src: "/images/service-digestive-metabolic.jpg",
-      alt: "Digestive and metabolic health care at Perspective Health Iowa",
+      src: "/images/approach-1.jpg",
+      alt: "Whole-person, mind-body care at Perspective Health Iowa",
     },
     "digestive-metabolic-health": {
-      src: "/images/service-supplementary.jpg",
-      alt: "Supplementary services at Perspective Health Iowa",
+      src: "/images/approach-2.jpg",
+      alt: "Nutrient-dense whole foods supporting digestive and metabolic health",
     },
     "supplementary-services": {
-      src: "/images/service-primary-care.jpg",
-      alt: "Primary care at Perspective Health Iowa",
+      src: "/images/hero-patients.jpg",
+      alt: "Multi-generational patients at Perspective Health Iowa",
     },
   };
   const firstBelow = firstBelowImageMap[service.slug] ?? {
