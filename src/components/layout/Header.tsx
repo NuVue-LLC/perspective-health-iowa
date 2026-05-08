@@ -69,7 +69,7 @@ export function Header() {
         )}
       >
         <div className="section-container">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-28">
             {/* Logo */}
             <Link
               href="/"
@@ -82,7 +82,7 @@ export function Header() {
                 width={2000}
                 height={714}
                 priority
-                className="h-14 w-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
+                className="h-20 w-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
               />
             </Link>
 
@@ -103,7 +103,7 @@ export function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:underline underline-offset-4",
+                        "flex items-center gap-1 px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:underline underline-offset-4",
                         pathname.startsWith(link.href) && link.href !== "/"
                           ? "text-teal"
                           : "text-white/90 hover:text-teal"
@@ -123,7 +123,7 @@ export function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "px-3 py-2 rounded-lg text-sm block font-medium transition-all duration-300 hover:underline underline-offset-4",
+                        "px-4 py-2 rounded-lg text-base block font-medium transition-all duration-300 hover:underline underline-offset-4",
                         pathname === link.href ||
                           (link.href !== "/" && pathname.startsWith(link.href))
                           ? "text-teal"
@@ -144,7 +144,7 @@ export function Header() {
                             href={child.href}
                             target={child.href.startsWith("http") ? "_blank" : undefined}
                             rel={child.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                            className="block px-4 py-2.5 text-sm text-purple font-medium hover:bg-purple/5 hover:text-purple-700 transition-colors border-t border-gray-100"
+                            className="block px-4 py-2.5 text-base text-purple font-medium hover:bg-purple/5 hover:text-purple-700 transition-colors border-t border-gray-100"
                           >
                             {child.label} &rarr;
                           </a>
@@ -152,7 +152,7 @@ export function Header() {
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="block px-4 py-2.5 text-sm text-charcoal hover:bg-sage hover:text-teal transition-colors"
+                            className="block px-4 py-2.5 text-base text-charcoal hover:bg-sage hover:text-teal transition-colors"
                           >
                             {child.label}
                           </Link>
@@ -169,7 +169,7 @@ export function Header() {
               <Link
                 href="/contact#contact-form"
                 className={cn(
-                  "hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300",
+                  "hidden md:inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-base transition-all duration-300",
                   isTransparent
                     ? "border-2 border-white text-white hover:bg-white hover:text-purple"
                     : "text-white bg-purple hover:bg-purple/90 shadow-md hover:shadow-lg"
@@ -201,7 +201,7 @@ export function Header() {
                   <Link
                     href={link.href}
                     className={cn(
-                      "block px-4 py-3 rounded-lg font-medium transition-colors",
+                      "block px-4 py-3 rounded-lg text-lg font-medium transition-colors",
                       pathname === link.href ||
                         (link.href !== "/" && pathname.startsWith(link.href))
                         ? "bg-teal/10 text-teal"
@@ -219,7 +219,7 @@ export function Header() {
                             href={child.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block px-4 py-2 text-sm text-white/60 hover:text-teal rounded-lg hover:bg-white/10 transition-colors"
+                            className="block px-4 py-2 text-base text-white/60 hover:text-teal rounded-lg hover:bg-white/10 transition-colors"
                           >
                             {child.label}
                           </a>
@@ -227,7 +227,7 @@ export function Header() {
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="block px-4 py-2 text-sm text-white/60 hover:text-teal rounded-lg hover:bg-white/10 transition-colors"
+                            className="block px-4 py-2 text-base text-white/60 hover:text-teal rounded-lg hover:bg-white/10 transition-colors"
                           >
                             {child.label}
                           </Link>
@@ -240,7 +240,7 @@ export function Header() {
               <div className="pt-3 border-t border-white/10">
                 <Link
                   href="/contact#contact-form"
-                  className="bg-purple text-white hover:bg-purple/90 w-full justify-center text-sm inline-flex items-center px-6 py-3 rounded-full font-semibold transition-all"
+                  className="bg-purple text-white hover:bg-purple/90 w-full justify-center text-base inline-flex items-center px-6 py-3 rounded-full font-semibold transition-all"
                 >
                   Start Your Health Journey
                 </Link>
