@@ -73,17 +73,21 @@ export function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center flex-shrink-0"
+              className="flex items-center gap-3 flex-shrink-0"
               aria-label="Perspective Health Iowa — Home"
             >
               <Image
-                src="/images/brand/phi-logo-horizontal-light.png"
-                alt="Perspective Health Iowa"
-                width={2000}
-                height={714}
+                src="/images/brand/phi-icon.svg"
+                alt=""
+                width={113}
+                height={113}
                 priority
-                className="h-20 w-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
+                className="h-16 w-16 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
               />
+              <span className="hidden sm:flex items-baseline gap-2 whitespace-nowrap text-2xl md:text-3xl font-bold tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
+                <span className="text-[#21c1dc]">PERSPECTIVE</span>
+                <span className="text-white">HEALTH</span>
+              </span>
             </Link>
 
             {/* Desktop navigation */}
