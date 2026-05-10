@@ -11,7 +11,7 @@ export function WelcomeSection() {
             <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] image-zoom">
               <Image
                 src="/images/welcome-1.jpg"
-                alt="Patient consultation at Perspective Health Iowa"
+                alt="Caring nurse with an older patient - relationship-based care at Perspective Health Iowa"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -21,7 +21,7 @@ export function WelcomeSection() {
             <div className="rounded-xl overflow-hidden shadow-lg w-2/3 mt-4 ml-auto image-zoom">
               <Image
                 src="/images/welcome-2.jpg"
-                alt="Whole-body wellness at Perspective Health Iowa"
+                alt="Patient relaxed at home, supported by whole-person care at Perspective Health Iowa"
                 width={400}
                 height={280}
                 className="object-cover w-full h-48 object-center"
