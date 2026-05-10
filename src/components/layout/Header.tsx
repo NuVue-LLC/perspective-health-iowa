@@ -191,7 +191,7 @@ export function Header() {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-white/10 bg-charcoal">
+          <div className="lg:hidden border-t border-white/10 bg-charcoal max-h-[calc(100dvh-8rem)] overflow-y-auto overscroll-contain">
             <nav
               className="section-container py-4 space-y-1"
               aria-label="Mobile navigation"
