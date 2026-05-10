@@ -45,12 +45,6 @@ import {
   HeartPulse as HeartPulseIcon,
   Target,
   Network,
-  ClipboardList,
-  FlaskConical as FlaskIcon,
-  ListChecks,
-  PhoneCall,
-  Scale,
-  GitMerge,
 } from "lucide-react";
 
 interface Props {
