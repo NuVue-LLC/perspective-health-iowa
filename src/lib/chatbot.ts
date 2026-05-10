@@ -134,7 +134,7 @@ function buildFaqPatterns(): FaqPattern[] {
     },
     {
       patterns: [/\b(hocatt?|hoccatt?|ozone|sauna|detox)\b/i],
-      answer: `Our HOCATT Ozone Sauna delivers up to 10 therapies in one 30-minute session — supporting detox, circulation, immunity, and recovery. You can book and pay online!\n\nBook now: ${SITE_CONFIG.hocattBookingUrl}\n\nLearn more: /services/hocatt`,
+      answer: `Our HOCATT Ozone Sauna delivers up to 10 therapies in one one-hour session — supporting detox, circulation, immunity, and recovery. You can book and pay online!\n\nBook now: ${SITE_CONFIG.hocattBookingUrl}\n\nLearn more: /services/hocatt`,
       suggestions: ["What services do you offer?", "How do I schedule?"],
     },
     {
@@ -381,7 +381,7 @@ Our clinic offers a personalized blend of functional medicine, primary care, and
 ${servicesSummary}
 
 ## HOCATT Ozone Sauna (Special Booking)
-The HOCATT is different from our other services — patients can book and pay online directly without calling the office. It delivers up to 10 therapeutic modalities in a single 30-minute session, supporting detoxification, circulation, immune function, and recovery.
+The HOCATT is different from our other services — patients can book and pay online directly without calling the office. It delivers up to 10 therapeutic modalities in a single one-hour session, supporting detoxification, circulation, immune function, and recovery.
 - Book & pay online: ${SITE_CONFIG.hocattBookingUrl}
 - Learn more: /services/hocatt
 When someone asks about booking or paying for HOCATT, always direct them to the online links above instead of telling them to call the office.
