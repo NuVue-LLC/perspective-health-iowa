@@ -21,7 +21,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Welcome, New Patients",
   description:
-    "Everything new patients need to know about their first visit at Perspective Health Iowa — what to expect, how to prepare, and FAQs.",
+    "Everything new patients need to know about their first visit at Perspective Health Iowa - what to expect, how to prepare, and FAQs.",
   openGraph: {
     title: "Welcome, New Patients | Perspective Health Iowa",
     description:
@@ -63,7 +63,7 @@ const faqs = [
   {
     question: "What is your cancellation policy?",
     answer:
-      "We ask that you provide at least 24 hours' notice to cancel or reschedule an appointment. Late cancellations or no-shows may be subject to a fee. We understand that unexpected situations arise — please contact us as soon as possible if you need to reschedule.",
+      "We ask that you provide at least 24 hours' notice to cancel or reschedule an appointment. Late cancellations or no-shows may be subject to a fee. We understand that unexpected situations arise - please contact us as soon as possible if you need to reschedule.",
   },
   {
     question: "How do I get my lab results?",
@@ -78,7 +78,7 @@ const faqs = [
   {
     question: "Can I use Perspective Health alongside my current doctors?",
     answer:
-      "Absolutely — and we encourage it. We believe in collaborative care and are happy to work alongside your existing healthcare team, coordinate care, and share records as appropriate and with your consent.",
+      "Absolutely - and we encourage it. We believe in collaborative care and are happy to work alongside your existing healthcare team, coordinate care, and share records as appropriate and with your consent.",
   },
 ];
 
@@ -184,7 +184,7 @@ export default function NewPatientsPage() {
             </h2>
             <div className="w-16 h-1 bg-teal rounded-full mx-auto mt-4" />
             <p className="text-gray-500 mt-4 max-w-lg mx-auto">
-              A little prep goes a long way — these help us make the most of your time together.
+              A little prep goes a long way - these help us make the most of your time together.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
@@ -279,7 +279,7 @@ export default function NewPatientsPage() {
         </div>
       </section>
 
-      <CTABanner heading="Ready to Get Started?" subtext="Reach out to our team — we can't wait to meet you." />
+      <CTABanner heading="Ready to Get Started?" subtext="Reach out to our team - we can't wait to meet you." />
     </>
   );
 }

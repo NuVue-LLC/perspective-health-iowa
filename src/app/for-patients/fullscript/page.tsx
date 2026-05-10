@@ -8,7 +8,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Fullscript Supplements",
   description:
-    "Order practitioner-grade supplements online through Fullscript — convenient, reliable delivery of the supplements recommended by your Perspective Health Iowa provider.",
+    "Order practitioner-grade supplements online through Fullscript - convenient, reliable delivery of the supplements recommended by your Perspective Health Iowa provider.",
   openGraph: {
     title: "Fullscript Supplements | Perspective Health Iowa",
     description:
@@ -53,7 +53,7 @@ export default function FullscriptPage() {
       <section className="section-padding bg-white">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            {/* Left — intro text */}
+            {/* Left - intro text */}
             <div>
               <p className="font-script text-3xl text-teal mb-2">Quality You Can Trust</p>
               <h2 className="text-3xl font-extrabold text-charcoal mb-4">
@@ -69,7 +69,7 @@ export default function FullscriptPage() {
               </p>
             </div>
 
-            {/* Right — Fullscript card */}
+            {/* Right - Fullscript card */}
             <div className="bg-green-accent geometric-pattern rounded-2xl p-8 sm:p-10 text-white shadow-lg">
               <div className="bg-white rounded-xl p-4 inline-block mb-6">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -112,7 +112,7 @@ export default function FullscriptPage() {
           <div className="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
             <ul className="space-y-4">
               {[
-                "Practitioner-grade quality — every product is vetted for purity, potency, and safety",
+                "Practitioner-grade quality - every product is vetted for purity, potency, and safety",
                 "Personalized recommendations from your Perspective Health provider",
                 "Convenient home delivery with free shipping on orders over $50",
                 "Easy auto-refill options so you never run out of your essentials",

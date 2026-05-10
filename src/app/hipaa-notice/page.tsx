@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "HIPAA Notice of Privacy Practices",
   description:
-    "Perspective Health Iowa's HIPAA Notice of Privacy Practices — how we use and disclose your Protected Health Information and your rights regarding that information.",
+    "Perspective Health Iowa's HIPAA Notice of Privacy Practices - how we use and disclose your Protected Health Information and your rights regarding that information.",
 };
 
 export default function HipaaNoticePage() {

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "For Our Patients | Perspective Health Iowa",
     description:
-      "Your health hub — access patient resources, new patient information, and supplement ordering at Perspective Health Iowa.",
+      "Your health hub - access patient resources, new patient information, and supplement ordering at Perspective Health Iowa.",
   },
 };
 
@@ -32,7 +32,7 @@ const resources = [
   {
     title: "New Patients",
     description:
-      "Everything you need to know about your first visit — what to expect, how to prepare, what to bring, and answers to frequently asked questions.",
+      "Everything you need to know about your first visit - what to expect, how to prepare, what to bring, and answers to frequently asked questions.",
     icon: UserPlus,
     href: "/for-patients/new-patients",
     external: false,
@@ -45,7 +45,7 @@ const resources = [
   {
     title: "Fullscript Supplements",
     description:
-      "Order practitioner-grade supplements recommended by your provider — delivered right to your door with free shipping on orders over $50.",
+      "Order practitioner-grade supplements recommended by your provider - delivered right to your door with free shipping on orders over $50.",
     icon: Leaf,
     href: "/for-patients/fullscript",
     external: false,
@@ -152,7 +152,7 @@ export default function ForPatientsHubPage() {
 
       <CTABanner
         heading="Need Help Getting Started?"
-        subtext="Our team is here for you — reach out anytime with questions."
+        subtext="Our team is here for you - reach out anytime with questions."
       />
     </>
   );

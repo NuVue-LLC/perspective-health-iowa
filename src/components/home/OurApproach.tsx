@@ -10,7 +10,7 @@ const accordionItems = [
     id: "collaborative",
     title: "Collaborative Approach",
     content:
-      "Our team works together across disciplines — conventional medicine, nursing practice, and functional nutrition — to ensure every aspect of your health is considered. We share insights and coordinate your care so nothing falls through the cracks.",
+      "Our team works together across disciplines - conventional medicine, nursing practice, and functional nutrition - to ensure every aspect of your health is considered. We share insights and coordinate your care so nothing falls through the cracks.",
   },
   {
     id: "root-cause",
@@ -22,13 +22,13 @@ const accordionItems = [
     id: "personalized",
     title: "Personalized Care Plans",
     content:
-      "No two patients are alike. Your care plan is built around your unique biology, lifestyle, preferences, and goals — combining evidence-based conventional treatments with targeted nutrition, lifestyle, and supplement strategies.",
+      "No two patients are alike. Your care plan is built around your unique biology, lifestyle, preferences, and goals - combining evidence-based conventional treatments with targeted nutrition, lifestyle, and supplement strategies.",
   },
   {
     id: "whole-person",
     title: "Whole-Person Wellness",
     content:
-      "We view your physical health, mental wellness, and lifestyle as deeply interconnected. Our approach addresses all dimensions of health — including stress, sleep, nutrition, movement, and social connection — to support sustainable, lasting change.",
+      "We view your physical health, mental wellness, and lifestyle as deeply interconnected. Our approach addresses all dimensions of health - including stress, sleep, nutrition, movement, and social connection - to support sustainable, lasting change.",
   },
 ];
 
@@ -46,7 +46,7 @@ export function OurApproach() {
           </h2>
           <div className="w-16 h-1 bg-teal rounded-full mx-auto mt-4 mb-6" />
           <p className="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed">
-            We see health as multidimensional — shaped by genetics, environment,
+            We see health as multidimensional - shaped by genetics, environment,
             relationships, nutrition, and life experiences. Our integrative
             model goes beyond treating disease to actively cultivating your
             optimal health.

@@ -21,7 +21,7 @@ const symptoms = [
   {
     label: "Weight Changes",
     description:
-      "Unexplained weight gain — especially around the midsection — or difficulty losing weight despite a healthy lifestyle can signal hormonal imbalances including thyroid dysfunction, insulin resistance, or cortisol dysregulation.",
+      "Unexplained weight gain - especially around the midsection - or difficulty losing weight despite a healthy lifestyle can signal hormonal imbalances including thyroid dysfunction, insulin resistance, or cortisol dysregulation.",
   },
   {
     label: "Low Libido",

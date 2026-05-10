@@ -28,13 +28,13 @@ export async function POST(request: NextRequest) {
         resend.emails.send({
           from: FROM_EMAIL,
           to: CLINIC_EMAIL,
-          subject: `New Contact Form Submission — ${data.name}`,
+          subject: `New Contact Form Submission - ${data.name}`,
           html: buildEmailHtml(data),
         }),
         resend.emails.send({
           from: FROM_EMAIL,
           to: data.email,
-          subject: "We received your message — Perspective Health Iowa",
+          subject: "We received your message - Perspective Health Iowa",
           html: buildContactAutoReplyHtml({ name: data.name }),
         }),
       ]);

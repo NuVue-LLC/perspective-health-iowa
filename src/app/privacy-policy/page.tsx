@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy & Notice of Privacy Practices",
   description:
-    "Perspective Health Iowa's Privacy Policy and HIPAA Notice of Privacy Practices — how we use and disclose your Protected Health Information and your rights regarding that information.",
+    "Perspective Health Iowa's Privacy Policy and HIPAA Notice of Privacy Practices - how we use and disclose your Protected Health Information and your rights regarding that information.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -215,7 +215,7 @@ export default function PrivacyPolicyPage() {
               information you submit (name, email, optional phone, service
               interest, and an optional short message) is sent to our team by
               email so we can follow up. The form is for contact purposes only
-              — please do not include health details in the message field.
+              - please do not include health details in the message field.
             </li>
             <li>
               <strong>Emergencies.</strong> The chatbot cannot triage

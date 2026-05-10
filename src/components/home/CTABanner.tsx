@@ -9,7 +9,7 @@ interface CTABannerProps {
 
 export function CTABanner({
   heading = "Your Journey to Better Health Starts Here",
-  subtext = "Take the first step — our team is ready to listen.",
+  subtext = "Take the first step - our team is ready to listen.",
 }: CTABannerProps) {
   return (
     <section className="bg-purple geometric-pattern py-14 sm:py-16 relative overflow-hidden">

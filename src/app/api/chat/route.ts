@@ -52,7 +52,7 @@ const LEAD_CAPTURE_TRIGGER = "have our team reach out";
 // --- PHI Pre-filter ---
 // If a user message looks like they're disclosing personal health info, return a
 // canned redirect *without* forwarding the message to the LLM. This keeps PHI
-// from being transmitted to a third-party API. Tuned to be specific — only fires
+// from being transmitted to a third-party API. Tuned to be specific - only fires
 // on clear first-person disclosure, not general questions about a service.
 const PHI_PATTERNS: RegExp[] = [
   // First-person disclosure of conditions / symptoms
@@ -81,7 +81,7 @@ function isEmergency(text: string): boolean {
   return EMERGENCY_PATTERNS.some((p) => p.test(text));
 }
 
-const PHI_REDIRECT_MESSAGE = `Thank you for trusting us with that. To protect your privacy, I can't discuss specific health concerns through this chat — but our providers would love to help you personally. Please call us at ${SITE_CONFIG.phone} or use our Contact page to schedule.`;
+const PHI_REDIRECT_MESSAGE = `Thank you for trusting us with that. To protect your privacy, I can't discuss specific health concerns through this chat - but our providers would love to help you personally. Please call us at ${SITE_CONFIG.phone} or use our Contact page to schedule.`;
 
 const EMERGENCY_MESSAGE = `If this is a medical emergency, please call 911 or go to the nearest emergency room right away. For non-urgent concerns, call our office at ${SITE_CONFIG.phone}.`;
 
@@ -112,7 +112,7 @@ export async function POST(request: NextRequest) {
     const lastMessage = messages[messages.length - 1];
 
     if (lastMessage.role === "user") {
-      // Emergency check first — overrides everything else
+      // Emergency check first - overrides everything else
       if (isEmergency(lastMessage.content)) {
         return NextResponse.json({
           message: EMERGENCY_MESSAGE,
@@ -120,7 +120,7 @@ export async function POST(request: NextRequest) {
         });
       }
 
-      // PHI pre-filter — short-circuit before forwarding to the LLM
+      // PHI pre-filter - short-circuit before forwarding to the LLM
       if (isLikelyPhi(lastMessage.content)) {
         return NextResponse.json({
           message: PHI_REDIRECT_MESSAGE,
@@ -128,7 +128,7 @@ export async function POST(request: NextRequest) {
         });
       }
 
-      // FAQ shortcut — instant answers for common questions (works without API key)
+      // FAQ shortcut - instant answers for common questions (works without API key)
       const faqMatch = matchFaq(lastMessage.content);
       if (faqMatch) {
         return NextResponse.json({

@@ -25,7 +25,7 @@ const pillars = [
     tagline: "Pillar 2",
     Icon: Salad,
     summary:
-      "A science-informed eating plan built around real, whole foods — designed to work with the homeopathic protocol, not against your lifestyle.",
+      "A science-informed eating plan built around real, whole foods - designed to work with the homeopathic protocol, not against your lifestyle.",
     bullets: [
       "Emphasizes low-glycemic, anti-inflammatory foods",
       "Balanced portions with structured daily guidance",

@@ -77,7 +77,7 @@ export default function ServicePage({ params }: Props) {
     .map((slug) => SERVICES.find((s) => s.slug === slug))
     .filter(Boolean);
 
-  // First image displayed below each hero — pulls from imagery across the
+  // First image displayed below each hero - pulls from imagery across the
   // site (not just service heroes) so the page doesn't open with the same
   // photo twice and the service pages don't all reuse the same five photos.
   // HOCATT keeps its hero image (per request).
@@ -104,7 +104,7 @@ export default function ServicePage({ params }: Props) {
     },
     "thinnr": {
       src: "/images/thinnr-products.jpg",
-      alt: "The THINNR product line — Protocol, Boost, Control, Detox, and Regulate",
+      alt: "The THINNR product line - Protocol, Boost, Control, Detox, and Regulate",
     },
   };
   const firstBelow = firstBelowImageMap[service.slug] ?? {
@@ -119,7 +119,7 @@ export default function ServicePage({ params }: Props) {
     },
     "hormone-health": {
       heading: "Think Your Hormones Might Be Out of Balance?",
-      subtext: "Let's find out together — reach out to get started.",
+      subtext: "Let's find out together - reach out to get started.",
     },
     "integrative-functional-medicine": {
       heading: "Looking for Answers Beyond Conventional Medicine?",
@@ -127,7 +127,7 @@ export default function ServicePage({ params }: Props) {
     },
     "digestive-metabolic-health": {
       heading: "Tired of Living With Digestive Issues?",
-      subtext: "Let's get to the root cause — contact us today.",
+      subtext: "Let's get to the root cause - contact us today.",
     },
     "supplementary-services": {
       heading: "Ready to Explore What Else Is Possible?",
@@ -225,7 +225,7 @@ export default function ServicePage({ params }: Props) {
             {/* Large uppercase headline */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight mb-14 max-w-4xl">
               <span className="text-teal">Comprehensive</span>{" "}
-              <span className="text-charcoal">Primary Care — Your Health, Our Priority</span>
+              <span className="text-charcoal">Primary Care - Your Health, Our Priority</span>
             </h2>
 
             {/* Two-column intro: image left, text right */}
@@ -310,13 +310,13 @@ export default function ServicePage({ params }: Props) {
                     and create a care plan built around you.
                   </p>
                   <p className="text-teal text-xs font-semibold mt-4 uppercase tracking-wider">
-                    — Our Care Team
+                    - Our Care Team
                   </p>
                 </div>
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src="/images/welcome-1.jpg"
-                    alt="Patients connecting at home — supported by Perspective Health Iowa primary care"
+                    alt="Patients connecting at home - supported by Perspective Health Iowa primary care"
                     fill
                     quality={85}
                     className="object-cover"
@@ -357,7 +357,7 @@ export default function ServicePage({ params }: Props) {
       ) : service.slug === "integrative-functional-medicine" && service.accordionSections ? (
         /* ── Integrative Medicine alternating sections layout ── */
         <article>
-          {/* Section 1 — White: Headline + image LEFT, text RIGHT */}
+          {/* Section 1 - White: Headline + image LEFT, text RIGHT */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -393,7 +393,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 2 — Functional Medicine vs. Integrative Medicine */}
+              {/* Section 2 - Functional Medicine vs. Integrative Medicine */}
           <section className="geometric-pattern-light">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -454,7 +454,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 3 — White: Image LEFT, headline + accordion RIGHT */}
+              {/* Section 3 - White: Image LEFT, headline + accordion RIGHT */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -560,7 +560,7 @@ export default function ServicePage({ params }: Props) {
       ) : service.slug === "digestive-metabolic-health" ? (
         /* ── Digestive & Metabolic Health layout ── */
         <article>
-          {/* Section 1 — White: Headline + image left, text right */}
+          {/* Section 1 - White: Headline + image left, text right */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight mb-12">
@@ -590,7 +590,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 2 — Green bg: Our Approach + service cards grid */}
+              {/* Section 2 - Green bg: Our Approach + service cards grid */}
           <section className="geometric-pattern-green">
             <div className="section-container py-16 sm:py-20 lg:py-24 relative z-10">
               <div className="mb-12">
@@ -651,7 +651,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 3 — White: Benefits left with bullets, image right */}
+              {/* Section 3 - White: Benefits left with bullets, image right */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -743,7 +743,7 @@ export default function ServicePage({ params }: Props) {
       ) : service.slug === "hocatt" ? (
         /* ── HOCATT Ozone Sauna layout ── */
         <article>
-          {/* Section 1 — White: Big centered headline + image left, intro right */}
+          {/* Section 1 - White: Big centered headline + image left, intro right */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-center mb-16 leading-tight">
@@ -773,7 +773,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 2 — Green: Interactive Modality Explorer */}
+              {/* Section 2 - Green: Interactive Modality Explorer */}
           <section className="geometric-pattern-green">
             <div className="section-container py-16 sm:py-20 lg:py-24 relative z-10">
               <div className="text-center mb-12">
@@ -788,14 +788,14 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          {/* Section 2.5 — White: The HOCATT Experience three-phase poster */}
+          {/* Section 2.5 - White: The HOCATT Experience three-phase poster */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_1.2fr] gap-10 lg:gap-14 items-center">
                 <div className="relative aspect-[2/3] rounded-3xl overflow-hidden shadow-xl bg-gradient-to-br from-gray-50 to-gray-100 max-w-md mx-auto lg:mx-0">
                   <Image
                     src="/images/hocatt-experience-poster.jpg"
-                    alt="The HOCATT Experience poster — Heat & Infrared, Carbonic Acid Phase, and Ozone Phase, with how a session begins and ends"
+                    alt="The HOCATT Experience poster - Heat & Infrared, Carbonic Acid Phase, and Ozone Phase, with how a session begins and ends"
                     fill
                     quality={88}
                     className="object-cover"
@@ -808,7 +808,7 @@ export default function ServicePage({ params }: Props) {
                     <span className="text-charcoal">a Session</span>
                   </h2>
                   <p className="text-gray-600 leading-relaxed mb-8">
-                    A one-hour HOCATT session moves through three distinct phases. Each phase works on a different system — circulatory, oxygenation, and immune — building on the one before it.
+                    A one-hour HOCATT session moves through three distinct phases. Each phase works on a different system - circulatory, oxygenation, and immune - building on the one before it.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-start gap-4 p-5 rounded-2xl bg-amber-50 border border-amber-100">
@@ -861,7 +861,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 3 — White: Gallery left, What to Expect right */}
+              {/* Section 3 - White: Gallery left, What to Expect right */}
           <section className="bg-white border-t border-gray-100">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -911,7 +911,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 4 — Light green: Benefits left, image right */}
+              {/* Section 4 - Light green: Benefits left, image right */}
           <section className="geometric-pattern-light">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -996,7 +996,7 @@ export default function ServicePage({ params }: Props) {
       ) : service.slug === "hormone-health" ? (
         /* ── Hormone Health layout ── */
         <article>
-          {/* Section 1 — White: Big centered headline + image left, text right */}
+          {/* Section 1 - White: Big centered headline + image left, text right */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-center mb-16 leading-tight">
@@ -1029,7 +1029,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 2 — White: Text left about BHRT, image right */}
+              {/* Section 2 - White: Text left about BHRT, image right */}
           <section className="bg-white border-t border-gray-200">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -1061,7 +1061,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 3 — Interactive Symptom Explorer */}
+              {/* Section 3 - Interactive Symptom Explorer */}
           <section className="geometric-pattern-light">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="max-w-4xl mx-auto text-center mb-10">
@@ -1129,7 +1129,7 @@ export default function ServicePage({ params }: Props) {
       ) : service.slug === "supplementary-services" ? (
         /* ── Supplementary Services layout ── */
         <article>
-          {/* Section 1 — White: Big centered headline */}
+          {/* Section 1 - White: Big centered headline */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-center mb-16 leading-tight">
@@ -1172,7 +1172,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 2 — Supplement Delivery (Fullscript) */}
+              {/* Section 2 - Supplement Delivery (Fullscript) */}
           <section className="geometric-pattern-green">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -1201,7 +1201,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 3 — Supplemental Services: image left with pattern, text right */}
+              {/* Section 3 - Supplemental Services: image left with pattern, text right */}
           <section className="bg-white border-t border-gray-200">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -1233,7 +1233,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 4 — Patient Packages */}
+              {/* Section 4 - Patient Packages */}
           <section className="geometric-pattern-light">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -1307,7 +1307,7 @@ export default function ServicePage({ params }: Props) {
       ) : service.slug === "thinnr" ? (
         /* ── THINNR Weight Loss Program layout ── */
         <article>
-          {/* Section 1 — White: Big centered headline + image left, intro right */}
+          {/* Section 1 - White: Big centered headline + image left, intro right */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-center mb-16 leading-tight">
@@ -1337,7 +1337,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          {/* Section 2 — Green: Interactive Two-Pillar Explorer */}
+          {/* Section 2 - Green: Interactive Two-Pillar Explorer */}
           <section className="geometric-pattern-green">
             <div className="section-container py-16 sm:py-20 lg:py-24 relative z-10">
               <div className="text-center mb-12">
@@ -1352,7 +1352,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          {/* Section 3 — Light green: Interactive Program Timeline */}
+          {/* Section 3 - Light green: Interactive Program Timeline */}
           <section className="geometric-pattern-light">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="max-w-4xl mx-auto text-center mb-12">
@@ -1370,7 +1370,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          {/* Section 4 — White: Interactive self-check (Who it's for) */}
+          {/* Section 4 - White: Interactive self-check (Who it's for) */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="max-w-6xl mx-auto">
@@ -1380,18 +1380,18 @@ export default function ServicePage({ params }: Props) {
                     <span className="text-charcoal">Sound Like You?</span>
                   </h2>
                   <p className="text-gray-600 text-lg">
-                    Tap any signs that apply — see at a glance how strong a fit THINNR may be.
+                    Tap any signs that apply - see at a glance how strong a fit THINNR may be.
                   </p>
                 </div>
                 <ThinnrSelfCheck items={service.whoItsFor} />
 
-                {/* Conversion CTA — natural moment after self-selecting */}
+                {/* Conversion CTA - natural moment after self-selecting */}
                 <div className="mt-10 bg-gradient-to-r from-teal/10 via-teal/5 to-teal/10 border border-teal/20 rounded-2xl p-6 sm:p-8 text-center">
                   <h3 className="text-lg sm:text-xl font-bold text-charcoal mb-2">
                     Sound like a fit? Let&apos;s talk it through.
                   </h3>
                   <p className="text-gray-600 text-sm sm:text-base mb-5 max-w-xl mx-auto">
-                    A quick consultation is the best way to find out if THINNR is right for you — no pressure, no commitment.
+                    A quick consultation is the best way to find out if THINNR is right for you - no pressure, no commitment.
                   </p>
                   <div className="flex flex-wrap gap-3 justify-center">
                     <Link href="/contact#contact-form" className="btn-teal text-base px-8 py-3">
@@ -1406,7 +1406,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          {/* Section 5 — Light pattern: What to Expect editorial program guide */}
+          {/* Section 5 - Light pattern: What to Expect editorial program guide */}
           <section className="geometric-pattern-light">
             <div className="section-container py-12 sm:py-14 lg:py-16">
               <div className="max-w-3xl mx-auto">
@@ -1459,7 +1459,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          {/* Section 6 — White: Potential Benefits icon grid */}
+          {/* Section 6 - White: Potential Benefits icon grid */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="text-center mb-12">
@@ -1517,7 +1517,7 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          {/* Section 7 — White: FAQ + Related */}
+          {/* Section 7 - White: FAQ + Related */}
           <section className="bg-white border-t border-gray-100">
             <div className="section-container py-16 sm:py-20 lg:py-24">
 

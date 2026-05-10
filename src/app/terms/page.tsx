@@ -84,8 +84,8 @@ export default function TermsPage() {
 
           <h2>Intellectual Property</h2>
           <p>
-            All content on this Site — including text, graphics, logos, images,
-            and software — is the property of Perspective Health Iowa or its
+            All content on this Site - including text, graphics, logos, images,
+            and software - is the property of Perspective Health Iowa or its
             licensors and is protected by U.S. and international copyright,
             trademark, and other intellectual property laws. You may view and
             print pages from the Site for your own personal, non-commercial use

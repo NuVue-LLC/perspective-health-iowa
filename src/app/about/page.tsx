@@ -7,7 +7,7 @@ import { CTABanner } from "@/components/home/CTABanner";
 export const metadata: Metadata = {
   title: "Our Team",
   description:
-    "Meet the Perspective Health Iowa team — Audrey Gries PA-C, Stephanie Erdmann DNP, and Tara Sayer RN. Iowa's integrative health clinic built on collaboration, compassion, and root-cause care.",
+    "Meet the Perspective Health Iowa team - Audrey Gries PA-C, Stephanie Erdmann DNP, and Tara Sayer RN. Iowa's integrative health clinic built on collaboration, compassion, and root-cause care.",
   openGraph: {
     title: "Our Team | Perspective Health Iowa",
     description:
@@ -63,15 +63,15 @@ export default function AboutPage() {
               <div className="w-16 h-1 bg-teal rounded-full mb-6" />
               <p className="text-gray-600 leading-relaxed mb-4">
                 At Perspective Health, we started with a simple belief: that
-                true healthcare means seeing and treating the whole person —
+                true healthcare means seeing and treating the whole person -
                 not just isolated symptoms or lab values. We believe in
                 listening deeply, thinking broadly, and partnering with each
                 patient to build health from the inside out.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Our clinic brings together practitioners from diverse healthcare
-                backgrounds — physician assisting, advanced nursing practice,
-                and clinical nutrition — united by a shared commitment to
+                backgrounds - physician assisting, advanced nursing practice,
+                and clinical nutrition - united by a shared commitment to
                 integrative, root-cause medicine. We combine the rigor of
                 evidence-based conventional medicine with the wisdom of
                 functional and integrative approaches.
@@ -80,13 +80,13 @@ export default function AboutPage() {
                 Whether you&apos;re struggling with a chronic condition,
                 searching for answers to longstanding symptoms, or simply
                 looking for a healthcare team that&apos;s as invested in your
-                wellness as you are — you&apos;ve found us.
+                wellness as you are - you&apos;ve found us.
               </p>
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-video lg:aspect-square image-zoom">
               <Image
                 src="/images/about-clinic.jpg"
-                alt="Perspective Health Iowa clinic — warm, welcoming integrative health environment"
+                alt="Perspective Health Iowa clinic - warm, welcoming integrative health environment"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -111,12 +111,12 @@ export default function AboutPage() {
               {
                 Icon: Eye,
                 title: "See the Whole Person",
-                body: "We evaluate physical, hormonal, metabolic, and lifestyle factors together — never in isolation.",
+                body: "We evaluate physical, hormonal, metabolic, and lifestyle factors together - never in isolation.",
               },
               {
                 Icon: Sprout,
                 title: "Root-Cause Focus",
-                body: "We invest time to understand why — not just what — treating root causes rather than managing symptoms.",
+                body: "We invest time to understand why - not just what - treating root causes rather than managing symptoms.",
               },
               {
                 Icon: Handshake,

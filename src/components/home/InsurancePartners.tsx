@@ -23,7 +23,7 @@ export function InsurancePartners() {
           </p>
         </div>
 
-        {/* Logo grid — 4 on top, 3 centered below */}
+        {/* Logo grid - 4 on top, 3 centered below */}
         <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
           {INSURANCE_PARTNERS.map((partner) => (
             <div
@@ -57,7 +57,7 @@ export function InsurancePartners() {
           <Link href="/contact#contact-form" className="text-teal font-medium hover:underline">
             Contact us
           </Link>{" "}
-          — we&apos;re happy to verify your benefits.
+          - we&apos;re happy to verify your benefits.
         </p>
 
       </div>

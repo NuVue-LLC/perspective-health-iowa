@@ -63,7 +63,7 @@ export function ChatInput({ onSend, disabled }: ChatInputProps) {
         </button>
       </div>
       <p className="px-3 pb-2 text-[10px] text-gray-400 text-center leading-tight">
-        Not a secure channel — please don&apos;t share health details. AI-assisted; messages aren&apos;t part of your medical record.
+        Not a secure channel - please don&apos;t share health details. AI-assisted; messages aren&apos;t part of your medical record.
       </p>
     </div>
   );

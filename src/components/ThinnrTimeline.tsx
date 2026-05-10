@@ -22,7 +22,7 @@ const phases = [
     duration: "Days 1–42",
     Icon: CalendarDays,
     summary:
-      "The core 42-day program — daily homeopathic protocol paired with the structured nutrition plan, supported by check-ins along the way.",
+      "The core 42-day program - daily homeopathic protocol paired with the structured nutrition plan, supported by check-ins along the way.",
     items: [
       "Daily THINNR homeopathic OTC routine",
       "Low-glycemic, anti-inflammatory nutrition plan",
@@ -48,7 +48,7 @@ const phases = [
     duration: "Ongoing",
     Icon: Sparkles,
     summary:
-      "We work with you on the longer-term plan — sustainable nutrition habits, lifestyle support, and integration with your other care at Perspective Health.",
+      "We work with you on the longer-term plan - sustainable nutrition habits, lifestyle support, and integration with your other care at Perspective Health.",
     items: [
       "Sustainable nutrition and lifestyle habits",
       "Coordination with your primary care, hormone, or functional medicine plan",
@@ -63,7 +63,7 @@ export default function ThinnrTimeline() {
 
   return (
     <div>
-      {/* Phase selector — horizontal connected stepper on md+, vertical stack on mobile */}
+      {/* Phase selector - horizontal connected stepper on md+, vertical stack on mobile */}
       <div className="relative mb-8">
         {/* Desktop connector line */}
         <div
