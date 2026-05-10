@@ -11,7 +11,7 @@ export function HeroSection() {
           fill
           priority
           quality={90}
-          className="object-cover object-top"
+          className="object-cover object-[65%_top] sm:object-top"
           sizes="100vw"
         />
         {/* Warm overlay for text legibility */}
