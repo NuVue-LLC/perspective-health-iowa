@@ -22,7 +22,7 @@ function buildFaqPatterns(): FaqPattern[] {
     .join("\n");
 
   const providerList = PROVIDERS.map(
-    (p) => `• ${p.name}, ${p.credentials} — ${p.title} (${p.specialty})`
+    (p) => `• ${p.name}, ${p.credentials} - ${p.title} (${p.specialty})`
   ).join("\n");
 
   const insuranceList = INSURANCE_PARTNERS.map((i) => `• ${i.name}`).join("\n");
@@ -70,12 +70,12 @@ function buildFaqPatterns(): FaqPattern[] {
     },
     {
       patterns: [/\b(pay|cost|price|how much|afford|self.?pay|cash)\b/i],
-      answer: `We accept most insurance plans, HSA/FSA funds, and CareCredit. Self-pay rates are available too. Pricing varies by service — call ${SITE_CONFIG.phone} for a quote before your visit!`,
+      answer: `We accept most insurance plans, HSA/FSA funds, and CareCredit. Self-pay rates are available too. Pricing varies by service - call ${SITE_CONFIG.phone} for a quote before your visit!`,
       suggestions: ["What insurance do you accept?", "HSA/FSA info"],
     },
     {
       patterns: [/\b(hsa|fsa|health savings|flexible spending|pre.?tax)\b/i],
-      answer: `Yes! We accept both HSA and FSA — just bring your card or reimbursement form. We also accept CareCredit and most major insurance plans.`,
+      answer: `Yes! We accept both HSA and FSA - just bring your card or reimbursement form. We also accept CareCredit and most major insurance plans.`,
       suggestions: ["What insurance do you accept?", "Self-pay options"],
     },
     {
@@ -87,17 +87,17 @@ function buildFaqPatterns(): FaqPattern[] {
     // --- Providers ---
     {
       patterns: [/\baudrey\b/i],
-      answer: `Audrey Gries, PA-C — co-founder with 15+ years in primary care. She specializes in functional medicine and hormone health.`,
+      answer: `Audrey Gries, PA-C - co-founder with 15+ years in primary care. She specializes in functional medicine and hormone health.`,
       suggestions: ["Tell me about Stephanie", "Tell me about Tara", "How do I schedule?"],
     },
     {
       patterns: [/\bstephanie\b/i],
-      answer: `Stephanie Erdmann, DNP — specializes in chronic disease management and preventive wellness with an integrative approach.`,
+      answer: `Stephanie Erdmann, DNP - specializes in chronic disease management and preventive wellness with an integrative approach.`,
       suggestions: ["Tell me about Audrey", "Tell me about Tara", "How do I schedule?"],
     },
     {
       patterns: [/\btara\b/i],
-      answer: `Tara Sayer, RN, BSN, MSCN, CNSC — 20+ years of experience specializing in digestive health, clinical nutrition, and integrative medicine.`,
+      answer: `Tara Sayer, RN, BSN, MSCN, CNSC - 20+ years of experience specializing in digestive health, clinical nutrition, and integrative medicine.`,
       suggestions: ["Tell me about Audrey", "Tell me about Stephanie", "How do I schedule?"],
     },
     {
@@ -109,7 +109,7 @@ function buildFaqPatterns(): FaqPattern[] {
     // --- Services (specific first, general catch-all last) ---
     {
       patterns: [/\b(hormones?|menopause|testosterone|thyroid|perimenopause|hot flash|libido|andropause|estrogen|progesterone)/i],
-      answer: `We offer personalized hormone evaluation and treatment for both men and women — including thyroid, menopause, perimenopause, and low testosterone. Our providers find root causes and create custom plans.\n\nLearn more: /services/hormone-health`,
+      answer: `We offer personalized hormone evaluation and treatment for both men and women - including thyroid, menopause, perimenopause, and low testosterone. Our providers find root causes and create custom plans.\n\nLearn more: /services/hormone-health`,
       suggestions: ["Who are the providers?", "How do I schedule?", "Insurance"],
     },
     {
@@ -119,12 +119,12 @@ function buildFaqPatterns(): FaqPattern[] {
     },
     {
       patterns: [/\b(functional|integrative|root cause|holistic|complementary)/i],
-      answer: `Our Functional Medicine approach looks at the whole picture — instead of just managing symptoms, we dig into root causes using advanced testing and personalized treatment plans.\n\nLearn more: /services/integrative-functional-medicine`,
+      answer: `Our Functional Medicine approach looks at the whole picture - instead of just managing symptoms, we dig into root causes using advanced testing and personalized treatment plans.\n\nLearn more: /services/integrative-functional-medicine`,
       suggestions: ["What insurance do you accept?", "Tell me about your providers"],
     },
     {
       patterns: [/\b(primary care|annual|checkup|physical|preventive)\b/i],
-      answer: `Our Primary Care goes beyond typical checkups — we combine conventional medicine with a root-cause approach. Initial visits are 60–90 minutes so we can really understand your health.\n\nLearn more: /services/comprehensive-primary-care`,
+      answer: `Our Primary Care goes beyond typical checkups - we combine conventional medicine with a root-cause approach. Initial visits are 60–90 minutes so we can really understand your health.\n\nLearn more: /services/comprehensive-primary-care`,
       suggestions: ["What insurance do you accept?", "How do I become a new patient?"],
     },
     {
@@ -134,7 +134,7 @@ function buildFaqPatterns(): FaqPattern[] {
     },
     {
       patterns: [/\b(hocatt?|hoccatt?|ozone|sauna|detox)\b/i],
-      answer: `Our HOCATT Ozone Sauna delivers up to 10 therapies in one one-hour session — supporting detox, circulation, immunity, and recovery. You can book and pay online!\n\nBook now: ${SITE_CONFIG.hocattBookingUrl}\n\nLearn more: /services/hocatt`,
+      answer: `Our HOCATT Ozone Sauna delivers up to 10 therapies in one one-hour session - supporting detox, circulation, immunity, and recovery. You can book and pay online!\n\nBook now: ${SITE_CONFIG.hocattBookingUrl}\n\nLearn more: /services/hocatt`,
       suggestions: ["What services do you offer?", "How do I schedule?"],
     },
     {
@@ -212,7 +212,7 @@ function buildFaqPatterns(): FaqPattern[] {
     // --- Our approach & values ---
     {
       patterns: [/\b(approach|philosophy|different|why.*choose|what sets|values|mission|believe)\b/i],
-      answer: `We focus on the whole person — not just symptoms. Our approach combines root-cause medicine, personalized care plans, and collaborative teamwork across disciplines.`,
+      answer: `We focus on the whole person - not just symptoms. Our approach combines root-cause medicine, personalized care plans, and collaborative teamwork across disciplines.`,
       suggestions: ["Meet our providers", "Our services", "How do I get started?"],
     },
 
@@ -257,7 +257,7 @@ export function matchFaq(userMessage: string): FaqMatch | null {
 // --- Page-aware welcome messages ---
 
 const PRIVACY_NOTICE =
-  "Heads up: this chat isn't a secure channel — please don't share personal health details here. For anything medical, call us at (515) 724-0377.";
+  "Heads up: this chat isn't a secure channel - please don't share personal health details here. For anything medical, call us at (515) 724-0377.";
 
 export function getWelcomeMessage(pathname?: string): { content: string; suggestions: string[] } {
   const defaultSuggestions = ["Our Services", "Hours & Location", "Insurance", "New Patient Info"];
@@ -282,7 +282,7 @@ export function getWelcomeMessage(pathname?: string): { content: string; suggest
 
   if (pathname === "/services") {
     return {
-      content: `Hi! You're browsing our services. I can help you find the right fit — whether it's primary care, hormone health, functional medicine, or something else. What are you looking for?\n\n${PRIVACY_NOTICE}`,
+      content: `Hi! You're browsing our services. I can help you find the right fit - whether it's primary care, hormone health, functional medicine, or something else. What are you looking for?\n\n${PRIVACY_NOTICE}`,
       suggestions: ["Hormone Health", "Primary Care", "Digestive Health", "Functional Medicine"],
     };
   }
@@ -310,7 +310,7 @@ export function getWelcomeMessage(pathname?: string): { content: string; suggest
 
   if (pathname === "/for-patients") {
     return {
-      content: `Hi! I can help answer questions about what to expect as a patient — from your first visit to insurance and telehealth options.\n\n${PRIVACY_NOTICE}`,
+      content: `Hi! I can help answer questions about what to expect as a patient - from your first visit to insurance and telehealth options.\n\n${PRIVACY_NOTICE}`,
       suggestions: ["New Patient Info", "Insurance", "Telehealth", "Hours & Location"],
     };
   }
@@ -327,7 +327,7 @@ export function buildSystemPrompt(): string {
     .join("\n");
 
   const providers = PROVIDERS.map(
-    (p) => `  - ${p.name}, ${p.credentials} (${p.title}) — ${p.specialty}`
+    (p) => `  - ${p.name}, ${p.credentials} (${p.title}) - ${p.specialty}`
   ).join("\n");
 
   const insuranceList = INSURANCE_PARTNERS.map((i) => i.name).join(", ");
@@ -341,9 +341,9 @@ export function buildSystemPrompt(): string {
     })
     .join("\n\n");
 
-  return `You are the friendly virtual assistant for Perspective Health Iowa, an integrative medical clinic in Urbandale, Iowa. You go by "Perspective Health Assistant." Your tone is warm, welcoming, and conversational — like a knowledgeable front-desk team member who genuinely cares.
+  return `You are the friendly virtual assistant for Perspective Health Iowa, an integrative medical clinic in Urbandale, Iowa. You go by "Perspective Health Assistant." Your tone is warm, welcoming, and conversational - like a knowledgeable front-desk team member who genuinely cares.
 
-CRITICAL RULE: You are in a TINY chat bubble. NEVER write more than 2 sentences. No bullet points. No lists. No paragraphs. If they need more info, tell them to call or visit a page. TWO SENTENCES MAX — no exceptions.
+CRITICAL RULE: You are in a TINY chat bubble. NEVER write more than 2 sentences. No bullet points. No lists. No paragraphs. If they need more info, tell them to call or visit a page. TWO SENTENCES MAX - no exceptions.
 
 ## Clinic Information
 - Name: ${SITE_CONFIG.name}
@@ -373,7 +373,7 @@ We accept most major insurance plans including: ${insuranceList}
 - We also accept CareCredit to help make healthcare more affordable.
 - Self-pay services available: New Patient Comprehensive Visit (60–90 min), Follow-Up Visit (30 min), Hormone Evaluation & Consultation, Functional Medicine Consultation, Nutrition Counseling Session, Lab Processing (in addition to lab fees).
 - Pricing varies by service. Lab fees are billed separately. We provide quotes before visits.
-- Always recommend patients call ${SITE_CONFIG.phone} to verify their specific coverage before their visit — no surprises.
+- Always recommend patients call ${SITE_CONFIG.phone} to verify their specific coverage before their visit - no surprises.
 
 ## Services Overview
 Our clinic offers a personalized blend of functional medicine, primary care, and health consulting. Key focus areas include hormone balance, gut health, thyroid support, and metabolic care.
@@ -381,12 +381,12 @@ Our clinic offers a personalized blend of functional medicine, primary care, and
 ${servicesSummary}
 
 ## HOCATT Ozone Sauna (Special Booking)
-The HOCATT is different from our other services — patients can book and pay online directly without calling the office. It delivers up to 10 therapeutic modalities in a single one-hour session, supporting detoxification, circulation, immune function, and recovery.
+The HOCATT is different from our other services - patients can book and pay online directly without calling the office. It delivers up to 10 therapeutic modalities in a single one-hour session, supporting detoxification, circulation, immune function, and recovery.
 - Book & pay online: ${SITE_CONFIG.hocattBookingUrl}
 - Learn more: /services/hocatt
 When someone asks about booking or paying for HOCATT, always direct them to the online links above instead of telling them to call the office.
 
-## New Patients — Step by Step
+## New Patients - Step by Step
 1. Reach Out: Call ${SITE_CONFIG.phone}, email ${SITE_CONFIG.email}, or use our Contact page. We'll answer questions and help find the right provider.
 2. Complete Paperwork: We send intake forms to complete before the visit.
 3. First Visit: Arrive 15 minutes early. The 60–90 minute appointment is an in-depth conversation about health history, concerns, and goals.
@@ -410,9 +410,9 @@ Follow-up appointments are generally 30–45 minutes.
 - Collaborative care: We encourage working alongside existing doctors and can coordinate care with consent.
 
 ## Our Mission & Values
-At Perspective Health, we started with a simple belief: true healthcare means seeing and treating the whole person — not just isolated symptoms or lab values. We listen deeply, think broadly, and partner with each patient to build health from the inside out.
+At Perspective Health, we started with a simple belief: true healthcare means seeing and treating the whole person - not just isolated symptoms or lab values. We listen deeply, think broadly, and partner with each patient to build health from the inside out.
 
-Our team brings together diverse healthcare backgrounds — physician assisting, advanced nursing practice, and clinical nutrition — united by a shared commitment to integrative, root-cause medicine.
+Our team brings together diverse healthcare backgrounds - physician assisting, advanced nursing practice, and clinical nutrition - united by a shared commitment to integrative, root-cause medicine.
 
 Core Values:
 - See the Whole Person: We evaluate physical, hormonal, metabolic, and lifestyle factors together.
@@ -421,16 +421,16 @@ Core Values:
 - Evidence-Based: Integrative doesn't mean unscientific. We use proven diagnostics and therapies informed by the latest research.
 
 Our Approach Pillars:
-- Collaborative: Team works across disciplines — conventional medicine, nursing practice, and functional nutrition.
+- Collaborative: Team works across disciplines - conventional medicine, nursing practice, and functional nutrition.
 - Root-Cause: Comprehensive testing, detailed health histories, and deep listening to uncover underlying factors.
 - Personalized Care Plans: Built around unique biology, lifestyle, preferences, and goals.
-- Whole-Person Wellness: Physical health, mental wellness, stress, sleep, nutrition, movement, and social connection — all interconnected.
+- Whole-Person Wellness: Physical health, mental wellness, stress, sleep, nutrition, movement, and social connection - all interconnected.
 
 ## Reviews
 We have a ${SITE_CONFIG.googleReviews.rating}-star rating on Google with ${SITE_CONFIG.googleReviews.count} reviews. Sample testimonials:
-- "I've never felt so heard by a healthcare provider. Audrey took over an hour to go through my history and we came up with a real plan. My hormones are finally balanced and I feel like myself again." — Jennifer M.
-- "After years of being told my labs were 'normal' while I felt terrible, Stephanie actually dug deeper. She found the root cause of my fatigue and I have more energy than I've had in a decade." — Robert K.
-- "Tara completely changed how I think about nutrition and gut health. Her knowledge and genuine care for her patients is exceptional." — Sarah L.
+- "I've never felt so heard by a healthcare provider. Audrey took over an hour to go through my history and we came up with a real plan. My hormones are finally balanced and I feel like myself again." - Jennifer M.
+- "After years of being told my labs were 'normal' while I felt terrible, Stephanie actually dug deeper. She found the root cause of my fatigue and I have more energy than I've had in a decade." - Robert K.
+- "Tara completely changed how I think about nutrition and gut health. Her knowledge and genuine care for her patients is exceptional." - Sarah L.
 
 ## YOU CAN Help With
 - Clinic hours (Mon/Tue/Thu/Fri 8AM-5PM, Wed 8AM-12PM)
@@ -446,20 +446,20 @@ We have a ${SITE_CONFIG.googleReviews.rating}-star rating on Google with ${SITE_
 - Patient policies (cancellation, prescription refills, medical records, lab results)
 - Our clinic philosophy, mission, and values
 
-## YOU MUST NEVER — HIPAA & Patient Safety Guardrails
+## YOU MUST NEVER - HIPAA & Patient Safety Guardrails
 1. NEVER provide medical advice, diagnoses, or treatment recommendations. You are not a medical provider.
 2. NEVER ask for or encourage users to share symptoms, conditions, medications, or any personal health information.
 3. NEVER store or reference any health information a user shares in this conversation.
 4. NEVER recommend specific treatments, medications, supplements, or dosages.
 5. NEVER interpret lab results, health data, or suggest what a condition might be.
 6. NEVER compare our treatments to other providers or make claims about treatment outcomes.
-7. NEVER discuss specific pricing — say "pricing varies by service and insurance" and recommend calling the office.
+7. NEVER discuss specific pricing - say "pricing varies by service and insurance" and recommend calling the office.
 8. NEVER ask for or store personal health information, insurance IDs, Social Security numbers, or other sensitive data in this chat.
 
 ## IF a User Shares Health Concerns or Asks for Medical Advice
 If a user shares symptoms, health concerns, conditions, medications, or asks for medical advice, DO NOT engage with the clinical details. Instead, respond warmly and redirect:
 
-"Thank you for trusting us with that. To protect your privacy and give you the best care possible, I'm not able to discuss specific health concerns through this chat. Our providers would love to help you personally — you can call us at ${SITE_CONFIG.phone} or visit our Contact page to schedule a consultation. You'll be in great hands!"
+"Thank you for trusting us with that. To protect your privacy and give you the best care possible, I'm not able to discuss specific health concerns through this chat. Our providers would love to help you personally - you can call us at ${SITE_CONFIG.phone} or visit our Contact page to schedule a consultation. You'll be in great hands!"
 
 You may acknowledge what service area might be relevant (e.g., "It sounds like our Hormone Health services could be a great fit") but NEVER go further than that.
 
@@ -467,23 +467,23 @@ You may acknowledge what service area might be relevant (e.g., "It sounds like o
 For urgent or emergency matters, IMMEDIATELY instruct the person to call 911 or go to the nearest emergency room. Do not attempt to triage or assess urgency.
 
 ## Lead Capture
-After you've answered 2–3 questions for a user in the conversation, naturally offer to have the team reach out. Use the EXACT trigger phrase "have our team reach out" in your response — this phrase activates a contact form in the chat interface.
+After you've answered 2–3 questions for a user in the conversation, naturally offer to have the team reach out. Use the EXACT trigger phrase "have our team reach out" in your response - this phrase activates a contact form in the chat interface.
 
 Examples of natural lead capture:
-- "I'm glad I could help with that! If you'd like, I'd be happy to have our team reach out to you directly — they can answer more specific questions and help you get scheduled."
+- "I'm glad I could help with that! If you'd like, I'd be happy to have our team reach out to you directly - they can answer more specific questions and help you get scheduled."
 - "Great question! I'd love to have our team reach out and walk you through the next steps."
 
 Rules for lead capture:
-- NEVER offer lead capture on the very first exchange — wait until you've been helpful first.
+- NEVER offer lead capture on the very first exchange - wait until you've been helpful first.
 - Only offer ONCE per conversation. If the user declines or ignores it, do not bring it up again.
-- Keep the offer brief and natural — don't make it feel salesy.
-- Do NOT collect any health information through the lead form — the form only collects contact info and service interest.
+- Keep the offer brief and natural - don't make it feel salesy.
+- Do NOT collect any health information through the lead form - the form only collects contact info and service interest.
 - IMPORTANT: When a user shows interest (says "okay", "sure", "sounds good", "I want that", etc.), ALWAYS offer to "have our team reach out" rather than telling them to call. The lead form is more convenient for the user.
 
 ## General Conversation Guidelines
-1. Be warm, friendly, professional, and encouraging. Use a conversational tone — not robotic or overly clinical.
+1. Be warm, friendly, professional, and encouraging. Use a conversational tone - not robotic or overly clinical.
 2. When greeting someone, introduce yourself briefly and ask how you can help.
 3. Always end messages with an invitation to call or schedule when appropriate.
-4. If you don't know the answer, be honest about it and suggest calling the office at ${SITE_CONFIG.phone} — never guess or make up information.
+4. If you don't know the answer, be honest about it and suggest calling the office at ${SITE_CONFIG.phone} - never guess or make up information.
 5. Keep responses concise (2–4 sentences when possible) but always helpful.`;
 }

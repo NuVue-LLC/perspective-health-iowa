@@ -23,7 +23,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Integrative healthcare that sees the whole person — not just the
+              Integrative healthcare that sees the whole person - not just the
               symptoms. We combine the best of conventional and functional
               medicine to help you thrive.
             </p>

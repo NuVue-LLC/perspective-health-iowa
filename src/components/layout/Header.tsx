@@ -74,7 +74,7 @@ export function Header() {
             <Link
               href="/"
               className="flex items-center flex-shrink-0"
-              aria-label="Perspective Health Iowa — Home"
+              aria-label="Perspective Health Iowa - Home"
             >
               <Image
                 src="/images/brand/phi-logo-horizontal-light.png"

@@ -150,7 +150,7 @@ export function ChatWindow({ onClose, pathname }: ChatWindowProps) {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
-  // Focus trap — keep Tab cycling inside the chat window
+  // Focus trap - keep Tab cycling inside the chat window
   useEffect(() => {
     const el = windowRef.current;
     if (!el) return;
@@ -261,7 +261,7 @@ export function ChatWindow({ onClose, pathname }: ChatWindowProps) {
     const dismissMessage: ChatMessage = {
       role: "assistant",
       content:
-        "No problem at all! Feel free to keep asking questions — I'm here to help. You can also reach us anytime at (515) 724-0377.",
+        "No problem at all! Feel free to keep asking questions - I'm here to help. You can also reach us anytime at (515) 724-0377.",
     };
     setMessages((prev) => [...prev, dismissMessage]);
     setSuggestions(["Our Services", "Hours & Location", "Insurance"]);

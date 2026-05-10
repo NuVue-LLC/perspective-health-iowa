@@ -43,7 +43,7 @@ export function WelcomeSection() {
             <div className="w-16 h-1 bg-teal rounded-full mb-6" />
             <p className="text-gray-600 leading-relaxed mb-4 text-lg">
               At Perspective Health, we believe that true wellness means seeing
-              the whole person — your history, your environment, your goals, and
+              the whole person - your history, your environment, your goals, and
               your unique biology. We combine the best of conventional medicine
               with integrative and functional approaches to create care plans
               that are as individual as you are.
@@ -51,7 +51,7 @@ export function WelcomeSection() {
             <p className="text-gray-600 leading-relaxed mb-8">
               Whether you&apos;re managing a chronic condition, seeking to optimize
               your hormone health, or simply looking for a healthcare team that
-              truly listens — you&apos;ve found the right place. Our providers take
+              truly listens - you&apos;ve found the right place. Our providers take
               the time to understand your full story and partner with you on your
               journey to lasting wellness.
             </p>

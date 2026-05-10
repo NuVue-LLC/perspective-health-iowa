@@ -8,11 +8,11 @@ import { CTABanner } from "@/components/home/CTABanner";
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Explore integrative health services at Perspective Health Iowa — comprehensive primary care, hormone health, functional medicine, digestive & metabolic health, and supplementary services.",
+    "Explore integrative health services at Perspective Health Iowa - comprehensive primary care, hormone health, functional medicine, digestive & metabolic health, and supplementary services.",
   openGraph: {
     title: "Our Services | Perspective Health Iowa",
     description:
-      "Personalized integrative health services in Iowa — from primary care to hormone health and functional medicine.",
+      "Personalized integrative health services in Iowa - from primary care to hormone health and functional medicine.",
   },
 };
 
@@ -43,7 +43,7 @@ export default function ServicesPage() {
             </span>
           </h1>
           <p className="text-white/80 text-lg max-w-xl mt-4">
-            Comprehensive, integrative healthcare designed around you — not just
+            Comprehensive, integrative healthcare designed around you - not just
             your diagnosis. Explore our full range of services below.
           </p>
         </div>

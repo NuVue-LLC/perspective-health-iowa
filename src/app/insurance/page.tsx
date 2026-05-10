@@ -86,14 +86,14 @@ export default function InsurancePage() {
                   /* eslint-disable-next-line @next/next/no-img-element */
                   <img
                     src={partner.logo}
-                    alt={`${partner.name} — accepted at Perspective Health Iowa`}
+                    alt={`${partner.name} - accepted at Perspective Health Iowa`}
                     className="max-h-12 max-w-full object-contain mb-1"
                   />
                 ) : (
                   <div className="relative w-full h-12 mb-1">
                     <Image
                       src={partner.logo}
-                      alt={`${partner.name} — accepted at Perspective Health Iowa`}
+                      alt={`${partner.name} - accepted at Perspective Health Iowa`}
                       fill
                       className="object-contain"
                       sizes="180px"
@@ -117,7 +117,7 @@ export default function InsurancePage() {
               </p>
               <p className="text-gray-600 text-sm">
                 Call us and we&apos;ll verify your benefits before your first
-                appointment — no surprises.
+                appointment - no surprises.
               </p>
             </div>
             <a
@@ -276,7 +276,7 @@ export default function InsurancePage() {
                 Get a quote before your visit
               </p>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Pricing varies by service and lab fees are billed separately. Call or message us — we&apos;ll give you a clear estimate up front, no surprises.
+                Pricing varies by service and lab fees are billed separately. Call or message us - we&apos;ll give you a clear estimate up front, no surprises.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">

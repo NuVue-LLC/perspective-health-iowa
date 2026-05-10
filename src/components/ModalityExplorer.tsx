@@ -31,7 +31,7 @@ const modalities = [
     label: "Electrotherapy (TENS)",
     icon: "⚡",
     description:
-      "Transcutaneous electrical nerve stimulation helps manage pain, reduce muscle tension, and stimulate circulation — all while you relax inside the capsule.",
+      "Transcutaneous electrical nerve stimulation helps manage pain, reduce muscle tension, and stimulate circulation - all while you relax inside the capsule.",
   },
   {
     label: "Aromatherapy",

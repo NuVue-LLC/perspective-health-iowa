@@ -5,7 +5,7 @@ import { buildLeadEmailHtml, buildLeadAutoReplyHtml } from "@/lib/email";
 
 // --- Rate Limiting (mirrors chat route) ---
 const RATE_LIMIT_WINDOW = 60_000;
-const RATE_LIMIT_MAX = 5; // stricter than chat — form submissions
+const RATE_LIMIT_MAX = 5; // stricter than chat - form submissions
 
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 
@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const data = leadSchema.parse(body);
 
-    const subjectLine = `Chatbot Lead: ${data.name} — ${data.service || "General Inquiry"}`;
+    const subjectLine = `Chatbot Lead: ${data.name} - ${data.service || "General Inquiry"}`;
 
     if (process.env.RESEND_API_KEY) {
       const resend = new Resend(process.env.RESEND_API_KEY);

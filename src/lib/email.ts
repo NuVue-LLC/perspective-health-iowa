@@ -44,7 +44,7 @@ export function buildEmailHtml(data: ContactEmailData): string {
 export function buildLeadEmailHtml(data: LeadEmailData): string {
   return `
     <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-      <h2 style="color: #7C3AED;">Chatbot Lead: ${data.name} — ${data.service || "General Inquiry"}</h2>
+      <h2 style="color: #7C3AED;">Chatbot Lead: ${data.name} - ${data.service || "General Inquiry"}</h2>
       <p style="color: #666; font-size: 14px;">This lead was captured through the website chatbot.</p>
       <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
         <tr><td style="padding: 8px; font-weight: bold; width: 40%;">Name:</td><td style="padding: 8px;">${data.name}</td></tr>
@@ -79,7 +79,7 @@ export function buildLeadAutoReplyHtml(data: { name: string }): string {
         <p style="margin: 4px 0; font-size: 14px;"><strong>Address:</strong> 8860 Northpark Dr., Suite 200, Urbandale, IA 50131</p>
       </div>
       <p style="color: #666; font-size: 14px;">We look forward to connecting with you!</p>
-      <p style="color: #333; font-size: 14px;">— The Perspective Health Iowa Team</p>
+      <p style="color: #333; font-size: 14px;">- The Perspective Health Iowa Team</p>
       ${FOOTER_HTML}
     </div>
   `;
@@ -100,7 +100,7 @@ export function buildContactAutoReplyHtml(data: { name: string }): string {
         <p style="margin: 4px 0; font-size: 14px;"><strong>Email:</strong> info@perspectivehealthiowa.com</p>
         <p style="margin: 4px 0; font-size: 14px;"><strong>Address:</strong> 8860 Northpark Dr., Suite 200, Urbandale, IA 50131</p>
       </div>
-      <p style="color: #333; font-size: 14px;">— The Perspective Health Iowa Team</p>
+      <p style="color: #333; font-size: 14px;">- The Perspective Health Iowa Team</p>
       ${FOOTER_HTML}
     </div>
   `;

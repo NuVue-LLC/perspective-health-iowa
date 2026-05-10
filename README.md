@@ -1,4 +1,4 @@
-# Perspective Health Iowa — Production Website
+# Perspective Health Iowa - Production Website
 
 A complete, production-ready Next.js 14 website for Perspective Health, an integrative medical clinic in Iowa.
 
@@ -36,9 +36,9 @@ cp .env.example .env.local
 ```
 
 Edit `.env.local` and fill in:
-- `NEXT_PUBLIC_SITE_URL` — your production domain
-- `RESEND_API_KEY` — for contact form emails (see below)
-- `CONTACT_EMAIL` — where form submissions are sent
+- `NEXT_PUBLIC_SITE_URL` - your production domain
+- `RESEND_API_KEY` - for contact form emails (see below)
+- `CONTACT_EMAIL` - where form submissions are sent
 
 ### 3. Generate placeholder images (development only)
 
@@ -99,7 +99,7 @@ src/
 
 ## Content Management
 
-### Before Launch — Replace These Placeholders
+### Before Launch - Replace These Placeholders
 
 In `src/lib/constants.ts`, update:
 - `phone` and `phoneRaw`
@@ -199,7 +199,7 @@ To verify schemas: [Google Rich Results Test](https://search.google.com/test/ric
 
 ---
 
-## Deployment (Vercel — Recommended)
+## Deployment (Vercel - Recommended)
 
 ### First deployment
 
@@ -278,4 +278,4 @@ npm run type-check   # TypeScript check
 
 ## License
 
-Proprietary — for Perspective Health Iowa. All rights reserved.
+Proprietary - for Perspective Health Iowa. All rights reserved.

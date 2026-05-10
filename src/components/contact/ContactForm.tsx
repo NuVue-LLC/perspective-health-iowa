@@ -193,7 +193,7 @@ export function ContactForm() {
             "border-gray-200"
           )}
         >
-          <option value="">— Select a service (optional) —</option>
+          <option value="">- Select a service (optional) -</option>
           {SERVICES.map((s) => (
             <option key={s.slug} value={s.slug}>
               {s.name}

@@ -159,10 +159,10 @@ export function LeadCaptureCard({ onSubmitSuccess, onDismiss }: LeadCaptureCardP
             <option value="General Inquiry">General Inquiry</option>
           </select>
 
-          {/* Trust signal — placed ABOVE the message field so users see it before typing */}
+          {/* Trust signal - placed ABOVE the message field so users see it before typing */}
           <p className="text-[10px] text-gray-500 leading-snug rounded-md bg-white/60 border border-gray-200 px-2 py-1.5">
             <strong>Please don&apos;t share health details</strong> (symptoms, conditions,
-            medications, lab results). Just let us know what you&apos;re looking for —
+            medications, lab results). Just let us know what you&apos;re looking for -
             our team will follow up by phone for anything medical.
           </p>
 
@@ -170,7 +170,7 @@ export function LeadCaptureCard({ onSubmitSuccess, onDismiss }: LeadCaptureCardP
           <textarea
             {...register("message")}
             rows={2}
-            placeholder="Briefly, what are you looking for? (e.g. &quot;new patient,&quot; &quot;hormone consult&quot;) — no health details please"
+            placeholder="Briefly, what are you looking for? (e.g. &quot;new patient,&quot; &quot;hormone consult&quot;) - no health details please"
             className="w-full px-3 py-2 rounded-lg border border-gray-200 text-xs text-charcoal placeholder-gray-400 bg-white resize-none focus:outline-none focus:ring-1 focus:ring-teal focus:border-transparent"
           />
 

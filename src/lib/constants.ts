@@ -87,7 +87,7 @@ export const SERVICES = [
     name: "HOCATT Ozone Sauna",
     shortName: "HOCATT",
     description:
-      "Advanced ozone therapy sauna that delivers up to 10 therapeutic modalities in a single one-hour session — supporting detoxification, circulation, immune function, and whole-body recovery.",
+      "Advanced ozone therapy sauna that delivers up to 10 therapeutic modalities in a single one-hour session - supporting detoxification, circulation, immune function, and whole-body recovery.",
     image: "/images/service-hocatt.jpg",
     imageAlt: "HOCATT ozone sauna therapy at Perspective Health Iowa",
   },
@@ -96,7 +96,7 @@ export const SERVICES = [
     name: "THINNR Weight Loss Program",
     shortName: "THINNR",
     description:
-      "A medically-supervised, all-natural weight loss program combining a homeopathic protocol with a personalized nutrition strategy — a thoughtful alternative to GLP-1 medications.",
+      "A medically-supervised, all-natural weight loss program combining a homeopathic protocol with a personalized nutrition strategy - a thoughtful alternative to GLP-1 medications.",
     image: "/images/service-thinnr.jpg",
     imageAlt: "THINNR medically-supervised weight loss program at Perspective Health Iowa",
   },

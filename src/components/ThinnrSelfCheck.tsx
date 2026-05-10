@@ -24,11 +24,11 @@ export default function ThinnrSelfCheck({ items }: Props) {
 
   let message = "Tap the signs that sound like you to see how strong a fit THINNR may be.";
   if (count > 0 && count < Math.ceil(total / 2)) {
-    message = "A few signs match — a quick consultation can help clarify whether THINNR is the right next step.";
+    message = "A few signs match - a quick consultation can help clarify whether THINNR is the right next step.";
   } else if (count >= Math.ceil(total / 2) && count < total) {
-    message = "Several signs match — THINNR may be a good fit. Reach out to talk it through.";
+    message = "Several signs match - THINNR may be a good fit. Reach out to talk it through.";
   } else if (count === total) {
-    message = "All signs match — let's talk about getting you started.";
+    message = "All signs match - let's talk about getting you started.";
   }
 
   return (
