@@ -64,8 +64,8 @@ export default function ForPatientsHubPage() {
       <section className="relative min-h-[60vh] flex flex-col justify-end overflow-hidden bg-charcoal">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-patients.jpg"
-            alt="Patient resources at Perspective Health Iowa"
+            src="/images/women-friends-wellness-perspective-health-iowa.jpg"
+            alt="Women supporting each other through integrative wellness at Perspective Health Iowa"
             fill
             priority
             quality={90}

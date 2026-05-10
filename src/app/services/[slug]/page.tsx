@@ -316,7 +316,7 @@ export default function ServicePage({ params }: Props) {
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src="/images/welcome-1.jpg"
-                    alt="Patients connecting at home - supported by Perspective Health Iowa primary care"
+                    alt="Caring nurse with an older patient - relationship-based primary care at Perspective Health Iowa"
                     fill
                     quality={85}
                     className="object-cover"
@@ -443,7 +443,7 @@ export default function ServicePage({ params }: Props) {
                 <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-lg">
                   <Image
                     src="/images/welcome-2.jpg"
-                    alt="Couple supported through whole-person integrative care at Perspective Health Iowa"
+                    alt="Patient relaxed at home, supported through whole-person integrative care at Perspective Health Iowa"
                     fill
                     quality={85}
                     className="object-cover"

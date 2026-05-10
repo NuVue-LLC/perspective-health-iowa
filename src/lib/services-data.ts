@@ -28,7 +28,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Whole-person primary care in Iowa at Perspective Health. We go beyond symptom management to address root causes and support your long-term health.",
     heroImage: "/images/service-primary-care.jpg",
-    heroImageAlt: "Primary care provider consulting with patient in Iowa",
+    heroImageAlt: "Patient in friendly consultation with primary care provider at Perspective Health Iowa",
     intro:
       "Primary care is the foundation of your health journey. At Perspective Health, our primary care goes far beyond annual checkups and prescription refills - we partner with you to understand your full health picture and create a proactive plan for lasting wellbeing.",
     whatItIs:
@@ -145,7 +145,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Personalized hormone evaluation and balancing in Iowa at Perspective Health. We help men and women experiencing hormonal imbalances reclaim their energy, mood, and vitality.",
     heroImage: "/images/service-hormone-health.jpg",
-    heroImageAlt: "Woman embracing balanced hormone health at Perspective Health Iowa",
+    heroImageAlt: "Women walking together at sunset - thriving with balanced hormone health at Perspective Health Iowa",
     intro:
       "Hormones are the body's chemical messengers - when they're out of balance, virtually every system in your body can feel the impact. At Perspective Health, we take a comprehensive, personalized approach to hormone evaluation and optimization, helping you reclaim your energy, mood, libido, and overall vitality.",
     whatItIs:
@@ -514,7 +514,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "THINNR weight loss program at Perspective Health Iowa - a provider-supervised, all-natural alternative to GLP-1 medications combining a homeopathic protocol with a personalized nutrition strategy.",
     heroImage: "/images/service-thinnr.jpg",
-    heroImageAlt: "THINNR medically-supervised weight loss program at Perspective Health Iowa",
+    heroImageAlt: "Woman feeling vibrant and joyful in a wildflower field - results from the THINNR weight loss program at Perspective Health Iowa",
     intro:
       "Lasting weight change rarely comes from a single intervention. THINNR is a structured, provider-supervised program that pairs an all-natural homeopathic protocol with a personalized nutrition strategy - designed to support sustainable results while your Perspective Health team monitors your progress, lab work, and overall wellbeing.",
     whatItIs:
