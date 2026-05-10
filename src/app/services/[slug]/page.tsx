@@ -34,7 +34,18 @@ import { MedicalServiceSchema } from "@/components/seo/MedicalServiceSchema";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import SymptomExplorer from "@/components/SymptomExplorer";
 import ModalityExplorer from "@/components/ModalityExplorer";
+import ThinnrPillarExplorer from "@/components/ThinnrPillarExplorer";
+import ThinnrTimeline from "@/components/ThinnrTimeline";
+import ThinnrSelfCheck from "@/components/ThinnrSelfCheck";
 import { CTABanner } from "@/components/home/CTABanner";
+import {
+  Stethoscope as StethoscopeIcon,
+  Leaf,
+  Layers,
+  HeartPulse as HeartPulseIcon,
+  Target,
+  Network,
+} from "lucide-react";
 
 interface Props {
   params: { slug: string };
@@ -91,6 +102,10 @@ export default function ServicePage({ params }: Props) {
       src: "/images/hero-patients.jpg",
       alt: "Multi-generational patients at Perspective Health Iowa",
     },
+    "thinnr": {
+      src: "/images/thinnr-products.jpg",
+      alt: "The THINNR product line — Protocol, Boost, Control, Detox, and Regulate",
+    },
   };
   const firstBelow = firstBelowImageMap[service.slug] ?? {
     src: service.heroImage,
@@ -122,6 +137,10 @@ export default function ServicePage({ params }: Props) {
       heading: "Curious About HOCATT Therapy?",
       subtext: "Book a session and experience it for yourself.",
     },
+    "thinnr": {
+      heading: "Ready to See What THINNR Could Do?",
+      subtext: "Book a consultation and find out if the program is a fit for you.",
+    },
   };
   const ctaProps = ctaMap[service.slug] || {};
 
@@ -136,7 +155,11 @@ export default function ServicePage({ params }: Props) {
       <FAQSchema faqs={service.faqs} />
 
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex flex-col justify-end overflow-hidden bg-charcoal">
+      <section
+        className={`relative ${
+          service.slug === "thinnr" ? "min-h-[78vh]" : "min-h-[60vh]"
+        } flex flex-col justify-end overflow-hidden bg-charcoal`}
+      >
         <div className="absolute inset-0">
           <Image
             src={service.heroImage}
@@ -149,7 +172,11 @@ export default function ServicePage({ params }: Props) {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />
         </div>
-        <div className="relative z-10 px-6 sm:px-12 lg:px-20 pb-16 sm:pb-20 lg:pb-24">
+        <div
+          className={`relative z-10 px-6 sm:px-12 lg:px-20 pb-16 sm:pb-20 lg:pb-24 ${
+            service.slug === "thinnr" ? "pt-40 sm:pt-44" : ""
+          }`}
+        >
           <p className="font-script text-5xl sm:text-6xl lg:text-7xl text-white font-light mb-2 sm:mb-3 ml-1">
             {service.heroScript}
           </p>
@@ -170,6 +197,22 @@ export default function ServicePage({ params }: Props) {
             >
               Book &amp; Pay Online
             </a>
+          )}
+          {service.slug === "thinnr" && (
+            <div className="flex flex-wrap gap-3 mt-6">
+              <Link
+                href="/contact#contact-form"
+                className="btn-teal text-base px-8 py-3.5"
+              >
+                Book a Consultation
+              </Link>
+              <a
+                href={`tel:${SITE_CONFIG.phoneRaw}`}
+                className="inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold text-white border-2 border-white/70 hover:bg-white hover:text-teal transition-all duration-200"
+              >
+                Call {SITE_CONFIG.phone}
+              </a>
+            </div>
           )}
         </div>
       </section>
@@ -735,7 +778,7 @@ export default function ServicePage({ params }: Props) {
             <div className="section-container py-16 sm:py-20 lg:py-24 relative z-10">
               <div className="text-center mb-12">
                 <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white leading-tight mb-4">
-                  10 Therapies. One 30-Minute Session.
+                  10 Therapies. One 1-Hour Session.
                 </h2>
                 <p className="text-white/80 text-lg max-w-2xl mx-auto">
                   Click any modality to learn how it works inside the HOCATT.
@@ -745,12 +788,87 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 3 — White: Gallery left, What to Expect right */}
+          {/* Section 2.5 — White: The HOCATT Experience three-phase poster */}
           <section className="bg-white">
+            <div className="section-container py-16 sm:py-20 lg:py-24">
+              <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_1.2fr] gap-10 lg:gap-14 items-center">
+                <div className="relative aspect-[2/3] rounded-3xl overflow-hidden shadow-xl bg-gradient-to-br from-gray-50 to-gray-100 max-w-md mx-auto lg:mx-0">
+                  <Image
+                    src="/images/hocatt-experience-poster.jpg"
+                    alt="The HOCATT Experience poster — Heat & Infrared, Carbonic Acid Phase, and Ozone Phase, with how a session begins and ends"
+                    fill
+                    quality={88}
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                </div>
+                <div>
+                  <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight leading-tight mb-4">
+                    <span className="text-teal">Three Phases of</span>{" "}
+                    <span className="text-charcoal">a Session</span>
+                  </h2>
+                  <p className="text-gray-600 leading-relaxed mb-8">
+                    A one-hour HOCATT session moves through three distinct phases. Each phase works on a different system — circulatory, oxygenation, and immune — building on the one before it.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4 p-5 rounded-2xl bg-amber-50 border border-amber-100">
+                      <div className="w-11 h-11 rounded-xl bg-amber-200/60 flex items-center justify-center flex-shrink-0">
+                        <span className="text-xl">🔥</span>
+                      </div>
+                      <div>
+                        <h3 className="text-base font-bold uppercase tracking-wide text-charcoal mb-1">
+                          Heat &amp; Infrared
+                        </h3>
+                        <p className="text-sm text-gray-600 leading-relaxed">
+                          Gently raises core temperature, enhances circulation, and supports the body&apos;s natural detoxification pathways.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4 p-5 rounded-2xl bg-teal/5 border border-teal/20">
+                      <div className="w-11 h-11 rounded-xl bg-teal/15 flex items-center justify-center flex-shrink-0">
+                        <span className="text-xl">🌿</span>
+                      </div>
+                      <div>
+                        <div className="flex items-baseline justify-between gap-3 flex-wrap mb-1">
+                          <h3 className="text-base font-bold uppercase tracking-wide text-charcoal">
+                            Carbonic Acid Phase
+                          </h3>
+                          <span className="text-xs font-semibold uppercase tracking-wider text-teal">
+                            First 3–8 min
+                          </span>
+                        </div>
+                        <p className="text-sm text-gray-600 leading-relaxed">
+                          Increases capillary dilation and improves oxygen delivery while opening the pores for the ozone that follows.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4 p-5 rounded-2xl bg-purple/5 border border-purple/20">
+                      <div className="w-11 h-11 rounded-xl bg-purple/15 flex items-center justify-center flex-shrink-0">
+                        <span className="text-xl">⚡</span>
+                      </div>
+                      <div>
+                        <h3 className="text-base font-bold uppercase tracking-wide text-charcoal mb-1">
+                          Ozone Phase
+                        </h3>
+                        <p className="text-sm text-gray-600 leading-relaxed">
+                          Stimulates antioxidant response, supports immune balance, and helps wrap up the session with a focus on cellular vitality.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+              {/* Section 3 — White: Gallery left, What to Expect right */}
+          <section className="bg-white border-t border-gray-100">
             <div className="section-container py-16 sm:py-20 lg:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
                 <div className="space-y-4">
-                  {service.gallery && service.gallery.map((img, i) => (
+                  {service.gallery && service.gallery
+                    .filter((img) => !img.src.includes("hocatt-experience-poster"))
+                    .map((img, i) => (
                     <div key={i} className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
                       <Image
                         src={img.src}
@@ -1180,6 +1298,294 @@ export default function ServicePage({ params }: Props) {
                           </Link>
                         )
                     )}
+                  </div>
+                </section>
+              )}
+            </div>
+          </section>
+        </article>
+      ) : service.slug === "thinnr" ? (
+        /* ── THINNR Weight Loss Program layout ── */
+        <article>
+          {/* Section 1 — White: Big centered headline + image left, intro right */}
+          <section className="bg-white">
+            <div className="section-container py-16 sm:py-20 lg:py-24">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-center mb-16 leading-tight">
+                <span className="text-teal">A Smarter Path to</span>{" "}
+                <span className="text-charcoal">Lasting Weight Loss</span>
+              </h2>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div className="relative aspect-[16/10] rounded-3xl overflow-hidden shadow-lg bg-gradient-to-br from-gray-50 to-gray-100">
+                  <Image
+                    src={firstBelow.src}
+                    alt={firstBelow.alt}
+                    fill
+                    quality={88}
+                    className="object-contain p-2 sm:p-4"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    {service.intro}
+                  </p>
+                  <p className="text-gray-600 leading-relaxed">
+                    {service.whatItIs}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 2 — Green: Interactive Two-Pillar Explorer */}
+          <section className="geometric-pattern-green">
+            <div className="section-container py-16 sm:py-20 lg:py-24 relative z-10">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white leading-tight mb-4">
+                  The Two-Pillar Approach
+                </h2>
+                <p className="text-white/80 text-lg max-w-2xl mx-auto">
+                  Click each pillar to see how it fits into the THINNR program.
+                </p>
+              </div>
+              <ThinnrPillarExplorer />
+            </div>
+          </section>
+
+          {/* Section 3 — Light green: Interactive Program Timeline */}
+          <section className="geometric-pattern-light">
+            <div className="section-container py-16 sm:py-20 lg:py-24">
+              <div className="max-w-4xl mx-auto text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight leading-tight mb-4">
+                  <span className="text-teal">Your THINNR</span>{" "}
+                  <span className="text-charcoal">Journey</span>
+                </h2>
+                <p className="text-gray-600 text-lg">
+                  Tap a step to see what happens at each phase of the program.
+                </p>
+              </div>
+              <div className="max-w-4xl mx-auto">
+                <ThinnrTimeline />
+              </div>
+            </div>
+          </section>
+
+          {/* Section 4 — White: Interactive self-check (Who it's for) */}
+          <section className="bg-white">
+            <div className="section-container py-16 sm:py-20 lg:py-24">
+              <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight leading-tight mb-4">
+                    <span className="text-teal">Does This</span>{" "}
+                    <span className="text-charcoal">Sound Like You?</span>
+                  </h2>
+                  <p className="text-gray-600 text-lg">
+                    Tap any signs that apply — see at a glance how strong a fit THINNR may be.
+                  </p>
+                </div>
+                <ThinnrSelfCheck items={service.whoItsFor} />
+
+                {/* Conversion CTA — natural moment after self-selecting */}
+                <div className="mt-10 bg-gradient-to-r from-teal/10 via-teal/5 to-teal/10 border border-teal/20 rounded-2xl p-6 sm:p-8 text-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-charcoal mb-2">
+                    Sound like a fit? Let&apos;s talk it through.
+                  </h3>
+                  <p className="text-gray-600 text-sm sm:text-base mb-5 max-w-xl mx-auto">
+                    A quick consultation is the best way to find out if THINNR is right for you — no pressure, no commitment.
+                  </p>
+                  <div className="flex flex-wrap gap-3 justify-center">
+                    <Link href="/contact#contact-form" className="btn-teal text-base px-8 py-3">
+                      Book a Consultation
+                    </Link>
+                    <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="btn-outline-teal text-base px-8 py-3">
+                      Call {SITE_CONFIG.phone}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 5 — Light pattern: What to Expect editorial program guide */}
+          <section className="geometric-pattern-light">
+            <div className="section-container py-12 sm:py-14 lg:py-16">
+              <div className="max-w-3xl mx-auto">
+                <div className="text-center mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight leading-tight mb-2">
+                    <span className="text-teal">What to</span>{" "}
+                    <span className="text-charcoal">Expect</span>
+                  </h2>
+                  <p className="text-gray-600 text-sm sm:text-base">
+                    From your first consultation through long-term maintenance.
+                  </p>
+                </div>
+                {(() => {
+                  const labels = [
+                    "Consultation",
+                    "Lab Work",
+                    "Personalized Plan",
+                    "Provider Check-ins",
+                    "Normalization",
+                    "Integrated Care",
+                  ];
+                  return (
+                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                      {service.whatToExpect.map((item, i) => {
+                        const label = labels[i] ?? `Step ${i + 1}`;
+                        const isLast = i === service.whatToExpect.length - 1;
+                        return (
+                          <div
+                            key={i}
+                            className={`group grid grid-cols-[auto_1fr] sm:grid-cols-[3.5rem_11rem_1fr] gap-x-3 sm:gap-x-5 items-baseline px-4 sm:px-6 py-3 sm:py-4 hover:bg-teal/5 transition-colors ${
+                              isLast ? "" : "border-b border-gray-100"
+                            }`}
+                          >
+                            <span className="text-xs font-mono text-teal/60 group-hover:text-teal transition-colors tabular-nums tracking-wider">
+                              {String(i + 1).padStart(2, "0")}
+                            </span>
+                            <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-charcoal whitespace-nowrap col-span-1 sm:col-span-1">
+                              {label}
+                            </span>
+                            <span className="text-sm text-gray-600 leading-snug col-span-2 sm:col-span-1">
+                              {item}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })()}
+              </div>
+            </div>
+          </section>
+
+          {/* Section 6 — White: Potential Benefits icon grid */}
+          <section className="bg-white">
+            <div className="section-container py-16 sm:py-20 lg:py-24">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight leading-tight mb-4">
+                  <span className="text-teal">Potential</span>{" "}
+                  <span className="text-charcoal">Benefits</span>
+                </h2>
+                <p className="text-gray-500 text-sm max-w-2xl mx-auto italic">
+                  Individual results may vary. The following benefits are often associated with this program and may vary based on individual health circumstances.
+                </p>
+              </div>
+              {(() => {
+                const benefitIcons = [
+                  StethoscopeIcon,
+                  Leaf,
+                  Layers,
+                  HeartPulseIcon,
+                  Target,
+                  Network,
+                ];
+                return (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+                    {service.benefits.map((benefit, i) => {
+                      const BenefitIcon = benefitIcons[i % benefitIcons.length];
+                      return (
+                        <div
+                          key={i}
+                          className="group bg-white rounded-2xl border border-gray-200 shadow-sm p-6 hover:shadow-lg hover:border-teal/40 hover:-translate-y-1 transition-all duration-200"
+                        >
+                          <div className="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center mb-4 group-hover:bg-teal transition-colors duration-200">
+                            <BenefitIcon
+                              size={22}
+                              className="text-teal group-hover:text-white transition-colors duration-200"
+                            />
+                          </div>
+                          <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                            {benefit}
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })()}
+
+              {/* Inline CTA after benefits */}
+              <div className="text-center mt-12">
+                <Link
+                  href="/contact#contact-form"
+                  className="btn-teal text-base px-10 py-3.5 inline-flex items-center gap-2"
+                >
+                  Get Started with THINNR <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 7 — White: FAQ + Related */}
+          <section className="bg-white border-t border-gray-100">
+            <div className="section-container py-16 sm:py-20 lg:py-24">
+
+              {/* FAQs */}
+              <section>
+                <h2 className="text-2xl font-bold text-charcoal mb-6 text-center">
+                  Frequently Asked Questions
+                </h2>
+                <div className="space-y-3">
+                  {service.faqs.map((faq, i) => (
+                    <details
+                      key={i}
+                      className="group border border-gray-200 rounded-xl hover:border-teal/30 transition-colors"
+                    >
+                      <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-charcoal list-none [&::-webkit-details-marker]:hidden">
+                        {faq.question}
+                        <ChevronDown
+                          size={20}
+                          className="text-teal flex-shrink-0 ml-4 transition-transform duration-300 group-open:rotate-180"
+                        />
+                      </summary>
+                      <div className="px-6 pb-6 pt-0">
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </details>
+                  ))}
+                </div>
+                <p className="text-center text-gray-500 text-sm mt-6">
+                  Still have questions?{" "}
+                  <Link
+                    href="/contact#contact-form"
+                    className="text-teal font-semibold hover:underline"
+                  >
+                    Reach out to our team
+                  </Link>
+                  {" "}or call{" "}
+                  <a
+                    href={`tel:${SITE_CONFIG.phoneRaw}`}
+                    className="text-teal font-semibold hover:underline"
+                  >
+                    {SITE_CONFIG.phone}
+                  </a>
+                  .
+                </p>
+              </section>
+
+              {/* Related services */}
+              {relatedServices.length > 0 && (
+                <section className="mt-16">
+                  <h2 className="text-2xl font-bold text-charcoal mb-6">
+                    Related Services
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                    {relatedServices.map((related) => related && (
+                      <Link key={related.slug} href={`/services/${related.slug}`} className="group rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md hover:border-teal/40 transition-all">
+                        <div className="relative h-40 overflow-hidden">
+                          <Image src={related.image} alt={related.imageAlt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 33vw" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 to-transparent" />
+                        </div>
+                        <div className="p-5">
+                          <h3 className="font-bold text-charcoal group-hover:text-teal transition-colors mb-2">{related.name}</h3>
+                          <p className="text-gray-500 text-sm mb-3 line-clamp-2">{related.description}</p>
+                          <span className="inline-flex items-center gap-1.5 text-teal text-sm font-semibold">Learn more <ArrowRight size={14} /></span>
+                        </div>
+                      </Link>
+                    ))}
                   </div>
                 </section>
               )}

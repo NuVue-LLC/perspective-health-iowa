@@ -431,13 +431,13 @@ export const servicesData: ServiceData[] = [
     heroScript: "Restore & Rejuvenate",
     heroSubtitle: "Advanced ozone sauna therapy that combines ten modalities in a single session to detoxify, energize, and heal.",
     metaDescription:
-      "Experience HOCATT ozone sauna therapy in Iowa at Perspective Health. A single 30-minute session delivers up to 10 therapeutic modalities to support detox, immunity, pain relief, and recovery.",
+      "Experience HOCATT ozone sauna therapy in Iowa at Perspective Health. A single one-hour session delivers up to 10 therapeutic modalities to support detox, immunity, pain relief, and recovery.",
     heroImage: "/images/service-hocatt.jpg",
     heroImageAlt: "HOCATT ozone sauna therapy session at Perspective Health Iowa",
     intro:
       "The HOCATT (Hyperthermic Ozone and Carbonic Acid Transdermal Technology) is the only device in the world that simultaneously delivers up to 10 evidence-informed therapeutic modalities in a single session. At Perspective Health, we use the HOCATT as a powerful tool to support detoxification, immune function, circulation, and whole-body wellness.",
     whatItIs:
-      "The HOCATT is a personal steam sauna capsule that combines transdermal ozone therapy, carbonic acid therapy, whole-body hyperthermia, far infrared energy, electrotherapy (TENS), aromatherapy, photon light therapy, ultraviolet irradiation, and pure humidified oxygen breathing into one 30-minute session. You sit comfortably inside the capsule with your head outside, breathing pure oxygen while the combination of steam, ozone, and other modalities work synergistically to promote circulation, stimulate the immune system, support the body's natural detoxification pathways, and aid recovery.",
+      "The HOCATT is a personal steam sauna capsule that combines transdermal ozone therapy, carbonic acid therapy, whole-body hyperthermia, far infrared energy, electrotherapy (TENS), aromatherapy, photon light therapy, ultraviolet irradiation, and pure humidified oxygen breathing into a single one-hour session. You sit comfortably inside the capsule with your head outside, breathing pure oxygen while the combination of steam, ozone, and other modalities work synergistically to promote circulation, stimulate the immune system, support the body's natural detoxification pathways, and aid recovery.",
     whoItsFor: [
       "Individuals seeking whole-body detoxification and immune support",
       "Those managing chronic fatigue, low energy, or brain fog",
@@ -449,7 +449,7 @@ export const servicesData: ServiceData[] = [
     whatToExpect: [
       "A brief health screening and intake to ensure the HOCATT is appropriate for you",
       "You'll sit comfortably inside the capsule with your head and neck outside at all times",
-      "A 30-minute session as the HOCATT cycles through its therapeutic modalities automatically",
+      "A one-hour session as the HOCATT cycles through its therapeutic modalities automatically",
       "You'll breathe pure humidified oxygen through a nasal cannula during the session",
       "Mild sweating and warmth — most patients find the experience deeply relaxing",
       "A cool-down period with hydration after your session before heading home",
@@ -471,7 +471,7 @@ export const servicesData: ServiceData[] = [
       {
         question: "How long is a HOCATT session and how often should I come?",
         answer:
-          "Each session lasts approximately 30 minutes. For general wellness, many patients start with 2–3 sessions per week for the first few weeks, then transition to weekly or biweekly maintenance. Your provider will recommend a frequency based on your individual health goals.",
+          "Each session lasts approximately one hour. For general wellness, many patients start with 2–3 sessions per week for the first few weeks, then transition to weekly or biweekly maintenance. Your provider will recommend a frequency based on your individual health goals.",
       },
       {
         question: "Who should not use the HOCATT?",
@@ -502,6 +502,93 @@ export const servicesData: ServiceData[] = [
         src: "/images/hocatt-experience-poster.jpg",
         alt: "The HOCATT Experience — phases of a session: Heat & Infrared, Carbonic Acid, and Ozone",
       },
+    ],
+  },
+  {
+    slug: "thinnr",
+    name: "THINNR Weight Loss Program",
+    headline: "THINNR Weight Loss Program",
+    heroScript: "A Healthier You",
+    heroSubtitle:
+      "A medically-supervised, all-natural weight loss program — a thoughtful alternative to GLP-1 medications, supported by your Perspective Health team.",
+    metaDescription:
+      "THINNR weight loss program at Perspective Health Iowa — a provider-supervised, all-natural alternative to GLP-1 medications combining a homeopathic protocol with a personalized nutrition strategy.",
+    heroImage: "/images/service-thinnr.jpg",
+    heroImageAlt: "THINNR medically-supervised weight loss program at Perspective Health Iowa",
+    intro:
+      "Lasting weight change rarely comes from a single intervention. THINNR is a structured, provider-supervised program that pairs an all-natural homeopathic protocol with a personalized nutrition strategy — designed to support sustainable results while your Perspective Health team monitors your progress, lab work, and overall wellbeing.",
+    whatItIs:
+      "THINNR is a 42-day, provider-supervised weight loss program built around a two-pillar approach: an all-natural, FDA-registered homeopathic OTC medication and the THINNR Weight Loss & Maintenance Nutrition Strategy, which emphasizes low-glycemic, anti-inflammatory foods in balanced portions. After the initial protocol, patients transition into a Metabolic Normalization phase to lock in results. THINNR is positioned as a faster, lower-cost alternative to GLP-1 medications like semaglutide — and at Perspective Health, it's integrated into the broader, root-cause approach we already take with our patients, so your weight loss plan is informed by your full health picture, not treated in isolation.",
+    whoItsFor: [
+      "Adults who want a structured, provider-supervised approach to weight loss",
+      "Patients exploring alternatives to GLP-1 medications like semaglutide or tirzepatide",
+      "Individuals who have struggled to lose weight with diet and exercise changes alone",
+      "Those whose weight is contributing to hormonal, metabolic, or inflammatory concerns",
+      "Patients who prefer an all-natural, non-injectable, non-prescription option",
+      "People who want their weight loss plan integrated with their primary or functional medicine care",
+    ],
+    whatToExpect: [
+      "An initial consultation to review your health history, goals, and whether THINNR is a good fit",
+      "Baseline lab work and vitals to make sure the program is appropriate and safe for you",
+      "A personalized nutrition plan and clear, day-by-day program guidance",
+      "Regular check-ins with your provider to track progress and address questions",
+      "A maintenance and metabolic-normalization phase after the initial protocol",
+      "Coordination with your other care at Perspective Health — primary care, hormone health, or functional medicine — as needed",
+    ],
+    benefits: [
+      "Provider-supervised throughout, with check-ins and guidance built into the program",
+      "All-natural, non-injectable, and does not require a prescription",
+      "Pairs nutrition strategy with a homeopathic protocol rather than relying on a single mechanism",
+      "May support better blood sugar stability and reduced inflammation through the nutrition plan",
+      "Often easier to sustain than restrictive diets because of the structured framework",
+      "Integrates seamlessly with the broader integrative care we offer",
+    ],
+    faqs: [
+      {
+        question: "What is THINNR, and how does it work?",
+        answer:
+          "THINNR uses a two-pillar approach to weight loss while supporting the four accepted keys to long-term maintenance. The first pillar is the THINNR homeopathic OTC medication — an all-natural, FDA-registered formula intended to support healthy weight loss, balanced metabolism, lower stress, reduced hunger and cravings, detoxification, and improved elimination. The second pillar is the THINNR Weight Loss & Maintenance Nutrition Strategy, which emphasizes low-glycemic and anti-inflammatory foods. Together, they're designed to support sustainable weight loss faster and at a lower cost than GLP-1s and semaglutide.",
+      },
+      {
+        question: "How is THINNR different from GLP-1 medications like semaglutide?",
+        answer:
+          "GLP-1 medications work by mimicking a hormone that regulates appetite and blood sugar, and they require ongoing prescription injections. THINNR is an all-natural, 42-day program that combines a homeopathic OTC protocol with a structured nutrition plan — no injections and no prescription. Whether THINNR or a GLP-1 medication is the better fit depends on your health history and goals, which we'll discuss during your consultation.",
+      },
+      {
+        question: "How much weight can I expect to lose?",
+        answer:
+          "Results vary by person. Many people have lost 20–35 pounds during the 42-day THINNR protocol. Outcomes depend on the amount of excess weight, genetics, and how closely the protocol is followed.",
+      },
+      {
+        question: "How long does the program last?",
+        answer:
+          "The initial THINNR protocol runs for 42 days. After that, you transition into a Metabolic Normalization phase for at least 3 weeks before considering another round. Your provider will walk you through the full timeline and help you plan how to maintain results long term.",
+      },
+      {
+        question: "Where are THINNR products made and how is quality controlled?",
+        answer:
+          "All THINNR products are manufactured in US-based, FDA-registered, cGMP-certified, state-licensed facilities. They undergo post-production quantitative testing for product specification, potency, and safety, and manufacturing follows Good Manufacturing Practices and the Code of Federal Regulations.",
+      },
+      {
+        question: "Is THINNR safe with my current medications, or during pregnancy?",
+        answer:
+          "Because THINNR is homeopathic, significant interactions with conventional medications — including birth control pills and Depo-Provera — are not highly likely, but you should always review your specific medications with your provider before starting. THINNR should not be used during pregnancy. If you become pregnant during the protocol, stop immediately and contact your provider.",
+      },
+      {
+        question: "Will I get hungry, and do I need to exercise?",
+        answer:
+          "Mild psychological hunger in the first few days is normal and typically subsides after 4–6 days. Daily exercise is not required for success on the protocol — your provider will share more detailed guidance in the program guide.",
+      },
+      {
+        question: "Is THINNR covered by insurance?",
+        answer:
+          "Weight loss programs like THINNR are typically not covered by insurance. We are transparent about pricing during your consultation, and HSA or FSA funds may be eligible — please check with your plan administrator.",
+      },
+    ],
+    relatedServices: [
+      "digestive-metabolic-health",
+      "hormone-health",
+      "comprehensive-primary-care",
     ],
   },
 ];
