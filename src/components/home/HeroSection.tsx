@@ -6,12 +6,12 @@ export function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/smiling-woman-warm-sunlight-perspective-health-iowa.jpg"
-          alt="Smiling woman on the beach at sunset, arms open - feeling vibrant and well at Perspective Health Iowa in Urbandale"
+          src="/images/hero-brunette-preview.jpg"
+          alt="Smiling woman outdoors in a blue top - welcoming integrative healthcare at Perspective Health Iowa"
           fill
           priority
           quality={90}
-          className="object-cover object-[70%_center] md:object-[60%_center]"
+          className="object-cover object-[60%_top]"
           sizes="100vw"
         />
         {/* Warm overlay for text legibility */}
