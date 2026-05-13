@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --color-teal: #00BCD4;
-  --color-purple: #7B4F9E;
+  --color-teal: #03AB8E;
+  --color-purple: #894C9E;
   --color-charcoal: #2C2C2C;
   --color-sage: #E8F0E9;
 }
@@ -68,23 +68,23 @@
     @apply inline-flex items-center justify-center px-8 py-3 rounded-full
            font-semibold text-white transition-all duration-200 shadow-md hover:shadow-lg
            focus:outline-none focus:ring-2 focus:ring-offset-2;
-    background-color: #1ABC9C;
-    --tw-ring-color: #1ABC9C;
+    background-color: #03AB8E;
+    --tw-ring-color: #03AB8E;
   }
   .btn-teal:hover {
-    background-color: #17a689;
+    background-color: #039681;
   }
 
   .btn-outline-teal {
     @apply inline-flex items-center justify-center px-8 py-3 rounded-full
            font-semibold transition-all duration-200
            focus:outline-none focus:ring-2 focus:ring-offset-2;
-    color: #1ABC9C;
-    border: 2px solid #1ABC9C;
-    --tw-ring-color: #1ABC9C;
+    color: #03AB8E;
+    border: 2px solid #03AB8E;
+    --tw-ring-color: #03AB8E;
   }
   .btn-outline-teal:hover {
-    background-color: #1ABC9C;
+    background-color: #03AB8E;
     color: white;
   }
 
@@ -92,11 +92,11 @@
     @apply inline-flex items-center justify-center px-8 py-3 rounded-full
            font-semibold text-white transition-all duration-200 shadow-md hover:shadow-lg
            focus:outline-none focus:ring-2 focus:ring-offset-2;
-    background-color: #7B4F9E;
-    --tw-ring-color: #7B4F9E;
+    background-color: #894C9E;
+    --tw-ring-color: #894C9E;
   }
   .btn-purple:hover {
-    background-color: #623F7E;
+    background-color: #6E3F7F;
   }
 
   .btn-outline-white {
@@ -108,7 +108,7 @@
 
   /* Green accent background */
   .bg-green-accent {
-    background-color: #1ABC9C;
+    background-color: #03AB8E;
   }
 
   /* Section backgrounds with the Perspective Health icon as a tight watermark.
@@ -119,7 +119,7 @@
   }
 
   .geometric-pattern-green {
-    background-color: #1ABC9C;
+    background-color: #03AB8E;
     background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='125 32 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235BC9B5' opacity='0.4'%3E%3Cpolygon points='176.31 121.03 211.18 121.03 199.89 109.75 161.22 105.95 176.31 121.03'/%3E%3Cpolygon points='213.57 118.65 213.57 83.78 198.48 68.69 202.28 107.36 213.57 118.65'/%3E%3Cpolygon points='216.94 118.65 228.23 107.36 232.03 68.69 216.94 83.78 216.94 118.65'/%3E%3Cpolygon points='254.2 121.03 269.28 105.95 230.62 109.75 219.33 121.03 254.2 121.03'/%3E%3Cpolygon points='211.18 124.41 176.31 124.41 161.22 139.5 199.89 135.7 211.18 124.41'/%3E%3Cpolygon points='254.2 124.41 219.33 124.41 230.62 135.7 269.28 139.5 254.2 124.41'/%3E%3Cpolygon points='216.94 126.8 216.94 161.67 232.03 176.75 228.23 138.09 216.94 126.8'/%3E%3Cpolygon points='213.57 126.8 202.28 138.09 198.48 176.75 213.57 161.67 213.57 126.8'/%3E%3Cpolygon points='196.4 166.94 199.18 138.81 171.04 141.58 196.4 166.94'/%3E%3Cpolygon points='234.11 78.51 231.33 106.64 259.47 103.87 234.11 78.51'/%3E%3Cpolygon points='259.47 141.58 231.34 138.8 234.11 166.94 259.47 141.58'/%3E%3Cpolygon points='171.04 103.87 199.17 106.65 196.4 78.51 171.04 103.87'/%3E%3C/g%3E%3C/svg%3E");
   }
 
@@ -211,12 +211,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00BCD4;
+  background: #03AB8E;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00A5BC;
+  background: #039681;
 }
 
 /* Print styles */

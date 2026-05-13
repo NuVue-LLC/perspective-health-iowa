@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Dancing_Script } from "next/font/google";
+import { Jost, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ChatWidget } from "@/components/chat/ChatWidget";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 
-const inter = Inter({
+// Brand-guide body/heading font
+const jost = Jost({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-jost",
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -82,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${dancingScript.variable}`}>
+    <html lang="en" className={`${jost.variable} ${dancingScript.variable}`}>
       <body className="min-h-screen flex flex-col">
         <SchemaMarkup />
         <Header />
