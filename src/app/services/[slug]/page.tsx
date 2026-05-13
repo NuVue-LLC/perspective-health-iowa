@@ -778,7 +778,7 @@ export default function ServicePage({ params }: Props) {
             <div className="section-container py-16 sm:py-20 lg:py-24 relative z-10">
               <div className="text-center mb-12">
                 <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white leading-tight mb-4">
-                  10 Therapies. One 1-Hour Session.
+                  10 Therapies. One 30-Minute Session.
                 </h2>
                 <p className="text-white/80 text-lg max-w-2xl mx-auto">
                   Click any modality to learn how it works inside the HOCATT.
