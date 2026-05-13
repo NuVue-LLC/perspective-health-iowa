@@ -9,39 +9,49 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Brand teal - Pantone 3268 C (#03AB8E)
         teal: {
-          DEFAULT: "#00BCD4",
-          50: "#EDF7FB",
-          100: "#D4EDF5",
-          200: "#ADDDED",
-          300: "#86CDE4",
-          400: "#00BCD4",
-          500: "#00BCD4",
-          600: "#00A5BC",
-          700: "#3A8FAA",
-          800: "#2B6D82",
-          900: "#1C4A59",
+          DEFAULT: "#03AB8E",
+          50: "#E6F7F2",
+          100: "#C5EAE0",
+          200: "#9DDBC8",
+          300: "#6BC9AC",
+          400: "#3CBA98",
+          500: "#03AB8E",
+          600: "#039681",
+          700: "#057D6B",
+          800: "#066354",
+          900: "#054839",
         },
+        // Brand purple - Pantone 511 C (#894C9E)
         purple: {
-          DEFAULT: "#7B4F9E",
-          50: "#F3EDF9",
-          100: "#E7DBF3",
-          200: "#CFB7E7",
-          300: "#B793DB",
-          400: "#9F6FCF",
-          500: "#7B4F9E",
-          600: "#623F7E",
-          700: "#4A2F5F",
-          800: "#311F3F",
-          900: "#190F20",
+          DEFAULT: "#894C9E",
+          50: "#F4EDF7",
+          100: "#E5D2EE",
+          200: "#CFA7DD",
+          300: "#B97DCC",
+          400: "#A35EB6",
+          500: "#894C9E",
+          600: "#6E3F7F",
+          700: "#553162",
+          800: "#3C2245",
+          900: "#231429",
+        },
+        // Brand secondary/tertiary palette (Pantone refs in brand guide)
+        brand: {
+          cyan: "#21C1DC",        // Pantone 7442
+          green: "#81C44D",       // Pantone 7488
+          lime: "#D4EB8E",        // Pantone 372  - light yellow-green
+          mint: "#A0D1CA",        // Pantone 7464 - light mint
+          periwinkle: "#B6B8DC",  // Pantone 7444 - light periwinkle
         },
         sage: {
-          DEFAULT: "#E8F0E9",
-          50: "#F4F8F5",
-          100: "#E8F0E9",
-          200: "#D1E1D3",
-          300: "#BAD2BD",
-          400: "#A3C3A7",
+          DEFAULT: "#A0D1CA",     // brand mint
+          50: "#F0F8F6",
+          100: "#DDEFEB",
+          200: "#C0E1DA",
+          300: "#A0D1CA",
+          400: "#7BBEB3",
         },
         charcoal: {
           DEFAULT: "#2C2C2C",
@@ -50,7 +60,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-jost)", "system-ui", "sans-serif"],
         script: ["var(--font-dancing-script)", "cursive"],
       },
       backgroundImage: {
@@ -63,9 +73,9 @@ const config: Config = {
           css: {
             color: "#2C2C2C",
             a: {
-              color: "#00BCD4",
+              color: "#03AB8E",
               "&:hover": {
-                color: "#00A5BC",
+                color: "#039681",
               },
             },
             h1: { color: "#2C2C2C" },
@@ -90,8 +100,8 @@ const config: Config = {
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
         pulseSoft: {
-          "0%, 100%": { boxShadow: "0 0 0 0 rgba(0, 188, 212, 0.4)" },
-          "50%": { boxShadow: "0 0 0 12px rgba(0, 188, 212, 0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(3, 171, 142, 0.4)" },
+          "50%": { boxShadow: "0 0 0 12px rgba(3, 171, 142, 0)" },
         },
         bounceDot: {
           "0%, 80%, 100%": { transform: "scale(0.6)", opacity: "0.4" },
