@@ -36,7 +36,7 @@ export default function InsurancePage() {
         <div className="absolute inset-0">
           <Image
             src="/images/hero-insurance.jpg"
-            alt="Healthcare professional reviewing insurance paperwork and forms"
+            alt="Smiling woman in warm golden sunlight - welcoming integrative healthcare at Perspective Health Iowa"
             fill
             priority
             quality={90}

@@ -7,11 +7,11 @@ export function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/smiling-woman-warm-sunlight-perspective-health-iowa.jpg"
-          alt="Smiling woman in warm golden sunlight representing the welcoming integrative healthcare at Perspective Health Iowa in Urbandale"
+          alt="Smiling woman on the beach at sunset, arms open - feeling vibrant and well at Perspective Health Iowa in Urbandale"
           fill
           priority
           quality={90}
-          className="object-cover object-[65%_top] sm:object-top"
+          className="object-cover object-[70%_center] md:object-[60%_center]"
           sizes="100vw"
         />
         {/* Warm overlay for text legibility */}
