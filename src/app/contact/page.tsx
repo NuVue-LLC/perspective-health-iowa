@@ -65,19 +65,13 @@ export default function ContactPage() {
             {/* Left: Contact form (shown first) */}
             <div id="contact-form" className="lg:order-1 scroll-mt-24">
               <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 sm:p-8">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
-                  <div>
-                    <h2 className="text-xl font-bold text-charcoal mb-1">
-                      Send Us a Message
-                    </h2>
-                    <p className="text-gray-500 text-sm">
-                      Fill out the form below and we&apos;ll get back to you within one business day.
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2 bg-teal/10 border border-teal/20 rounded-full px-4 py-1.5 flex-shrink-0">
-                    <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
-                    <span className="text-teal text-xs font-semibold whitespace-nowrap">Avg. reply under 4 hrs</span>
-                  </div>
+                <div className="mb-6">
+                  <h2 className="text-xl font-bold text-charcoal mb-1">
+                    Send Us a Message
+                  </h2>
+                  <p className="text-gray-500 text-sm">
+                    Fill out the form below and we&apos;ll get back to you within one business day.
+                  </p>
                 </div>
                 <JotFormEmbed />
               </div>
