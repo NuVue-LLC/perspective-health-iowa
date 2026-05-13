@@ -1233,30 +1233,6 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-              {/* Section 4 - Patient Packages */}
-          <section className="geometric-pattern-light">
-            <div className="section-container py-16 sm:py-20 lg:py-24">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-charcoal mb-6">
-                    Patient Packages
-                  </h3>
-                  <p className="text-gray-500 italic text-lg">Coming Soon</p>
-                </div>
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
-                  <Image
-                    src="/images/consultation-care.jpg"
-                    alt="Personalized supplemental care consultation at Perspective Health Iowa"
-                    fill
-                    quality={85}
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-              </div>
-            </div>
-          </section>
-
               {/* CTA + Related Services */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
