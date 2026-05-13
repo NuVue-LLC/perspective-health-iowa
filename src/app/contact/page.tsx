@@ -219,11 +219,8 @@ export default function ContactPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
               Visit Our Clinic
             </h2>
-            <p className="text-white/80 text-lg mb-2">
+            <p className="text-white/80 text-lg mb-6">
               {SITE_CONFIG.address.full}
-            </p>
-            <p className="text-white/60 text-sm mb-6">
-              Walk-ins welcome during office hours
             </p>
             <a
               href={`https://maps.google.com/?q=${encodeURIComponent(SITE_CONFIG.address.full)}`}
