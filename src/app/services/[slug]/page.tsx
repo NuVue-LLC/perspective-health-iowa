@@ -808,7 +808,7 @@ export default function ServicePage({ params }: Props) {
                     <span className="text-charcoal">a Session</span>
                   </h2>
                   <p className="text-gray-600 leading-relaxed mb-8">
-                    A one-hour HOCATT session moves through three distinct phases. Each phase works on a different system - circulatory, oxygenation, and immune - building on the one before it.
+                    A 30-minute HOCATT session moves through three distinct phases. Each phase works on a different system - circulatory, oxygenation, and immune - building on the one before it.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-start gap-4 p-5 rounded-2xl bg-amber-50 border border-amber-100">

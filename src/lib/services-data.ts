@@ -431,13 +431,13 @@ export const servicesData: ServiceData[] = [
     heroScript: "Restore & Rejuvenate",
     heroSubtitle: "Advanced ozone sauna therapy that combines ten modalities in a single session to detoxify, energize, and heal.",
     metaDescription:
-      "Experience HOCATT ozone sauna therapy in Iowa at Perspective Health. A single one-hour session delivers up to 10 therapeutic modalities to support detox, immunity, pain relief, and recovery.",
+      "Experience HOCATT ozone sauna therapy in Iowa at Perspective Health. A single 30-minute session delivers up to 10 therapeutic modalities to support detox, immunity, pain relief, and recovery.",
     heroImage: "/images/service-hocatt.jpg",
     heroImageAlt: "HOCATT ozone sauna therapy session at Perspective Health Iowa",
     intro:
       "The HOCATT (Hyperthermic Ozone and Carbonic Acid Transdermal Technology) is the only device in the world that simultaneously delivers up to 10 evidence-informed therapeutic modalities in a single session. At Perspective Health, we use the HOCATT as a powerful tool to support detoxification, immune function, circulation, and whole-body wellness.",
     whatItIs:
-      "The HOCATT is a personal steam sauna capsule that combines transdermal ozone therapy, carbonic acid therapy, whole-body hyperthermia, far infrared energy, electrotherapy (TENS), aromatherapy, photon light therapy, ultraviolet irradiation, and pure humidified oxygen breathing into a single one-hour session. You sit comfortably inside the capsule with your head outside, breathing pure oxygen while the combination of steam, ozone, and other modalities work synergistically to promote circulation, stimulate the immune system, support the body's natural detoxification pathways, and aid recovery.",
+      "The HOCATT is a personal steam sauna capsule that combines transdermal ozone therapy, carbonic acid therapy, whole-body hyperthermia, far infrared energy, electrotherapy (TENS), aromatherapy, photon light therapy, ultraviolet irradiation, and pure humidified oxygen breathing into a single 30-minute session. You sit comfortably inside the capsule with your head outside, breathing pure oxygen while the combination of steam, ozone, and other modalities work synergistically to promote circulation, stimulate the immune system, support the body's natural detoxification pathways, and aid recovery.",
     whoItsFor: [
       "Individuals seeking whole-body detoxification and immune support",
       "Those managing chronic fatigue, low energy, or brain fog",
@@ -449,7 +449,7 @@ export const servicesData: ServiceData[] = [
     whatToExpect: [
       "A brief health screening and intake to ensure the HOCATT is appropriate for you",
       "You'll sit comfortably inside the capsule with your head and neck outside at all times",
-      "A one-hour session as the HOCATT cycles through its therapeutic modalities automatically",
+      "A 30-minute session as the HOCATT cycles through its therapeutic modalities automatically",
       "You'll breathe pure humidified oxygen through a nasal cannula during the session",
       "Mild sweating and warmth - most patients find the experience deeply relaxing",
       "A cool-down period with hydration after your session before heading home",
@@ -471,7 +471,7 @@ export const servicesData: ServiceData[] = [
       {
         question: "How long is a HOCATT session and how often should I come?",
         answer:
-          "Each session lasts approximately one hour. For general wellness, many patients start with 2–3 sessions per week for the first few weeks, then transition to weekly or biweekly maintenance. Your provider will recommend a frequency based on your individual health goals.",
+          "Each session lasts approximately 30 minutes. For general wellness, many patients start with 2–3 sessions per week for the first few weeks, then transition to weekly or biweekly maintenance. Your provider will recommend a frequency based on your individual health goals.",
       },
       {
         question: "Who should not use the HOCATT?",
