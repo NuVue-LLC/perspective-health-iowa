@@ -50,7 +50,7 @@ export default function SymptomExplorer() {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-3 mb-8">
+      <div className="flex flex-wrap justify-center gap-3 mb-8">
         {symptoms.map((symptom, i) => (
           <button
             key={i}
