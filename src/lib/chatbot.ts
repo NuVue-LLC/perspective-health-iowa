@@ -200,7 +200,7 @@ function buildFaqPatterns(): FaqPattern[] {
     },
     {
       patterns: [/\b(child|kid|pediatric|son|daughter|baby|infant|minor)\b/i],
-      answer: `We treat adults (18+) only. Call ${SITE_CONFIG.phone} and we can help connect you with pediatric resources!`,
+      answer: `We treat patients ages 21 and up only. Call ${SITE_CONFIG.phone} and we can help connect you with pediatric resources!`,
       suggestions: ["What services do you offer?", "How do I become a new patient?"],
     },
     {
@@ -406,7 +406,7 @@ Follow-up appointments stay focused on your active care plan.
 - Prescription refills: Submit through patient portal or call during business hours. Allow 2–3 business days. Controlled substances require an in-person visit.
 - Medical records: Request by contacting the office. We comply with all HIPAA regulations. Fulfilled within 30 business days.
 - Lab results: Reviewed by provider and communicated via patient portal or phone. Routine results 5–7 business days. Abnormal results communicated sooner.
-- We treat adult patients (18+) only. We can help connect families with pediatric resources.
+- We treat patients ages 21 and up only. We can help connect families with pediatric resources.
 - Collaborative care: We encourage working alongside existing doctors and can coordinate care with consent.
 
 ## Our Mission & Values

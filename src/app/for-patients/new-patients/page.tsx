@@ -73,7 +73,7 @@ const faqs = [
   {
     question: "Do you treat children?",
     answer:
-      "Our current practice focuses on adult patients (18+). We'd be happy to help connect you with appropriate pediatric resources in the area.",
+      "Our current practice focuses on patients ages 21 and up. We'd be happy to help connect you with appropriate pediatric resources in the area.",
   },
   {
     question: "Can I use Perspective Health alongside my current doctors?",
