@@ -49,21 +49,31 @@ export function JotFormEmbed() {
         src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"
         strategy="lazyOnload"
       />
-      <iframe
-        ref={iframeRef}
-        id={`JotFormIFrame-${FORM_ID}`}
-        title="Perspective Health Iowa contact form"
-        src={FORM_URL}
-        allow="geolocation; microphone; camera"
-        allowTransparency
-        scrolling="no"
-        style={{
-          minWidth: "100%",
-          maxWidth: "100%",
-          height: "720px",
-          border: "none",
-        }}
-      />
+      <div className="relative">
+        <iframe
+          ref={iframeRef}
+          id={`JotFormIFrame-${FORM_ID}`}
+          title="Perspective Health Iowa contact form"
+          src={FORM_URL}
+          allow="geolocation; microphone; camera"
+          allowTransparency
+          scrolling="no"
+          style={{
+            minWidth: "100%",
+            maxWidth: "100%",
+            height: "720px",
+            border: "none",
+            display: "block",
+          }}
+        />
+        {/* Mask the free-tier JotForm branding bar at the bottom of the iframe.
+            Card background is white so a white block blends in seamlessly.
+            Pointer-events-none so it never blocks interaction with the form above. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-white"
+        />
+      </div>
     </>
   );
 }
