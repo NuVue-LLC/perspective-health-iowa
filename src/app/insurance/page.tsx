@@ -4,7 +4,6 @@ import Link from "next/link";
 import {
   CheckCircle,
   Phone,
-  ArrowRight,
   PiggyBank,
   Wallet,
   Stethoscope,
@@ -267,27 +266,6 @@ export default function InsurancePage() {
             })}
           </div>
 
-          <div className="bg-gradient-to-br from-teal/10 to-purple/5 border border-teal/20 rounded-2xl p-8 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-5">
-            <div className="w-14 h-14 rounded-2xl bg-teal flex items-center justify-center flex-shrink-0">
-              <Phone size={24} className="text-white" />
-            </div>
-            <div className="flex-grow">
-              <p className="font-bold text-charcoal text-lg mb-1">
-                Get a quote before your visit
-              </p>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Pricing varies by service and lab fees are billed separately. Call or message us - we&apos;ll give you a clear estimate up front, no surprises.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-              <Link href="/contact#contact-form" className="btn-teal text-sm">
-                Get Pricing Info
-              </Link>
-              <Link href="/for-patients" className="btn-outline-teal text-sm inline-flex items-center gap-2">
-                Patient Resources <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 
