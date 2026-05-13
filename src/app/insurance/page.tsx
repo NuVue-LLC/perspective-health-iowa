@@ -5,12 +5,6 @@ import {
   Phone,
   PiggyBank,
   Wallet,
-  Stethoscope,
-  CalendarCheck,
-  HeartPulse,
-  Compass,
-  Apple,
-  FlaskConical,
 } from "lucide-react";
 import { INSURANCE_PARTNERS, SITE_CONFIG } from "@/lib/constants";
 import { CTABanner } from "@/components/home/CTABanner";
@@ -232,37 +226,6 @@ export default function InsurancePage() {
               or your plan doesn&apos;t cover a specific service, we offer clear,
               fair self-pay rates.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
-            {[
-              { service: "New Patient Comprehensive Visit", detail: "Custom quote", Icon: Stethoscope, accent: "teal" as const },
-              { service: "Follow-Up Visit", detail: "Custom quote", Icon: CalendarCheck, accent: "purple" as const },
-              { service: "Hormone Evaluation & Consultation", detail: "Custom quote", Icon: HeartPulse, accent: "green" as const },
-              { service: "Functional Medicine Consultation", detail: "Custom quote", Icon: Compass, accent: "teal" as const },
-              { service: "Nutrition Counseling Session", detail: "Per session", Icon: Apple, accent: "purple" as const },
-              { service: "Lab Processing", detail: "In addition to lab fees", Icon: FlaskConical, accent: "green" as const },
-            ].map(({ service, detail, Icon, accent }) => {
-              const accentClasses = {
-                teal: { badge: "bg-teal/10", icon: "text-teal", pill: "bg-teal/10 text-teal", border: "group-hover:border-teal/40", hoverFill: "group-hover:bg-teal" },
-                purple: { badge: "bg-purple/10", icon: "text-purple", pill: "bg-purple/10 text-purple", border: "group-hover:border-purple/40", hoverFill: "group-hover:bg-purple" },
-                green: { badge: "bg-green-accent/10", icon: "text-green-accent", pill: "bg-green-accent/10 text-green-accent", border: "group-hover:border-green-accent/40", hoverFill: "group-hover:bg-green-accent" },
-              }[accent];
-              return (
-                <div
-                  key={service}
-                  className={`group bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 ${accentClasses.border}`}
-                >
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all ${accentClasses.badge} ${accentClasses.hoverFill} group-hover:scale-105`}>
-                    <Icon size={22} strokeWidth={2} className={`transition-colors ${accentClasses.icon} group-hover:text-white`} />
-                  </div>
-                  <h3 className="font-bold text-charcoal text-base mb-2 leading-snug">{service}</h3>
-                  <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full ${accentClasses.pill}`}>
-                    {detail}
-                  </span>
-                </div>
-              );
-            })}
           </div>
 
         </div>
