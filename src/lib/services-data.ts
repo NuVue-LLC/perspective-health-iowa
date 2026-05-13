@@ -41,7 +41,7 @@ export const servicesData: ServiceData[] = [
       "Patients wanting an integrative approach to existing health concerns",
     ],
     whatToExpect: [
-      "An extended initial visit (60–90 minutes) to review your complete health history",
+      "An extended initial visit to review your complete health history",
       "Comprehensive lab work beyond standard panels to get a full picture",
       "A personalized care plan addressing your unique goals and health concerns",
       "Regular follow-up appointments to track your progress and adjust your plan",
@@ -67,9 +67,9 @@ export const servicesData: ServiceData[] = [
           "We accept most major insurance plans including Wellmark BlueCross BlueShield, Optum/UnitedHealthcare, MidlandsChoice, and Medicare. Please contact our office to verify your specific coverage.",
       },
       {
-        question: "How long does an initial primary care appointment take?",
+        question: "What does an initial primary care appointment look like?",
         answer:
-          "Initial appointments are typically 60–90 minutes. We invest this time upfront to thoroughly understand your health history, concerns, and goals so we can create the most effective care plan possible.",
+          "Your first appointment is an extended, in-depth visit. We invest this time upfront to thoroughly understand your health history, concerns, and goals so we can create the most effective care plan possible.",
       },
       {
         question:
@@ -225,7 +225,7 @@ export const servicesData: ServiceData[] = [
       "Patients who want to use food, lifestyle, and targeted strategies as medicine",
     ],
     whatToExpect: [
-      "A comprehensive 90-minute initial consultation exploring your full health timeline",
+      "A comprehensive initial consultation exploring your full health timeline",
       "Advanced functional lab testing (gut microbiome, nutrient status, inflammation markers, toxin load, and more)",
       "A personalized, prioritized treatment roadmap",
       "Integration of dietary therapy, targeted supplementation, and lifestyle medicine",
