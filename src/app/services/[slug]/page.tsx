@@ -1406,59 +1406,6 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
-          {/* Section 5 - Light pattern: What to Expect editorial program guide */}
-          <section className="geometric-pattern-light">
-            <div className="section-container py-12 sm:py-14 lg:py-16">
-              <div className="max-w-3xl mx-auto">
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight leading-tight mb-2">
-                    <span className="text-teal">What to</span>{" "}
-                    <span className="text-charcoal">Expect</span>
-                  </h2>
-                  <p className="text-gray-600 text-sm sm:text-base">
-                    From your first consultation through long-term maintenance.
-                  </p>
-                </div>
-                {(() => {
-                  const labels = [
-                    "Consultation",
-                    "Lab Work",
-                    "Personalized Plan",
-                    "Provider Check-ins",
-                    "Normalization",
-                    "Integrated Care",
-                  ];
-                  return (
-                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                      {service.whatToExpect.map((item, i) => {
-                        const label = labels[i] ?? `Step ${i + 1}`;
-                        const isLast = i === service.whatToExpect.length - 1;
-                        return (
-                          <div
-                            key={i}
-                            className={`group grid grid-cols-[auto_1fr] sm:grid-cols-[3.5rem_11rem_1fr] gap-x-3 sm:gap-x-5 items-baseline px-4 sm:px-6 py-3 sm:py-4 hover:bg-teal/5 transition-colors ${
-                              isLast ? "" : "border-b border-gray-100"
-                            }`}
-                          >
-                            <span className="text-xs font-mono text-teal/60 group-hover:text-teal transition-colors tabular-nums tracking-wider">
-                              {String(i + 1).padStart(2, "0")}
-                            </span>
-                            <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-charcoal whitespace-nowrap col-span-1 sm:col-span-1">
-                              {label}
-                            </span>
-                            <span className="text-sm text-gray-600 leading-snug col-span-2 sm:col-span-1">
-                              {item}
-                            </span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  );
-                })()}
-              </div>
-            </div>
-          </section>
-
           {/* Section 6 - White: Potential Benefits icon grid */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">
