@@ -237,8 +237,8 @@ export default function InsurancePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
             {[
-              { service: "New Patient Comprehensive Visit", detail: "60–90 min", Icon: Stethoscope, accent: "teal" as const },
-              { service: "Follow-Up Visit", detail: "30 min", Icon: CalendarCheck, accent: "purple" as const },
+              { service: "New Patient Comprehensive Visit", detail: "Custom quote", Icon: Stethoscope, accent: "teal" as const },
+              { service: "Follow-Up Visit", detail: "Custom quote", Icon: CalendarCheck, accent: "purple" as const },
               { service: "Hormone Evaluation & Consultation", detail: "Custom quote", Icon: HeartPulse, accent: "green" as const },
               { service: "Functional Medicine Consultation", detail: "Custom quote", Icon: Compass, accent: "teal" as const },
               { service: "Nutrition Counseling Session", detail: "Per session", Icon: Apple, accent: "purple" as const },

@@ -124,7 +124,7 @@ function buildFaqPatterns(): FaqPattern[] {
     },
     {
       patterns: [/\b(primary care|annual|checkup|physical|preventive)\b/i],
-      answer: `Our Primary Care goes beyond typical checkups - we combine conventional medicine with a root-cause approach. Initial visits are 60–90 minutes so we can really understand your health.\n\nLearn more: /services/comprehensive-primary-care`,
+      answer: `Our Primary Care goes beyond typical checkups - we combine conventional medicine with a root-cause approach, with extended visits so we can really understand your health.\n\nLearn more: /services/comprehensive-primary-care`,
       suggestions: ["What insurance do you accept?", "How do I become a new patient?"],
     },
     {
@@ -158,22 +158,22 @@ function buildFaqPatterns(): FaqPattern[] {
     // --- New patient & scheduling ---
     {
       patterns: [/\b(new patient|first visit|first time|get started|become a patient|sign up|onboard)\b/i],
-      answer: `Getting started is easy! Just call ${SITE_CONFIG.phone}, email ${SITE_CONFIG.email}, or use our Contact page. We'll send you intake forms, and your first visit will be a thorough 60–90 minute appointment. Bring your ID, insurance card, and current medications.`,
+      answer: `Getting started is easy! Just call ${SITE_CONFIG.phone}, email ${SITE_CONFIG.email}, or use our Contact page. We'll send you intake forms, and your first visit will be a thorough, in-depth appointment. Bring your ID, insurance card, and current medications.`,
       suggestions: ["What insurance do you accept?", "Do you offer telehealth?", "What to bring"],
     },
     {
       patterns: [/\b(what.*bring|prepare.*visit|before.*visit|what.*need.*visit|what.*need.*appointment)\b/i],
-      answer: `Please bring your photo ID, insurance card, current medications and supplements, any recent lab work, and a list of your health goals. Arrive 15 minutes early for your first visit!`,
-      suggestions: ["How long is the first visit?", "Do you offer telehealth?"],
+      answer: `Please bring your photo ID, insurance card, current medications and supplements, any recent lab work, and a list of your health goals. Arrive a few minutes early for your first visit!`,
+      suggestions: ["What does the first visit look like?", "Do you offer telehealth?"],
     },
     {
       patterns: [/\b(how long|duration|appointment length|follow.?up)\b/i],
-      answer: `Initial visits are 60–90 minutes and follow-ups are 30–45 minutes. We take the time upfront to really understand your health!`,
+      answer: `Initial visits are extended so we can really understand your health, and follow-ups stay focused on your active care plan.`,
       suggestions: ["How do I become a new patient?", "What should I bring?"],
     },
     {
       patterns: [/\b(schedule|book|appointment|make.*visit)\b/i],
-      answer: `Call ${SITE_CONFIG.phone}, email ${SITE_CONFIG.email}, or use our Contact page. New patients should allow 60–90 minutes for the first visit!`,
+      answer: `Call ${SITE_CONFIG.phone}, email ${SITE_CONFIG.email}, or use our Contact page. We'll get you scheduled and walk you through what to expect.`,
       suggestions: ["New patient info", "What are your hours?", "Telehealth"],
     },
 
@@ -371,7 +371,7 @@ We accept most major insurance plans including: ${insuranceList}
 - HSA (Health Savings Account): use pre-tax dollars for eligible healthcare expenses, bring your HSA debit card or reimbursement form.
 - FSA (Flexible Spending Account): employer-sponsored pre-tax account for copays, deductibles, and eligible services.
 - We also accept CareCredit to help make healthcare more affordable.
-- Self-pay services available: New Patient Comprehensive Visit (60–90 min), Follow-Up Visit (30 min), Hormone Evaluation & Consultation, Functional Medicine Consultation, Nutrition Counseling Session, Lab Processing (in addition to lab fees).
+- Self-pay services available: New Patient Comprehensive Visit, Follow-Up Visit, Hormone Evaluation & Consultation, Functional Medicine Consultation, Nutrition Counseling Session, Lab Processing (in addition to lab fees).
 - Pricing varies by service. Lab fees are billed separately. We provide quotes before visits.
 - Always recommend patients call ${SITE_CONFIG.phone} to verify their specific coverage before their visit - no surprises.
 
@@ -389,12 +389,12 @@ When someone asks about booking or paying for HOCATT, always direct them to the 
 ## New Patients - Step by Step
 1. Reach Out: Call ${SITE_CONFIG.phone}, email ${SITE_CONFIG.email}, or use our Contact page. We'll answer questions and help find the right provider.
 2. Complete Paperwork: We send intake forms to complete before the visit.
-3. First Visit: Arrive 15 minutes early. The 60–90 minute appointment is an in-depth conversation about health history, concerns, and goals.
+3. First Visit: Arrive a few minutes early. The appointment is an extended, in-depth conversation about health history, concerns, and goals.
 4. Care Plan: After the visit, patients receive a personalized care plan with next steps, testing recommendations, and a health roadmap.
 
 What to bring: photo ID, insurance card(s), current medications with dosages, current supplements, recent lab work or medical records, list of symptoms and health concerns, health goals and questions, emergency contact info.
 
-Follow-up appointments are generally 30–45 minutes.
+Follow-up appointments stay focused on your active care plan.
 
 ## Telehealth
 - We offer both in-person and virtual telehealth visits for flexible care.
@@ -428,7 +428,7 @@ Our Approach Pillars:
 
 ## Reviews
 We have a ${SITE_CONFIG.googleReviews.rating}-star rating on Google with ${SITE_CONFIG.googleReviews.count} reviews. Sample testimonials:
-- "I've never felt so heard by a healthcare provider. Audrey took over an hour to go through my history and we came up with a real plan. My hormones are finally balanced and I feel like myself again." - Jennifer M.
+- "I've never felt so heard by a healthcare provider. Audrey really took the time to go through my history and we came up with a real plan. My hormones are finally balanced and I feel like myself again." - Jennifer M.
 - "After years of being told my labs were 'normal' while I felt terrible, Stephanie actually dug deeper. She found the root cause of my fatigue and I have more energy than I've had in a decade." - Robert K.
 - "Tara completely changed how I think about nutrition and gut health. Her knowledge and genuine care for her patients is exceptional." - Sarah L.
 

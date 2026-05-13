@@ -41,9 +41,9 @@ const faqs = [
       "Please bring: a photo ID, your insurance card, a list of current medications and supplements (with dosages), any recent lab work or medical records you have access to, and a list of your current symptoms, concerns, and health goals. The more information you can share upfront, the more productive your first visit will be.",
   },
   {
-    question: "How long is the initial appointment?",
+    question: "What should I expect from my first appointment?",
     answer:
-      "Initial appointments are typically 60–90 minutes. We invest this time in a thorough review of your health history, symptoms, goals, and concerns. Follow-up appointments are generally 30–45 minutes.",
+      "Your initial appointment is an extended, in-depth visit so we can thoroughly review your health history, symptoms, goals, and concerns. Follow-up appointments are more focused on your active care plan.",
   },
   {
     question: "Do you offer telehealth appointments?",
@@ -143,7 +143,7 @@ export default function NewPatientsPage() {
               {
                 step: 3,
                 title: "Your First Visit",
-                body: "Arrive 15 minutes early. Your 60–90 minute appointment will be an in-depth conversation about your health history, concerns, and goals.",
+                body: "Arrive a few minutes early. Your appointment will be an in-depth conversation about your health history, concerns, and goals.",
               },
               {
                 step: 4,
