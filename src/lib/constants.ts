@@ -87,7 +87,7 @@ export const SERVICES = [
     name: "HOCATT Ozone Sauna",
     shortName: "HOCATT",
     description:
-      "Advanced ozone therapy sauna that delivers up to 10 therapeutic modalities in a single one-hour session - supporting detoxification, circulation, immune function, and whole-body recovery.",
+      "Advanced ozone therapy sauna that delivers up to 10 therapeutic modalities in a single 30-minute session - supporting detoxification, circulation, immune function, and whole-body recovery.",
     image: "/images/service-hocatt.jpg",
     imageAlt: "HOCATT ozone sauna therapy at Perspective Health Iowa",
   },

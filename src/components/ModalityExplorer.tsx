@@ -28,10 +28,10 @@ const modalities = [
       "Far infrared energy penetrates deep into tissues, promoting circulation, easing muscle tension, reducing inflammation, and supporting the body's natural healing processes.",
   },
   {
-    label: "Electrotherapy (TENS)",
+    label: "FSM - Frequency Specific Microcurrents",
     icon: "⚡",
     description:
-      "Transcutaneous electrical nerve stimulation helps manage pain, reduce muscle tension, and stimulate circulation - all while you relax inside the capsule.",
+      "Targeted frequencies deliver gentle electrical stimulation to support cellular processes.",
   },
   {
     label: "Aromatherapy",

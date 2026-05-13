@@ -57,7 +57,9 @@ export default function ServicesPage() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="card group overflow-hidden flex flex-col cursor-pointer"
+                className={`card group overflow-hidden flex flex-col cursor-pointer${
+                  service.slug === "thinnr" ? " md:col-span-2 md:max-w-[calc(50%-1rem)] md:mx-auto md:w-full lg:col-span-1 lg:col-start-2 lg:max-w-none" : ""
+                }`}
               >
                 {/* Image */}
                 <div className="relative h-52 overflow-hidden">

@@ -433,11 +433,11 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Experience HOCATT ozone sauna therapy in Iowa at Perspective Health. A single 30-minute session delivers up to 10 therapeutic modalities to support detox, immunity, pain relief, and recovery.",
     heroImage: "/images/service-hocatt.jpg",
-    heroImageAlt: "HOCATT ozone sauna therapy session at Perspective Health Iowa",
+    heroImageAlt: "HOCATT ozone sauna capsule at Perspective Health Iowa - clean, modern wellness suite",
     intro:
       "The HOCATT (Hyperthermic Ozone and Carbonic Acid Transdermal Technology) is the only device in the world that simultaneously delivers up to 10 evidence-informed therapeutic modalities in a single session. At Perspective Health, we use the HOCATT as a powerful tool to support detoxification, immune function, circulation, and whole-body wellness.",
     whatItIs:
-      "The HOCATT is a personal steam sauna capsule that combines transdermal ozone therapy, carbonic acid therapy, whole-body hyperthermia, far infrared energy, electrotherapy (TENS), aromatherapy, photon light therapy, ultraviolet irradiation, and pure humidified oxygen breathing into a single 30-minute session. You sit comfortably inside the capsule with your head outside, breathing pure oxygen while the combination of steam, ozone, and other modalities work synergistically to promote circulation, stimulate the immune system, support the body's natural detoxification pathways, and aid recovery.",
+      "The HOCATT is a personal steam sauna capsule that combines transdermal ozone therapy, carbonic acid therapy, whole-body hyperthermia, far infrared energy, FSM (Frequency Specific Microcurrents), aromatherapy, photon light therapy, ultraviolet irradiation, and pure humidified oxygen breathing into a single 30-minute session. You sit comfortably inside the capsule with your head outside, breathing pure oxygen while the combination of steam, ozone, and other modalities work synergistically to promote circulation, stimulate the immune system, support the body's natural detoxification pathways, and aid recovery.",
     whoItsFor: [
       "Individuals seeking whole-body detoxification and immune support",
       "Those managing chronic fatigue, low energy, or brain fog",
