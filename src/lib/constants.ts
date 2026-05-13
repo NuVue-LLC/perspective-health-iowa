@@ -167,6 +167,7 @@ export const INSURANCE_PARTNERS = [
 ];
 
 export const NAVIGATION_LINKS = [
+  { label: "Home", href: "/" },
   {
     label: "Our Services",
     href: "/services",
@@ -186,4 +187,5 @@ export const NAVIGATION_LINKS = [
     ],
   },
   { label: "Insurance", href: "/insurance" },
+  { label: "Contact Us", href: "/contact#contact-form" },
 ];
