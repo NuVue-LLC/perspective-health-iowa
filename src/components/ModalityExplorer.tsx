@@ -7,61 +7,61 @@ const modalities = [
     label: "Transdermal Ozone",
     icon: "O₃",
     description:
-      "Ozone is delivered through the skin via steam, supporting the immune system, promoting oxygen utilization, and aiding the body's natural detoxification processes.",
+      "Full-body ozone steam sauna for deep wellness support.",
   },
   {
-    label: "Carbonic Acid",
+    label: "CO₂ (Carbonic Acid)",
     icon: "CO₂",
     description:
-      "Carbonic acid therapy dilates blood vessels and increases blood flow, improving oxygen delivery to tissues. It also opens pores to enhance the absorption of ozone that follows.",
-  },
-  {
-    label: "Whole-Body Hyperthermia",
-    icon: "°F",
-    description:
-      "Controlled elevation of core body temperature stimulates immune function, increases circulation, and promotes the release of heat shock proteins that support cellular repair.",
-  },
-  {
-    label: "Far Infrared",
-    icon: "IR",
-    description:
-      "Far infrared energy penetrates deep into tissues, promoting circulation, easing muscle tension, reducing inflammation, and supporting the body's natural healing processes.",
-  },
-  {
-    label: "FSM - Frequency Specific Microcurrents",
-    icon: "⚡",
-    description:
-      "Targeted frequencies deliver gentle electrical stimulation to support cellular processes.",
-  },
-  {
-    label: "Aromatherapy",
-    icon: "✦",
-    description:
-      "Essential oils are infused into the steam to promote relaxation, support respiratory function, and enhance the overall therapeutic experience.",
-  },
-  {
-    label: "Photon Light Therapy",
-    icon: "◉",
-    description:
-      "Specific light frequencies support cellular energy production, skin health, and mood. Photon therapy works at the cellular level to promote healing and regeneration.",
-  },
-  {
-    label: "UV Irradiation",
-    icon: "UV",
-    description:
-      "Controlled ultraviolet exposure inside the capsule supports vitamin D synthesis, skin health, and has antimicrobial properties that complement the ozone therapy.",
-  },
-  {
-    label: "Oxygen Breathing",
-    icon: "O₂",
-    description:
-      "Throughout your session, you breathe pure humidified oxygen through a nasal cannula, supporting brain function, energy production, and overall cellular vitality.",
+      "Enhances ozone absorption and supports circulation.",
   },
   {
     label: "Steam Sauna",
     icon: "♨",
     description:
-      "Medical-grade steam opens pores, promotes sweating for detoxification, and serves as the delivery system for ozone and carbonic acid to penetrate the skin.",
+      "Whole body hyperthermia for core temperature elevation.",
+  },
+  {
+    label: "Far Infrared",
+    icon: "IR",
+    description:
+      "Deep-penetrating infrared warmth for enhanced vitality.",
+  },
+  {
+    label: "High-Intensity PEMF",
+    icon: "⚡",
+    description:
+      "Pulsed electromagnetic energy optimization.",
+  },
+  {
+    label: "Frequency Specific Microcurrents",
+    icon: "〰",
+    description:
+      "Targeted frequency protocols for cellular support.",
+  },
+  {
+    label: "Concentrated Oxygen Breathing",
+    icon: "O₂",
+    description:
+      "Pure oxygen inhalation during the session.",
+  },
+  {
+    label: "Essential Oil Infusions",
+    icon: "✦",
+    description:
+      "Aromatic compounds delivered via steam.",
+  },
+  {
+    label: "Photon Light & Color",
+    icon: "◉",
+    description:
+      "Full-spectrum light for photobiomodulation.",
+  },
+  {
+    label: "Ultraviolet Irradiation",
+    icon: "UV",
+    description:
+      "Natural UV energy that complements ozone's antimicrobial action.",
   },
 ];
 
