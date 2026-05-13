@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { ContactForm } from "@/components/contact/ContactForm";
+import { JotFormEmbed } from "@/components/contact/JotFormEmbed";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -79,7 +79,7 @@ export default function ContactPage() {
                     <span className="text-teal text-xs font-semibold whitespace-nowrap">Avg. reply under 4 hrs</span>
                   </div>
                 </div>
-                <ContactForm />
+                <JotFormEmbed />
               </div>
             </div>
 
