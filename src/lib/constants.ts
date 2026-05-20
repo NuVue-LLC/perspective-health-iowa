@@ -24,6 +24,7 @@ export const SITE_CONFIG = {
   },
   hocattBookingUrl:
     "https://book.squareup.com/appointments/fa4963azbg6vtb/location/LB3A4EPZZ23CA/services",
+  thinnrBookingUrl: "https://perspectivehealth.usethinnr.com/",
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61566951063111",
     instagram: "https://www.instagram.com/perspective_health_iowa/",

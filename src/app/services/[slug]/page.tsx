@@ -200,12 +200,14 @@ export default function ServicePage({ params }: Props) {
           )}
           {service.slug === "thinnr" && (
             <div className="flex flex-wrap gap-3 mt-6">
-              <Link
-                href="/contact#contact-form"
+              <a
+                href={SITE_CONFIG.thinnrBookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-teal text-base px-8 py-3.5"
               >
                 Book a Consultation
-              </Link>
+              </a>
               <a
                 href={`tel:${SITE_CONFIG.phoneRaw}`}
                 className="inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold text-white border-2 border-white/70 hover:bg-white hover:text-teal transition-all duration-200"
@@ -1370,9 +1372,14 @@ export default function ServicePage({ params }: Props) {
                     A quick consultation is the best way to find out if THINNR is right for you - no pressure, no commitment.
                   </p>
                   <div className="flex flex-wrap gap-3 justify-center">
-                    <Link href="/contact#contact-form" className="btn-teal text-base px-8 py-3">
+                    <a
+                      href={SITE_CONFIG.thinnrBookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-teal text-base px-8 py-3"
+                    >
                       Book a Consultation
-                    </Link>
+                    </a>
                     <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="btn-outline-teal text-base px-8 py-3">
                       Call {SITE_CONFIG.phone}
                     </a>
@@ -1430,12 +1437,14 @@ export default function ServicePage({ params }: Props) {
 
               {/* Inline CTA after benefits */}
               <div className="text-center mt-12">
-                <Link
-                  href="/contact#contact-form"
+                <a
+                  href={SITE_CONFIG.thinnrBookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-teal text-base px-10 py-3.5 inline-flex items-center gap-2"
                 >
                   Get Started with THINNR <ArrowRight size={16} />
-                </Link>
+                </a>
               </div>
             </div>
           </section>

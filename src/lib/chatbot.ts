@@ -138,6 +138,11 @@ function buildFaqPatterns(): FaqPattern[] {
       suggestions: ["What services do you offer?", "How do I schedule?"],
     },
     {
+      patterns: [/\b(thinnr|thinner|weight loss|glp-?1|semaglutide|ozempic|wegovy)\b/i],
+      answer: `THINNR is our medically-supervised, all-natural weight loss program - a homeopathic protocol paired with a personalized nutrition strategy, designed as a thoughtful alternative to GLP-1 medications. You can book your consultation online!\n\nBook now: ${SITE_CONFIG.thinnrBookingUrl}\n\nLearn more: /services/thinnr`,
+      suggestions: ["What services do you offer?", "How do I schedule?"],
+    },
+    {
       patterns: [/\b(telehealth|virtual|video|remote|online visit)\b/i],
       answer: `Yes! We offer telehealth for established patients. Call ${SITE_CONFIG.phone} to see if your visit qualifies.`,
       suggestions: ["How do I become a new patient?", "What are your hours?"],
@@ -385,6 +390,12 @@ The HOCATT is different from our other services - patients can book and pay onli
 - Book & pay online: ${SITE_CONFIG.hocattBookingUrl}
 - Learn more: /services/hocatt
 When someone asks about booking or paying for HOCATT, always direct them to the online links above instead of telling them to call the office.
+
+## THINNR Weight Loss Program (Online Booking)
+THINNR is a medically-supervised, all-natural weight loss program that pairs a homeopathic protocol with a personalized nutrition strategy - a thoughtful alternative to GLP-1 medications. Patients can book their consultation online directly.
+- Book consultation online: ${SITE_CONFIG.thinnrBookingUrl}
+- Learn more: /services/thinnr
+When someone asks about booking THINNR or starting the weight loss program, direct them to the online booking link above.
 
 ## New Patients - Step by Step
 1. Reach Out: Call ${SITE_CONFIG.phone}, email ${SITE_CONFIG.email}, or use our Contact page. We'll answer questions and help find the right provider.
