@@ -219,6 +219,25 @@ export default function SchemaMarkup() {
         "Digestive Health",
       ],
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Stacey Darnold",
+      "honorificSuffix": "FNP-C",
+      "jobTitle": "Family Nurse Practitioner",
+      "description":
+        "Stacey Darnold, FNP-C, is a board-certified Family Nurse Practitioner with over two decades of medical experience. She specializes in hormone management, peptide therapy, trigger point and joint injections, and therapeutic and cosmetic Botox at Perspective Health Iowa.",
+      "image": "https://perspectivehealthiowa.com/images/stacey-darnold.jpg",
+      "url": "https://perspectivehealthiowa.com/about#stacey-darnold",
+      "worksFor": {
+        "@id": "https://perspectivehealthiowa.com/#organization",
+      },
+      "medicalSpecialty": [
+        "Hormone Management",
+        "Peptide Therapy",
+        "Joint and Trigger Point Injections",
+      ],
+    },
   ];
 
   // --- WEBSITE SCHEMA ---

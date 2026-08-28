@@ -98,12 +98,17 @@ function buildFaqPatterns(): FaqPattern[] {
     {
       patterns: [/\btara\b/i],
       answer: `Tara Sayer, RN, BSN, MSCN, CNSC - 20+ years of experience specializing in digestive health, clinical nutrition, and integrative medicine.`,
+      suggestions: ["Tell me about Audrey", "Tell me about Stacey", "How do I schedule?"],
+    },
+    {
+      patterns: [/\bstacey\b/i],
+      answer: `Stacey Darnold, FNP-C - board-certified Family Nurse Practitioner with 20+ years of medical experience. She specializes in hormone and peptide management, trigger point and joint injections, and therapeutic and cosmetic Botox.`,
       suggestions: ["Tell me about Audrey", "Tell me about Stephanie", "How do I schedule?"],
     },
     {
       patterns: [/\b(providers?|doctors?|staff|team|who works|practitioners?|nurse|pa\b)/i],
       answer: `Our team:\n${providerList}\n\nWant to learn more about a specific provider?`,
-      suggestions: ["Tell me about Audrey", "Tell me about Stephanie", "Tell me about Tara"],
+      suggestions: ["Tell me about Audrey", "Tell me about Stephanie", "Tell me about Tara", "Tell me about Stacey"],
     },
 
     // --- Services (specific first, general catch-all last) ---
@@ -295,7 +300,7 @@ export function getWelcomeMessage(pathname?: string): { content: string; suggest
   if (pathname === "/about") {
     return {
       content: `Hi! You're checking out our team. Want to know more about one of our providers, or how our integrative approach works?\n\n${PRIVACY_NOTICE}`,
-      suggestions: ["Tell me about Audrey", "Tell me about Stephanie", "Tell me about Tara", "Your Approach"],
+      suggestions: ["Tell me about Audrey", "Tell me about Stephanie", "Tell me about Tara", "Tell me about Stacey", "Your Approach"],
     };
   }
 

@@ -7,7 +7,7 @@ import { CTABanner } from "@/components/home/CTABanner";
 export const metadata: Metadata = {
   title: "Our Team",
   description:
-    "Meet the Perspective Health Iowa team - Audrey Gries PA-C, Stephanie Erdmann DNP, and Tara Sayer RN. Iowa's integrative health clinic built on collaboration, compassion, and root-cause care.",
+    "Meet the Perspective Health Iowa team - Audrey Gries PA-C, Stephanie Erdmann DNP, Tara Sayer RN, and Stacey Darnold FNP-C. Iowa's integrative health clinic built on collaboration, compassion, and root-cause care.",
   openGraph: {
     title: "Our Team | Perspective Health Iowa",
     description:

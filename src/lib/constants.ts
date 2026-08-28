@@ -135,6 +135,16 @@ export const PROVIDERS = [
     imageAlt: "Tara Sayer, RN, BSN, MSCN, CNSC - Functional Medicine Practitioner at Perspective Health Iowa",
     specialty: "Digestive Health & Clinical Nutrition",
   },
+  {
+    id: "stacey-darnold",
+    name: "Stacey Darnold",
+    credentials: "FNP-C",
+    title: "Family Nurse Practitioner",
+    bio: "Stacey is a board-certified Family Nurse Practitioner with over two decades of medical experience, including emergency and trauma nursing, family practice, chronic pain management, and functional medicine. She meets patients where they are and works with them toward their most optimal life - offering compassionate, individual-focused care for new diagnoses, chronic conditions, and preventive wellness, with clinical expertise in hormone and peptide management, trigger point and joint injections, and therapeutic and cosmetic Botox.",
+    image: "/images/stacey-darnold.jpg",
+    imageAlt: "Stacey Darnold, FNP-C - Family Nurse Practitioner at Perspective Health Iowa",
+    specialty: "Hormone, Peptide & Injection Therapies",
+  },
 ];
 
 export const INSURANCE_PARTNERS = [
