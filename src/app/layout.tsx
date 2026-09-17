@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ChatWidget } from "@/components/chat/ChatWidget";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
+import SiteAnalytics from "@/components/SiteAnalytics";
 
 // Brand-guide body/heading font
 const jost = Jost({
@@ -91,6 +92,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         {process.env.NEXT_PUBLIC_CHATBOT_ENABLED === "true" && <ChatWidget />}
+        <SiteAnalytics />
       </body>
     </html>
   );
