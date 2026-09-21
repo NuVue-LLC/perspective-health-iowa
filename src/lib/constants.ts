@@ -26,6 +26,43 @@ export const SITE_CONFIG = {
     "https://book.squareup.com/appointments/fa4963azbg6vtb/location/LB3A4EPZZ23CA/services",
   thinnrBookingUrl:
     "https://book.squareup.com/appointments/fa4963azbg6vtb/location/LB3A4EPZZ23CA/services",
+  // Square checkout links for prepaid session packages (from Jess, 2026-09-21)
+  hocattPackages: [
+    {
+      name: "HOCATT 12 Session Package",
+      sessions: 12,
+      total: 1500,
+      perSession: 125,
+      bestValue: true,
+      url: "https://square.link/u/ZILbPSkE",
+    },
+    {
+      name: "HOCATT 6 Session Package",
+      sessions: 6,
+      total: 800,
+      perSession: 133,
+      bestValue: false,
+      url: "https://square.link/u/NUIyVjnX",
+    },
+  ],
+  hugoPackages: [
+    {
+      name: "HUGO PEMF 12 Session Package",
+      sessions: 12,
+      total: 800,
+      perSession: 67,
+      bestValue: true,
+      url: "https://square.link/u/y0QySsYq",
+    },
+    {
+      name: "HUGO PEMF 6 Session Package",
+      sessions: 6,
+      total: 426,
+      perSession: 71,
+      bestValue: false,
+      url: "https://square.link/u/nVZhi4EJ",
+    },
+  ],
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61566951063111",
     instagram: "https://www.instagram.com/perspective_health_iowa/",

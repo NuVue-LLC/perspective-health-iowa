@@ -913,6 +913,77 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
+              {/* Section 3.5 - White: Prepaid session packages (Square checkout) */}
+          <section id="packages" className="bg-white border-t border-gray-100">
+            <div className="section-container py-16 sm:py-20 lg:py-24">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight leading-tight mb-4">
+                  <span className="text-teal">Session</span>{" "}
+                  <span className="text-charcoal">Packages</span>
+                </h2>
+                <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                  Save on a series of sessions. Purchase a package online, then book your visits on our Square calendar. HSA and FSA funds may be eligible.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[...SITE_CONFIG.hocattPackages, ...SITE_CONFIG.hugoPackages].map((pkg) => {
+                  const isHugo = pkg.name.startsWith("HUGO");
+                  return (
+                    <div
+                      key={pkg.url}
+                      className={`relative flex flex-col rounded-3xl border p-7 shadow-sm ${
+                        isHugo ? "bg-purple/5 border-purple/20" : "bg-teal/5 border-teal/20"
+                      }`}
+                    >
+                      {pkg.bestValue && (
+                        <span
+                          className={`absolute -top-3 left-6 text-xs font-bold uppercase tracking-wider text-white px-3 py-1 rounded-full ${
+                            isHugo ? "bg-purple" : "bg-teal"
+                          }`}
+                        >
+                          Best Value
+                        </span>
+                      )}
+                      <p
+                        className={`text-xs font-semibold uppercase tracking-wider mb-2 ${
+                          isHugo ? "text-purple" : "text-teal"
+                        }`}
+                      >
+                        {isHugo ? "HUGO PEMF Only" : "HOCATT Ozone Sauna"}
+                      </p>
+                      <h3 className="text-2xl font-extrabold text-charcoal mb-1">
+                        {pkg.sessions} Sessions
+                      </h3>
+                      <p className="text-3xl font-extrabold text-charcoal mb-1">
+                        ${pkg.total.toLocaleString()}
+                      </p>
+                      <p className="text-sm text-gray-600 mb-6">
+                        ${pkg.perSession} per session
+                      </p>
+                      <a
+                        href={pkg.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`mt-auto text-center text-sm px-6 py-3 inline-block ${
+                          isHugo ? "btn-purple" : "btn-teal"
+                        }`}
+                      >
+                        Buy Package
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="text-center text-sm text-gray-500 mt-8">
+                HUGO PEMF-only sessions use the high-intensity pulsed electromagnetic field mat without the full HOCATT sauna. Not sure which is right for you? Call us at{" "}
+                <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="text-teal font-semibold hover:underline">
+                  {SITE_CONFIG.phone}
+                </a>
+                .
+              </p>
+            </div>
+          </section>
+
               {/* Section 4 - Light green: Benefits left, image right */}
           <section className="geometric-pattern-light">
             <div className="section-container py-16 sm:py-20 lg:py-24">
