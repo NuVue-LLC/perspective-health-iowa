@@ -1419,6 +1419,85 @@ export default function ServicePage({ params }: Props) {
             </div>
           </section>
 
+          {/* Section 3.5 - White: Patient story (Dot's testimonial, used with written permission) */}
+          <section className="bg-white">
+            <div className="section-container py-16 sm:py-20 lg:py-24">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-center mb-12">
+                  <p className="text-teal text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+                    Patient Story
+                  </p>
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-tight">
+                    <span className="text-teal">&ldquo;This Is</span>{" "}
+                    <span className="text-charcoal">The Place!&rdquo;</span>
+                  </h2>
+                </div>
+
+                <div className="grid grid-cols-3 gap-3 sm:gap-5 mb-10">
+                  {[
+                    { value: "28", unit: "lbs", label: "Lost so far" },
+                    { value: "14+", unit: "in", label: "Inches lost" },
+                    { value: "67", unit: "", label: "Years young" },
+                  ].map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-2xl bg-gradient-to-br from-teal/10 via-white to-purple/5 border border-teal/20 p-4 sm:p-8 text-center"
+                    >
+                      <p className="font-extrabold text-charcoal leading-none text-4xl sm:text-6xl lg:text-7xl">
+                        {stat.value}
+                        {stat.unit && (
+                          <span className="text-teal text-lg sm:text-2xl lg:text-3xl font-bold ml-1">
+                            {stat.unit}
+                          </span>
+                        )}
+                      </p>
+                      <p className="text-gray-500 text-xs sm:text-sm uppercase tracking-wider mt-3">
+                        {stat.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <figure className="relative bg-white rounded-3xl p-7 sm:p-10 shadow-md border-l-4 border-teal">
+                  <Quote size={36} className="text-teal/30 mb-4" />
+                  <blockquote className="space-y-4 text-charcoal text-base sm:text-lg leading-relaxed">
+                    <p>
+                      I am 67 and have been told for many years I am obese. I am 5&apos;6&quot; and
+                      weighed in at 215. I have tried many diets and other items only to have the
+                      &ldquo;yo-yo&rdquo; effect. I started going to Perspective Health for whole
+                      body care. I wanted to be seen and listened to.{" "}
+                      <strong className="text-teal">THIS IS THE PLACE!</strong> I was introduced
+                      to THINNR. I was skeptical, but hey, what did I have to lose besides time
+                      and hopefully weight.
+                    </p>
+                    <p>
+                      Today I am 187 lbs. and I have lost over 14 inches.{" "}
+                      <strong className="text-teal">I feel fantastic!!</strong> I have had
+                      guidance and support every step along the way. This program helps you learn
+                      better habits and is always uplifting when you feel like you&apos;re not
+                      doing your best. Love the program, the support, and Perspective Health and
+                      THINNR have been with me every step of the way.
+                    </p>
+                  </blockquote>
+                  <figcaption className="mt-6 flex items-center gap-3">
+                    <div className="w-11 h-11 rounded-full bg-teal flex items-center justify-center text-white font-bold flex-shrink-0">
+                      D
+                    </div>
+                    <div>
+                      <p className="font-semibold text-charcoal">Dot D.</p>
+                      <p className="text-gray-500 text-sm">THINNR patient, Perspective Health</p>
+                    </div>
+                  </figcaption>
+                </figure>
+
+                <p className="text-gray-400 text-xs italic text-center mt-5 max-w-2xl mx-auto">
+                  Shared with the patient&apos;s permission. Individual results vary and depend on
+                  each person&apos;s health history, adherence, and provider guidance.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* Section 4 - White: Interactive self-check (Who it's for) */}
           <section className="bg-white">
             <div className="section-container py-16 sm:py-20 lg:py-24">

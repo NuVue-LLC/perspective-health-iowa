@@ -445,9 +445,10 @@ Our Approach Pillars:
 
 ## Reviews
 We have a ${SITE_CONFIG.googleReviews.rating}-star rating on Google with ${SITE_CONFIG.googleReviews.count} reviews. Sample testimonials:
-- "I've never felt so heard by a healthcare provider. Audrey really took the time to go through my history and we came up with a real plan. My hormones are finally balanced and I feel like myself again." - Jennifer M.
-- "After years of being told my labs were 'normal' while I felt terrible, Stephanie actually dug deeper. She found the root cause of my fatigue and I have more energy than I've had in a decade." - Robert K.
-- "Tara completely changed how I think about nutrition and gut health. Her knowledge and genuine care for her patients is exceptional." - Sarah L.
+- "I have NEVER met a more caring, thorough doctor than Audrey. She cares and is devoted to making sure your concerns are heard and looked into." - Megan S. (Google)
+- "Stephanie was incredibly understanding, thorough, and took the time to really listen to my concerns. I felt heard and supported throughout my visit." - Amy U. (Google)
+- "The motto here is 'Be Seen' and they truly do see you as a person! I have never felt so heard than at any other medical practice." - Alexa S. (Google)
+- THINNR patient story: Dot D., 67, went from 215 to 187 lbs and lost over 14 inches. "I wanted to be seen and listened to. THIS IS THE PLACE! ... I have had guidance and support every step along the way." Individual results vary. Her full story is on the THINNR page.
 
 ## YOU CAN Help With
 - Clinic hours (Mon/Tue/Thu/Fri 8AM-5PM, Wed 8AM-12PM)
