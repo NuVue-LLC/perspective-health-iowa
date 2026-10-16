@@ -146,6 +146,15 @@ export const SERVICES = [
     image: "/images/service-thinnr.jpg",
     imageAlt: "THINNR medically-supervised weight loss program at Perspective Health Iowa",
   },
+  {
+    slug: "peptide-therapy",
+    name: "Peptide Therapy",
+    shortName: "Peptides",
+    description:
+      "Provider-guided peptide therapy through virtual visits with Stacey Darnold, FNP-C, built around your goals, health history, and labs.",
+    image: "/images/hero-services.jpg",
+    imageAlt: "Peptide therapy at Perspective Health Iowa",
+  },
 ];
 
 export const PROVIDERS = [

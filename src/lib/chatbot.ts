@@ -143,6 +143,11 @@ function buildFaqPatterns(): FaqPattern[] {
       suggestions: ["What services do you offer?", "How do I schedule?"],
     },
     {
+      patterns: [/\b(peptides?|bpc-?157|sermorelin|ipamorelin|tb-?500|cjc-?1295)\b/i],
+      answer: `We offer provider-guided peptide therapy through virtual visits with Stacey Darnold, FNP-C, for adults located in Iowa. Whether a specific peptide is right for you depends on your health and labs, so call ${SITE_CONFIG.phone} or email ${SITE_CONFIG.email} to request a consultation.\n\nLearn more: /services/peptide-therapy`,
+      suggestions: ["Tell me about Stacey", "How do I schedule?"],
+    },
+    {
       patterns: [/\b(thinnr|thinner|weight loss|glp-?1|semaglutide|ozempic|wegovy)\b/i],
       answer: `THINNR is our medically-supervised, all-natural weight loss program - a homeopathic protocol paired with a personalized nutrition strategy, designed as a thoughtful alternative to GLP-1 medications. You can book your consultation online!\n\nBook now: ${SITE_CONFIG.thinnrBookingUrl}\n\nLearn more: /services/thinnr`,
       suggestions: ["What services do you offer?", "How do I schedule?"],
@@ -403,6 +408,11 @@ THINNR is a medically-supervised, all-natural weight loss program that pairs a h
 - Book consultation online: ${SITE_CONFIG.thinnrBookingUrl}
 - Learn more: /services/thinnr
 When someone asks about booking THINNR or starting the weight loss program, direct them to the online booking link above.
+
+## Peptide Therapy (Virtual, with Stacey)
+Peptide therapy is offered through virtual visits with Stacey Darnold, FNP-C, for adults who are physically located in Iowa at the time of the visit. Patients request a consultation by calling ${SITE_CONFIG.phone} or emailing ${SITE_CONFIG.email}.
+- Learn more: /services/peptide-therapy
+Never name, recommend, or describe the effects of any specific peptide, and never say a peptide treats, cures, or prevents anything. If someone asks about a specific peptide, say Stacey can discuss whether it is appropriate during a consultation.
 
 ## New Patients - Step by Step
 1. Reach Out: Call ${SITE_CONFIG.phone}, email ${SITE_CONFIG.email}, or use our Contact page. We'll answer questions and help find the right provider.
