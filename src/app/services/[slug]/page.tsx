@@ -925,6 +925,68 @@ export default function ServicePage({ params }: Props) {
                   Save on a series of sessions. Purchase a package online, then book your visits on our Square calendar. HSA and FSA funds may be eligible.
                 </p>
               </div>
+
+              {/* HOCATT Monthly Plan - featured membership */}
+              <div className="relative mb-8 rounded-3xl bg-gradient-to-br from-teal/15 via-teal/5 to-purple/10 border-2 border-teal/30 p-7 sm:p-10 shadow-sm">
+                <span className="absolute -top-3 left-6 sm:left-10 text-xs font-bold uppercase tracking-wider text-white px-3 py-1 rounded-full bg-purple">
+                  New
+                </span>
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                  <div className="lg:col-span-2 text-center lg:text-left">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-teal mb-2">
+                      HOCATT Monthly Plan
+                    </p>
+                    <p className="font-extrabold text-charcoal leading-none text-5xl sm:text-6xl">
+                      ${SITE_CONFIG.hocattMonthlyPlan.price}
+                      <span className="text-teal text-2xl sm:text-3xl font-bold">/month</span>
+                    </p>
+                    <p className="text-purple font-bold uppercase tracking-wide mt-3">
+                      Up to {SITE_CONFIG.hocattMonthlyPlan.sessions} HOCATT sessions
+                    </p>
+                    <p className="text-gray-600 text-sm mt-1">
+                      About $
+                      {Math.round(SITE_CONFIG.hocattMonthlyPlan.price / SITE_CONFIG.hocattMonthlyPlan.sessions)}{" "}
+                      per session. Make wellness part of your routine.
+                    </p>
+                  </div>
+                  <ul className="lg:col-span-2 space-y-3 text-sm text-gray-700">
+                    <li>
+                      <span className="font-semibold text-charcoal">Use your sessions within the month.</span>{" "}
+                      Book visits any time that month, subject to availability. Unused sessions expire at month-end and do not roll over.
+                    </li>
+                    <li>
+                      <span className="font-semibold text-charcoal">Simple monthly renewal.</span>{" "}
+                      Renews automatically at ${SITE_CONFIG.hocattMonthlyPlan.price}/month on your payment method on file.
+                    </li>
+                    <li>
+                      <span className="font-semibold text-charcoal">Cancel by month-end.</span>{" "}
+                      Let us know by the last day of the month, otherwise the plan renews for the following month.
+                    </li>
+                  </ul>
+                  <div className="flex flex-col gap-3">
+                    {SITE_CONFIG.hocattMonthlyPlan.signupUrl ? (
+                      <a
+                        href={SITE_CONFIG.hocattMonthlyPlan.signupUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-teal text-center text-sm px-6 py-3"
+                      >
+                        Start My Plan
+                      </a>
+                    ) : (
+                      <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="btn-teal text-center text-sm px-6 py-3">
+                        Call to Join
+                      </a>
+                    )}
+                    <a
+                      href={`mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent("HOCATT Monthly Plan")}`}
+                      className="btn-outline-teal text-center text-sm px-6 py-3"
+                    >
+                      Email Us
+                    </a>
+                  </div>
+                </div>
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[...SITE_CONFIG.hocattPackages, ...SITE_CONFIG.hugoPackages].map((pkg) => {
                   const isHugo = pkg.name.startsWith("HUGO");

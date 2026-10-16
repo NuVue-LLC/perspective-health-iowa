@@ -395,6 +395,7 @@ The HOCATT is different from our other services - patients can book and pay onli
 - Book & pay online: ${SITE_CONFIG.hocattBookingUrl}
 - Learn more: /services/hocatt
 - Prepaid packages (HOCATT 6 or 12 sessions, and HUGO PEMF-only 6 or 12 sessions) are listed with prices at /services/hocatt#packages
+- HOCATT Monthly Plan: $${SITE_CONFIG.hocattMonthlyPlan.price}/month for up to ${SITE_CONFIG.hocattMonthlyPlan.sessions} sessions, auto-renews monthly, unused sessions expire at month-end, cancel by the last day of the month. To join, call ${SITE_CONFIG.phone} or email ${SITE_CONFIG.email}. Details at /services/hocatt#packages
 When someone asks about booking or paying for HOCATT, always direct them to the online links above instead of telling them to call the office. When someone asks about HOCATT or HUGO package pricing, send them to /services/hocatt#packages rather than quoting numbers yourself.
 
 ## THINNR Weight Loss Program (Online Booking)

@@ -45,6 +45,13 @@ export const SITE_CONFIG = {
       url: "https://square.link/u/NUIyVjnX",
     },
   ],
+  // HOCATT monthly membership (from Jess's flyer, 2026-10-16). Sign-up is by
+  // phone/email until there's a Square subscription link; set signupUrl then.
+  hocattMonthlyPlan: {
+    price: 395,
+    sessions: 4,
+    signupUrl: null as string | null,
+  },
   hugoPackages: [
     {
       name: "HUGO PEMF 12 Session Package",
