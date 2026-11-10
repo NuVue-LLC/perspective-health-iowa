@@ -140,8 +140,19 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="section-container py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
-          <p>
+          <p className="text-center sm:text-left">
             &copy; {currentYear} Perspective Health Iowa. All rights reserved.
+            <span className="block sm:inline sm:ml-3 mt-1 sm:mt-0">
+              Powered by{" "}
+              <a
+                href="https://nuvuepro.com"
+                target="_blank"
+                rel="noopener"
+                className="text-gray-400 font-semibold hover:text-teal transition-colors"
+              >
+                NuVue
+              </a>
+            </span>
           </p>
           <div className="flex items-center gap-4">
             <Link
