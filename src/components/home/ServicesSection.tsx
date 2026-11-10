@@ -20,14 +20,12 @@ export function ServicesSection() {
         </div>
 
         {/* 3-column service grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="flex flex-wrap justify-center gap-5">
           {SERVICES.map((service) => (
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className={`service-card group block h-48 sm:h-56${
-                service.slug === "thinnr" ? " sm:col-span-2 sm:max-w-[calc(50%-0.625rem)] sm:mx-auto sm:w-full lg:col-span-1 lg:col-start-2 lg:max-w-none" : ""
-              }`}
+              className="service-card group block h-48 sm:h-56 w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.834rem)]"
             >
               {/* Image */}
               <Image

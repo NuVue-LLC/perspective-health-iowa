@@ -155,6 +155,13 @@ export default function SchemaMarkup() {
             "Additional integrative wellness services including advanced testing and tailored treatments.",
           "url": "https://perspectivehealthiowa.com/services/supplementary-services",
         },
+        {
+          "@type": "MedicalTherapy",
+          "name": "Peptide Therapy",
+          "description":
+            "Provider-guided peptide therapy with Stacey Darnold, FNP-C, including virtual consultations for adults in Iowa.",
+          "url": "https://perspectivehealthiowa.com/services/peptide-therapy",
+        },
       ],
     },
   };

@@ -12,10 +12,6 @@ import {
   FlaskConical,
   Pill,
   Quote,
-  ShieldCheck,
-  Video,
-  Mail,
-  Phone,
 } from "lucide-react";
 
 // Maps a primary-care accordion title to a Lucide icon. Lookup is case-insensitive
@@ -33,7 +29,7 @@ import {
   getServiceBySlug,
   getAllServiceSlugs,
 } from "@/lib/services-data";
-import { SERVICES, SITE_CONFIG, PROVIDERS } from "@/lib/constants";
+import { SERVICES, SITE_CONFIG } from "@/lib/constants";
 import { MedicalServiceSchema } from "@/components/seo/MedicalServiceSchema";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import SymptomExplorer from "@/components/SymptomExplorer";
@@ -41,6 +37,7 @@ import ModalityExplorer from "@/components/ModalityExplorer";
 import ThinnrPillarExplorer from "@/components/ThinnrPillarExplorer";
 import ThinnrTimeline from "@/components/ThinnrTimeline";
 import ThinnrSelfCheck from "@/components/ThinnrSelfCheck";
+import PeptideTherapyContent from "@/components/services/PeptideTherapyContent";
 import { CTABanner } from "@/components/home/CTABanner";
 import {
   Stethoscope as StethoscopeIcon,
@@ -62,11 +59,18 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getServiceBySlug(params.slug);
   if (!service) return {};
+  const ogTitle =
+    service.metaTitle ?? `${service.headline} | Perspective Health Iowa`;
   return {
-    title: service.headline,
+    title: service.metaTitle
+      ? { absolute: service.metaTitle }
+      : service.headline,
     description: service.metaDescription,
+    alternates: service.metaTitle
+      ? { canonical: `/services/${service.slug}` }
+      : undefined,
     openGraph: {
-      title: `${service.headline} | Perspective Health Iowa`,
+      title: ogTitle,
       description: service.metaDescription,
       images: [{ url: service.heroImage, alt: service.heroImageAlt }],
     },
@@ -151,10 +155,9 @@ export default function ServicePage({ params }: Props) {
     },
     "peptide-therapy": {
       heading: "Curious Whether Peptides Are Right for You?",
-      subtext: "Call or email us to request a virtual consultation with Stacey.",
+      subtext: "Request a virtual consultation with Stacey Darnold, FNP-C.",
     },
   };
-  const stacey = PROVIDERS.find((p) => p.id === "stacey-darnold");
   // Heroes with a button row need extra height so the script line clears the header.
   const hasHeroButtons = ["thinnr", "peptide-therapy"].includes(service.slug);
   const ctaProps = ctaMap[service.slug] || {};
@@ -231,20 +234,20 @@ export default function ServicePage({ params }: Props) {
               </a>
             </div>
           )}
-          {/* Booking link is TBD from Jess, so phone + email for now */}
+          {/* Booking link is TBD from the clinic, so contact form + phone for now */}
           {service.slug === "peptide-therapy" && (
             <div className="flex flex-wrap gap-3 mt-6">
-              <a
-                href={`tel:${SITE_CONFIG.phoneRaw}`}
+              <Link
+                href="/contact#contact-form"
                 className="btn-teal text-base px-8 py-3.5"
               >
-                Call {SITE_CONFIG.phone}
-              </a>
+                Request a Consultation
+              </Link>
               <a
-                href={`mailto:${SITE_CONFIG.email}?subject=Peptide%20therapy%20consultation`}
+                href={`tel:${SITE_CONFIG.phoneRaw}`}
                 className="inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold text-white border-2 border-white/70 hover:bg-white hover:text-teal transition-all duration-200"
               >
-                Email Us
+                Call {SITE_CONFIG.phone}
               </a>
             </div>
           )}
@@ -1775,258 +1778,11 @@ export default function ServicePage({ params }: Props) {
           </section>
         </article>
       ) : service.slug === "peptide-therapy" ? (
-        /* ── Peptide Therapy layout ── */
-        <article>
-          {/* Section 1 - White: Big centered headline + image left, intro right */}
-          <section className="bg-white">
-            <div className="section-container py-16 sm:py-20 lg:py-24">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-center mb-16 leading-tight">
-                <span className="text-teal">Peptide Therapy,</span>{" "}
-                <span className="text-charcoal">Guided by a Provider</span>
-              </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg w-full">
-                  <Image
-                    src={firstBelow.src}
-                    alt={firstBelow.alt}
-                    fill
-                    quality={85}
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-                <div className="flex flex-col justify-center">
-                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                    {service.intro}
-                  </p>
-                  <p className="text-gray-600 leading-relaxed">
-                    {service.whatItIs}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Section 2 - Green: How a virtual visit works */}
-          <section className="geometric-pattern-green">
-            <div className="section-container py-16 sm:py-20 lg:py-24 relative z-10">
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/15 mb-5">
-                  <Video size={28} className="text-white" />
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white leading-tight mb-4">
-                  How a Virtual Visit Works
-                </h2>
-                <p className="text-white/80 text-lg max-w-2xl mx-auto">
-                  Peptide consultations happen by secure video, so you can meet
-                  with Stacey from home, anywhere in Iowa.
-                </p>
-              </div>
-              <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
-                {service.whatToExpect.map((step, i) => (
-                  <li
-                    key={i}
-                    className="bg-white rounded-2xl p-6 shadow-lg flex items-start gap-4"
-                  >
-                    <span className="flex-shrink-0 w-9 h-9 rounded-full bg-purple text-white text-sm font-bold flex items-center justify-center">
-                      {i + 1}
-                    </span>
-                    <span className="text-gray-700 leading-relaxed">{step}</span>
-                  </li>
-                ))}
-              </ol>
-              <p className="text-white/80 text-sm text-center mt-10 max-w-2xl mx-auto">
-                You must be physically located in Iowa at the time of each
-                virtual visit.
-              </p>
-            </div>
-          </section>
-
-          {/* Section 3 - White: Meet your provider */}
-          {stacey && (
-            <section className="bg-white">
-              <div className="section-container py-16 sm:py-20 lg:py-24">
-                <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-center max-w-5xl mx-auto">
-                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lg w-full max-w-sm mx-auto">
-                    <Image
-                      src={stacey.image}
-                      alt={stacey.imageAlt}
-                      fill
-                      quality={85}
-                      className="object-cover object-top"
-                      sizes="(max-width: 1024px) 100vw, 40vw"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-teal text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] mb-3">
-                      Meet Your Provider
-                    </p>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-charcoal leading-tight mb-2">
-                      {stacey.name},{" "}
-                      <span className="whitespace-nowrap">{stacey.credentials}</span>
-                    </h2>
-                    <p className="text-gray-500 mb-6">{stacey.title}</p>
-                    <p className="text-gray-600 leading-relaxed mb-6">
-                      {stacey.bio}
-                    </p>
-                    <Link
-                      href={`/about#${stacey.id}`}
-                      className="inline-flex items-center gap-1.5 text-teal font-semibold hover:underline"
-                    >
-                      Meet the rest of our team <ArrowRight size={16} />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* Section 4 - Light green: Who it's for + our approach */}
-          <section className="geometric-pattern-light">
-            <div className="section-container py-16 sm:py-20 lg:py-24">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-7">
-                  <h2 className="text-2xl font-extrabold uppercase tracking-tight text-charcoal mb-6">
-                    Who It&apos;s For
-                  </h2>
-                  <div className="space-y-3">
-                    {service.whoItsFor.map((item, i) => (
-                      <div
-                        key={i}
-                        className="flex items-start gap-3 bg-sage/30 rounded-xl p-4"
-                      >
-                        <CheckCircle size={16} className="text-teal flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-7">
-                  <h2 className="text-2xl font-extrabold uppercase tracking-tight text-charcoal mb-6">
-                    Our Approach
-                  </h2>
-                  <div className="space-y-3">
-                    {service.benefits.map((item, i) => (
-                      <div
-                        key={i}
-                        className="flex items-start gap-3 bg-purple/5 rounded-xl p-4"
-                      >
-                        <div className="w-2 h-2 rounded-full bg-purple mt-2 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Section 5 - White: Safety & eligibility */}
-          {service.safetyNotes && (
-            <section className="bg-white" id="safety">
-              <div className="section-container py-16 sm:py-20 lg:py-24">
-                <div className="max-w-4xl mx-auto bg-teal/5 border border-teal/20 rounded-3xl p-8 sm:p-10 relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-1.5 h-full bg-teal" />
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
-                      <ShieldCheck size={26} className="text-teal" />
-                    </div>
-                    <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-charcoal">
-                      Safety &amp; Eligibility
-                    </h2>
-                  </div>
-                  <ul className="space-y-4">
-                    {service.safetyNotes.map((note, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <CheckCircle size={18} className="text-teal flex-shrink-0 mt-1" />
-                        <span className="text-gray-700 leading-relaxed">{note}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-gray-500 text-sm italic mt-8">
-                    Individual results vary. Peptide therapy is one part of a
-                    broader care plan, not a cure or a quick fix, and is only
-                    prescribed when your provider believes it is appropriate
-                    for you.
-                  </p>
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* Section 6 - FAQs + related */}
-          <section className="bg-white border-t border-gray-200">
-            <div className="section-container py-16 sm:py-20 lg:py-24">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-center leading-tight mb-10">
-                  <span className="text-teal">Peptide Therapy</span>{" "}
-                  <span className="text-charcoal">Questions</span>
-                </h2>
-                <div className="space-y-3">
-                  {service.faqs.map((faq, i) => (
-                    <details
-                      key={i}
-                      className="group border border-gray-200 rounded-xl hover:border-teal/30 transition-colors"
-                    >
-                      <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-charcoal list-none [&::-webkit-details-marker]:hidden">
-                        {faq.question}
-                        <ChevronDown
-                          size={20}
-                          className="text-teal flex-shrink-0 ml-4 transition-transform duration-300 group-open:rotate-180"
-                        />
-                      </summary>
-                      <div className="px-6 pb-6 pt-0">
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </details>
-                  ))}
-                </div>
-
-                <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
-                  <a
-                    href={`tel:${SITE_CONFIG.phoneRaw}`}
-                    className="btn-teal px-7 py-3 inline-flex items-center gap-2"
-                  >
-                    <Phone size={16} />
-                    Call {SITE_CONFIG.phone}
-                  </a>
-                  <a
-                    href={`mailto:${SITE_CONFIG.email}?subject=Peptide%20therapy%20consultation`}
-                    className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-teal border-2 border-teal hover:bg-teal hover:text-white transition-colors"
-                  >
-                    <Mail size={16} />
-                    {SITE_CONFIG.email}
-                  </a>
-                </div>
-              </div>
-
-              {relatedServices.length > 0 && (
-                <section className="mt-20">
-                  <h2 className="text-2xl font-bold text-charcoal mb-6">
-                    Related Services
-                  </h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                    {relatedServices.map((related) => related && (
-                      <Link key={related.slug} href={`/services/${related.slug}`} className="group rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md hover:border-teal/40 transition-all">
-                        <div className="relative h-40 overflow-hidden">
-                          <Image src={related.image} alt={related.imageAlt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 33vw" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 to-transparent" />
-                        </div>
-                        <div className="p-5">
-                          <h3 className="font-bold text-charcoal group-hover:text-teal transition-colors mb-2">{related.name}</h3>
-                          <p className="text-gray-500 text-sm mb-3 line-clamp-2">{related.description}</p>
-                          <span className="inline-flex items-center gap-1.5 text-teal text-sm font-semibold">Learn more <ArrowRight size={14} /></span>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </section>
-              )}
-            </div>
-          </section>
-        </article>
+        <PeptideTherapyContent
+          service={service}
+          relatedServices={relatedServices}
+          introImage={firstBelow}
+        />
       ) : (
         /* ── Original layout (all other services) ── */
         <article className="section-padding bg-white">

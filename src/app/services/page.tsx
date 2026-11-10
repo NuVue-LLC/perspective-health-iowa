@@ -8,7 +8,7 @@ import { CTABanner } from "@/components/home/CTABanner";
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Explore integrative health services at Perspective Health Iowa - comprehensive primary care, hormone health, functional medicine, digestive & metabolic health, and supplementary services.",
+    "Explore integrative health services at Perspective Health Iowa - comprehensive primary care, hormone health, functional medicine, digestive & metabolic health, peptide therapy, HOCATT, and THINNR.",
   openGraph: {
     title: "Our Services | Perspective Health Iowa",
     description:
@@ -52,14 +52,12 @@ export default function ServicesPage() {
       {/* Services grid */}
       <section className="section-padding bg-white">
         <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {SERVICES.map((service, idx) => (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className={`card group overflow-hidden flex flex-col cursor-pointer${
-                  service.slug === "thinnr" ? " md:col-span-2 md:max-w-[calc(50%-1rem)] md:mx-auto md:w-full lg:col-span-1 lg:col-start-2 lg:max-w-none" : ""
-                }`}
+                className="card group overflow-hidden flex flex-col cursor-pointer w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]"
               >
                 {/* Image */}
                 <div className="relative h-52 overflow-hidden">

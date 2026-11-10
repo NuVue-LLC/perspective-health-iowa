@@ -2,6 +2,8 @@ export interface ServiceData {
   slug: string;
   name: string;
   headline: string;
+  /** Full <title> override. When set it is used as-is (no site suffix). */
+  metaTitle?: string;
   heroScript: string;
   heroSubtitle: string;
   metaDescription: string;
@@ -593,37 +595,42 @@ export const servicesData: ServiceData[] = [
     ],
   },
   {
-    // Copy is deliberately generic: no specific peptides are named as
-    // treatments and benefits describe the care model, not drug outcomes.
-    // See docs/peptide-marketing-research.md before adding claims or names.
+    // WORDING RULES for this entry (see docs/peptide-marketing-research.md):
+    // - No specific peptide is named, priced, or described as a treatment.
+    // - Nothing says a peptide treats, cures, heals, reverses, or prevents
+    //   anything, and nothing promises a result or a timeline.
+    // - Goals are described as what patients ask about, never as outcomes.
+    // - Compounded medications are always described as not FDA-approved.
+    // - Facts about Stacey come from her clinic intro sheet (Aug 2026).
     slug: "peptide-therapy",
     name: "Peptide Therapy",
-    headline: "Peptide Therapy",
+    headline: "Peptide Therapy in Urbandale & Des Moines",
+    metaTitle: "Peptide Therapy Des Moines & Urbandale, IA | Perspective Health",
     heroScript: "Provider-Guided Care",
     heroSubtitle:
-      "Virtual peptide therapy consultations with Stacey Darnold, FNP-C, for adults in Iowa who want a thoughtful, medically supervised approach to wellness.",
+      "Peptide solutions prescribed and monitored by Stacey Darnold, FNP-C, a board-certified nurse practitioner with over two decades in medicine. Visits are by secure video for adults anywhere in Iowa.",
     metaDescription:
-      "Provider-guided peptide therapy in the Des Moines area. Virtual visits with Stacey Darnold, FNP-C, at Perspective Health Iowa, with labs and follow-up care.",
+      "Provider-guided peptide therapy in Urbandale and the Des Moines metro with Stacey Darnold, FNP-C. Virtual visits across Iowa, labs, and follow-up care.",
     heroImage: "/images/hero-services.jpg",
-    heroImageAlt: "Smiling woman outdoors in warm sunlight, enjoying healthy aging",
+    heroImageAlt: "Smiling woman outdoors in warm evening sunlight",
     intro:
-      "Peptides are short chains of amino acids, the same building blocks your body uses to make proteins. Your body already makes many peptides that act as messengers between cells. Peptide therapy uses specific, prescribed peptides as one part of a personalized care plan, always guided by a licensed provider who knows your health history.",
+      "Peptides are short chains of amino acids, the same building blocks your body uses to make proteins. Your body already makes many of them, and they act as messengers between cells. Peptide therapy uses specific prescribed peptides as one part of a personal care plan, guided by a licensed provider who knows your health history.",
     whatItIs:
-      "At Perspective Health, peptide therapy is not a product you add to a cart. It is a prescription option that Stacey Darnold, FNP-C, may recommend after a careful review of your history, medications, goals, and labs. Depending on your needs, a plan may focus on areas like energy and vitality, healthy aging, body composition, recovery, or sexual wellness. Peptides are one tool among many, and we pair them with the nutrition, lifestyle, hormone, and lab-guided care our clinic is known for.",
+      "At Perspective Health, peptide therapy is not a product you add to a cart. It is a prescription option that Stacey Darnold, FNP-C, may recommend after reviewing your history, medications, goals, and labs. Stacey starts with what you want to change, then decides with you whether a peptide, a different treatment, or no prescription at all is the right next step.",
     whoItsFor: [
-      "Adults 21 and older who are physically located in Iowa and want the convenience of a virtual visit",
-      "People interested in support for energy, recovery, healthy aging, or body composition goals",
-      "Anyone who wants peptides prescribed and monitored by a licensed provider instead of bought online",
+      "Adults who are physically located in Iowa and want the convenience of a virtual visit",
+      "People who have been reading about peptides and want a licensed provider to sort out what applies to them",
+      "Anyone who wants peptides prescribed and monitored instead of bought online",
       "Current Perspective Health patients who want to explore adding peptides to an existing care plan",
-      "Anyone curious about peptides who wants straight answers before deciding",
+      "Anyone who wants straight answers before deciding, including whether peptides are a fit at all",
     ],
     whatToExpect: [
-      "Call or email our office to request a virtual peptide consultation with Stacey",
+      "Call us or send a message to request a peptide consultation with Stacey",
       "Complete your intake forms, including health history, current medications, and goals",
       "Meet with Stacey by secure video from anywhere in Iowa to talk through your goals and options",
-      "Get lab work if needed, so we can confirm a peptide is safe and appropriate for you",
-      "If peptides are a fit, receive a personalized plan with clear instructions, including at-home injection training when needed",
-      "Check in at scheduled follow-ups so we can monitor how you feel and adjust your plan",
+      "Get lab work if Stacey needs it to decide whether a peptide is appropriate for you",
+      "If a peptide is a fit, receive a personal plan with clear instructions, including at-home injection training when needed",
+      "Check in at scheduled follow-ups so Stacey can review how you are doing and adjust or stop the plan",
     ],
     benefits: [
       "A plan built around your goals, health history, and lab results",
@@ -638,18 +645,33 @@ export const servicesData: ServiceData[] = [
       "Some peptides are prepared by licensed compounding pharmacies. Compounded medications are not FDA-approved, which means the FDA has not reviewed them for safety, effectiveness, or quality. Stacey will explain the status of anything she prescribes.",
       "We never sell peptides without a visit, and we never use products labeled “for research use only.”",
       "Virtual visits are available to patients who are physically located in Iowa at the time of the visit.",
-      "Like any prescription, peptides can have side effects. Your plan includes follow-up visits so we can monitor how you respond.",
+      "Like any prescription, peptides can have side effects. Your plan includes follow-up visits so Stacey can monitor how you respond.",
     ],
     faqs: [
       {
-        question: "What are peptides?",
+        question: "What is peptide therapy?",
         answer:
-          "Peptides are short chains of amino acids. Your body naturally makes many of them, and they act as signals that help regulate processes throughout the body. Prescribed peptides are designed to support specific goals as part of a provider-guided plan.",
+          "Peptides are short chains of amino acids. Your body naturally makes many of them, and they act as signals between cells. Peptide therapy is the use of specific prescribed peptides as one part of a care plan that a licensed provider builds around your health history, goals, and labs.",
+      },
+      {
+        question: "Who prescribes peptides at Perspective Health?",
+        answer:
+          "Stacey Darnold, FNP-C. Stacey is a board-certified Family Nurse Practitioner with over two decades of medical experience, including eight years in advanced practice. Her background includes emergency and trauma nursing, family practice, chronic pain management, and functional medicine.",
+      },
+      {
+        question: "Where can I get peptide therapy near Des Moines?",
+        answer:
+          "Perspective Health Iowa is located at 8860 Northpark Dr., Suite 200, in Urbandale, and serves the Des Moines metro. Peptide consultations with Stacey are held by secure video, so adults anywhere in Iowa can be seen without driving to the clinic.",
       },
       {
         question: "Are peptides FDA-approved?",
         answer:
-          "Some are. Several peptide-based medications are FDA-approved for specific uses. Others are only available from licensed compounding pharmacies, and compounded medications are not FDA-approved. FDA rules on which peptides pharmacies may compound have been changing, and we follow them. During your visit, Stacey will tell you exactly what she recommends, why, and its regulatory status.",
+          "Some are. Several peptide medications are FDA-approved for specific uses. Others are available only from licensed compounding pharmacies, and compounded medications are not FDA-approved, which means the FDA has not reviewed them for safety, effectiveness, or quality. Federal policy on which peptides pharmacies may compound has been changing, and we follow it. During your visit, Stacey will tell you exactly what she recommends, why, and its regulatory status.",
+      },
+      {
+        question: "Which peptides do you offer?",
+        answer:
+          "We don't list specific peptides online, because the right option depends on your health, goals, and labs, and because availability depends on current FDA policy and pharmacy supply. If you are asking about a specific peptide, call or message us and we will let you know whether it is something Stacey can consider.",
       },
       {
         question: "Do I need to come into the clinic?",
@@ -657,24 +679,29 @@ export const servicesData: ServiceData[] = [
           "No. Peptide consultations with Stacey are virtual. You do need to be physically located in Iowa during each visit. If you need lab work, we will help you arrange it.",
       },
       {
-        question: "Which peptides do you offer?",
-        answer:
-          "We don't list specific peptides online, because the right option depends on your health, goals, and labs, and because availability depends on current FDA rules and pharmacy supply. If you are asking about a specific peptide, call or email us and we will let you know whether it is something Stacey can consider.",
-      },
-      {
         question: "How are peptides taken?",
         answer:
-          "Many peptides are given as small injections under the skin that you do at home, and some come in other forms. If your plan includes injections, we will walk you through exactly how to do them safely.",
+          "Many peptides are given as small injections under the skin that you do at home, and some come in other forms. If your plan includes injections, we will walk you through exactly how to do them.",
       },
       {
         question: "Is peptide therapy safe?",
         answer:
-          "Like any prescription, peptides can have side effects, and they are not right for everyone. That is why every plan starts with a thorough review of your history and medications, and includes follow-up visits so we can monitor how you are doing.",
+          "Like any prescription, peptides can have side effects, and they are not right for everyone. That is why every plan starts with a thorough review of your history and medications and includes follow-up visits so Stacey can monitor how you are doing.",
       },
       {
-        question: "Is peptide therapy covered by insurance?",
+        question: "How soon will I notice a difference?",
         answer:
-          "Peptide therapy is usually not covered by insurance. Contact our office for current consultation and treatment pricing. HSA or FSA funds may be eligible, so check with your plan administrator.",
+          "It varies from person to person and depends on the peptide, your health, and the rest of your plan. Some people do not notice a change. We do not promise specific results or timelines. Follow-up visits are where Stacey reviews how you are responding and adjusts or stops the plan.",
+      },
+      {
+        question: "Why not just buy peptides online?",
+        answer:
+          "Products sold online as “for research use only” are not made or labeled for people to use, and no prescriber or pharmacist is involved. With a prescription, a licensed provider reviews your history first, a licensed pharmacy fills the order, and someone is following how you respond.",
+      },
+      {
+        question: "How much does peptide therapy cost, and is it covered by insurance?",
+        answer:
+          "Coverage varies by plan, and our team can check whether your insurance applies to the consultation. Peptide prescriptions themselves are often not covered. Stacey will go over the cost of anything she recommends before you decide. HSA or FSA funds may be eligible, so check with your plan administrator.",
       },
       {
         question: "Do I need to be a current Perspective Health patient?",

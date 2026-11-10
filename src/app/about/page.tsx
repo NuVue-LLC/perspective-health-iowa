@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Eye, Sprout, Handshake, Microscope } from "lucide-react";
+import Link from "next/link";
+import { Eye, Sprout, Handshake, Microscope, ArrowRight } from "lucide-react";
 import { PROVIDERS } from "@/lib/constants";
 import { CTABanner } from "@/components/home/CTABanner";
 
@@ -196,6 +197,14 @@ export default function AboutPage() {
                   <p className="text-gray-600 leading-relaxed">
                     {provider.bio}
                   </p>
+                  {provider.id === "stacey-darnold" && (
+                    <Link
+                      href="/services/peptide-therapy"
+                      className="inline-flex items-center gap-1.5 text-teal font-semibold hover:underline mt-5"
+                    >
+                      Peptide therapy with Stacey <ArrowRight size={16} />
+                    </Link>
+                  )}
                 </div>
               </article>
             ))}

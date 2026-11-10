@@ -1,8 +1,10 @@
 # Peptide Clinic: Marketing Do's and Don'ts
 
-For Jess at Perspective Health Iowa, from NuVue. October 2026. This is not legal advice, so have an attorney look at the page before it goes live.
+For Jess at Perspective Health Iowa, from NuVue. October 2026, updated November 10, 2026. This is not legal advice, so have an attorney look at the page before it goes live.
 
-**Heads up:** the rules may loosen soon. A federal plan that would let pharmacies make BPC-157 and similar peptides went to the White House on Oct 15-16 ([NBC](https://www.nbcnews.com/health/health-news/trump-administration-advances-plan-peptide-drugs-favored-rfk-jr-rcna603867)). It isn't final. Everything below reflects today's rules.
+**Status as of Nov 10, 2026:** the rules loosened, partly. In late October FDA said it will not take action against 503A pharmacies that compound six peptides (BPC-157, TB-500, KPV, MOTS-c, Semax, Epitalon) if they meet a list of conditions ([NCPA](https://ncpa.org/newsroom/qam/2026/10/29/fda-grants-enforcement-discretion-compounding-six-peptides)). That is a "we won't enforce for now" policy with no end date, not approval. The final rule is still pending, state pharmacy boards can be stricter, and the other peptides on the clinic's flyers are not covered. None of this changes the advertising rules: a compounded drug's marketing still can't be false or misleading, and compounded peptides are still not FDA-approved.
+
+**What that means for the page:** it still names no peptides and makes no treatment claims, so it is fine under the old rules and the new ones.
 
 ## Do
 
@@ -14,7 +16,7 @@ For Jess at Perspective Health Iowa, from NuVue. October 2026. This is not legal
 
 ## Don't
 
-- **Don't name or price these yet:** BPC-157, TB-500, CJC-1295, ipamorelin, AOD-9604, GHK-Cu injections, Melanotan II, and similar. Pharmacies can't legally make them right now, and FDA is sending warning letters about them ([FDA](https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks)).
+- **Don't name or price specific peptides yet:** BPC-157, TB-500, CJC-1295, ipamorelin, AOD-9604, GHK-Cu injections, Melanotan II, and similar. Six are now tolerated for pharmacy compounding (see above), the rest are not, and FDA has sent warning letters over how these are marketed ([FDA](https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks)).
 - Don't say a peptide treats, cures, or heals anything, and don't say "clinically proven."
 - Don't call compounded peptides "FDA-approved" or "the same as" a brand drug.
 - Don't use before/after photos as proof that peptides work.
