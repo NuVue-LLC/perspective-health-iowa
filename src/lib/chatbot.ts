@@ -22,7 +22,7 @@ function buildFaqPatterns(): FaqPattern[] {
     .join("\n");
 
   const providerList = PROVIDERS.map(
-    (p) => `• ${p.name}, ${p.credentials} - ${p.title} (${p.specialty})`
+    (p) => `• ${p.name}, ${p.credentials} - ${p.title}${p.specialty ? ` (${p.specialty})` : ""}`
   ).join("\n");
 
   const insuranceList = INSURANCE_PARTNERS.map((i) => `• ${i.name}`).join("\n");
@@ -87,12 +87,12 @@ function buildFaqPatterns(): FaqPattern[] {
     // --- Providers ---
     {
       patterns: [/\baudrey\b/i],
-      answer: `Audrey Gries, PA-C - co-founder with 15+ years in primary care. She specializes in functional medicine and hormone health.`,
+      answer: `Audrey Gries, PA-C - Primary Care Provider and Medical Director. She brings a strong background in primary care and connects conventional and integrative medicine into one plan that makes sense for you.`,
       suggestions: ["Tell me about Stephanie", "Tell me about Tara", "How do I schedule?"],
     },
     {
       patterns: [/\bstephanie\b/i],
-      answer: `Stephanie Erdmann, DNP - specializes in chronic disease management and preventive wellness with an integrative approach.`,
+      answer: `Stephanie Erdmann, DNP - focuses on hormone replacement therapy and thyroid health, helping patients through the hormonal changes that come with different stages of life.`,
       suggestions: ["Tell me about Audrey", "Tell me about Tara", "How do I schedule?"],
     },
     {
@@ -337,7 +337,7 @@ export function buildSystemPrompt(): string {
     .join("\n");
 
   const providers = PROVIDERS.map(
-    (p) => `  - ${p.name}, ${p.credentials} (${p.title}) - ${p.specialty}`
+    (p) => `  - ${p.name}, ${p.credentials} (${p.title})${p.specialty ? ` - ${p.specialty}` : ""}`
   ).join("\n");
 
   const insuranceList = INSURANCE_PARTNERS.map((i) => i.name).join(", ");
@@ -371,8 +371,8 @@ If someone asks about hours, mention that they can always call ${SITE_CONFIG.pho
 ${providers}
 
 About our team:
-- Audrey Gries, PA-C is a co-founder with 15+ years of experience in primary care. She brings a compassionate, whole-person approach and has advanced training in functional medicine and hormone health.
-- Stephanie Erdmann, DNP specializes in relationship-based care, integrative chronic disease management, and preventive wellness. She empowers patients with knowledge and tools for their health journey.
+- Audrey Gries, PA-C is a Primary Care Provider and the clinic's Medical Director. She brings a strong background in primary care, pays close attention to detail, and connects conventional and integrative medicine into one plan.
+- Stephanie Erdmann, DNP focuses on hormone replacement therapy and thyroid health, including perimenopause and menopause. She explains the evidence behind each treatment option in clear terms.
 - Tara Sayer, RN, BSN, MSCN, CNSC has 20+ years of healthcare experience combining intensive care nursing expertise with integrative medicine. She focuses on the connection between nutrition and health outcomes.
 
 ## Insurance & Payment

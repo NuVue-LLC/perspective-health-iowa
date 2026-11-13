@@ -27,7 +27,7 @@ export default function AboutPage() {
             fill
             priority
             quality={90}
-            className="object-cover object-center"
+            className="object-cover object-[center_22%]"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />
@@ -189,13 +189,19 @@ export default function AboutPage() {
                   <p className="text-purple italic font-medium mt-1 mb-2">
                     {provider.title}
                   </p>
-                  <p className="text-teal text-sm font-semibold mb-4 uppercase tracking-wide">
-                    {provider.specialty}
-                  </p>
-                  <div className="w-12 h-1 bg-teal rounded-full mb-5" />
-                  <p className="text-gray-600 leading-relaxed">
-                    {provider.bio}
-                  </p>
+                  {provider.specialty && (
+                    <p className="text-teal text-sm font-semibold mb-4 uppercase tracking-wide">
+                      {provider.specialty}
+                    </p>
+                  )}
+                  <div className={`w-12 h-1 bg-teal rounded-full mb-5${provider.specialty ? "" : " mt-4"}`} />
+                  <div className="space-y-4">
+                    {provider.bio.split("\n\n").map((para, i) => (
+                      <p key={i} className="text-gray-600 leading-relaxed">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </article>
             ))}
