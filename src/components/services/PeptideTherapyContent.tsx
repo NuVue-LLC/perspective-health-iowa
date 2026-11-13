@@ -4,17 +4,14 @@ import {
   ArrowRight,
   CheckCircle,
   ChevronDown,
-  ClipboardCheck,
   GraduationCap,
-  HeartPulse,
   MapPin,
   Phone,
   ShieldCheck,
-  Stethoscope,
   Video,
 } from "lucide-react";
 import type { ServiceData } from "@/lib/services-data";
-import { PROVIDERS, SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG } from "@/lib/constants";
 
 /*
  * Peptide Therapy page body.
@@ -25,9 +22,11 @@ import { PROVIDERS, SITE_CONFIG } from "@/lib/constants";
  *  - Do not promise results or timelines. Goals are what patients ask about.
  *  - Keep "Compounded medications are not FDA-approved" wherever compounding
  *    comes up.
- *  - Everything said about Stacey comes from her clinic intro sheet. Do not
- *    add experience claims (patient counts, years with peptides) without her
- *    sign-off.
+ *  - No individual provider is named on this page (clinic request,
+ *    2026-11-13). Say "your provider" or "our providers".
+ *  - The two opening sections are the clinic's own wording (service.intro and
+ *    service.whatItIs). Do not edit them without asking the clinic.
+ *  - The call to action is a phone call to the office. No online booking.
  */
 
 interface RelatedService {
@@ -44,47 +43,6 @@ interface Props {
   introImage: { src: string; alt: string };
 }
 
-// From Stacey's intro sheet (sent by the clinic, Aug 2026).
-const STACEY_EXPERIENCE = [
-  {
-    icon: Stethoscope,
-    title: "Over two decades in medicine",
-    detail: "Including eight years in advanced practice as a nurse practitioner.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Board-certified Family Nurse Practitioner",
-    detail: "FNP-C, with a BSN and MSN from Graceland University.",
-  },
-  {
-    icon: HeartPulse,
-    title: "Emergency and trauma nursing",
-    detail: "At Nebraska Medical Center.",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Family practice and functional medicine",
-    detail:
-      "Plus chronic pain management, and seven years of practice along the Texas Gulf Coast.",
-  },
-];
-
-const STACEY_FOCUS = [
-  "Hormone management",
-  "Peptide management",
-  "Trigger point and joint injections",
-  "Therapeutic and cosmetic Botox",
-];
-
-// What people ask about. These are goals, not outcomes.
-const COMMON_GOALS = [
-  "Energy and vitality",
-  "Healthy weight and body composition",
-  "Healthy aging",
-  "Recovery and staying active",
-  "Sexual wellness",
-];
-
 const WHY_A_PROVIDER = [
   {
     title: "You know what you are taking",
@@ -92,11 +50,11 @@ const WHY_A_PROVIDER = [
   },
   {
     title: "The plan is built around you",
-    body: "Stacey reviews your goals, health history, medications, and labs before she prescribes anything. Sometimes the right answer is a different treatment, or no prescription at all.",
+    body: "Your provider reviews your goals, health history, medications, and labs before prescribing anything. Sometimes the right answer is a different treatment, or no prescription at all.",
   },
   {
     title: "Someone is following along",
-    body: "Scheduled follow-ups are part of the plan, so Stacey can see how you are responding and adjust or stop it.",
+    body: "Scheduled follow-ups are part of the plan, so your provider can see how you are responding and adjust or stop it.",
   },
 ];
 
@@ -116,7 +74,6 @@ export default function PeptideTherapyContent({
   relatedServices,
   introImage,
 }: Props) {
-  const stacey = PROVIDERS.find((p) => p.id === "stacey-darnold");
   const pageUrl = `${SITE_CONFIG.url}/services/${service.slug}`;
 
   const breadcrumbSchema = {
@@ -144,16 +101,6 @@ export default function PeptideTherapyContent({
     about: { "@type": "MedicalTherapy", name: "Peptide therapy" },
     audience: { "@type": "Patient" },
     publisher: { "@id": `${SITE_CONFIG.url}/#organization` },
-    mentions: stacey
-      ? {
-          "@type": "Physician",
-          name: stacey.name,
-          honorificSuffix: stacey.credentials,
-          jobTitle: stacey.title,
-          url: `${SITE_CONFIG.url}/about#${stacey.id}`,
-          worksFor: { "@id": `${SITE_CONFIG.url}/#organization` },
-        }
-      : undefined,
   };
 
   return (
@@ -191,8 +138,8 @@ export default function PeptideTherapyContent({
           </nav>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-center mb-16 leading-tight">
-            <span className="text-teal">Peptide Therapy,</span>{" "}
-            <span className="text-charcoal">Guided by a Provider</span>
+            <span className="text-teal">Support Your Body&apos;s</span>{" "}
+            <span className="text-charcoal">Natural Messengers</span>
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg w-full">
@@ -206,144 +153,39 @@ export default function PeptideTherapyContent({
               />
             </div>
             <div className="flex flex-col justify-center">
-              <p className="text-gray-700 text-lg leading-relaxed mb-6">
+              <p className="text-gray-700 text-lg leading-relaxed mb-8">
                 {service.intro}
               </p>
-              <p className="text-gray-600 leading-relaxed mb-8">
-                {service.whatItIs}
-              </p>
-              <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-charcoal mb-4">
-                What people ask Stacey about
+              <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-charcoal leading-tight mb-4">
+                Personalized Care, Not a One-Size-Fits-All Product
               </h3>
-              <ul className="flex flex-wrap gap-2 mb-4">
-                {COMMON_GOALS.map((goal) => (
-                  <li
-                    key={goal}
-                    className="px-4 py-2 rounded-full bg-sage/40 text-sm text-gray-700"
-                  >
-                    {goal}
-                  </li>
+              <div className="space-y-4 mb-8">
+                {service.whatItIs.split("\n\n").map((para, i) => (
+                  <p key={i} className="text-gray-600 leading-relaxed">
+                    {para}
+                  </p>
                 ))}
-              </ul>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                These are goals, not promises. Whether a peptide is appropriate
-                for you, and what it can reasonably do, is the conversation
-                you have with Stacey at your visit.
-              </p>
+              </div>
+              <div className="rounded-2xl bg-sage/40 p-6">
+                <p className="text-charcoal leading-relaxed mb-4">
+                  <span className="font-bold">Ready to learn more?</span>{" "}
+                  Schedule a consultation to find out if peptide therapy is
+                  right for you.
+                </p>
+                <a
+                  href={`tel:${SITE_CONFIG.phoneRaw}`}
+                  className="btn-teal px-7 py-3 inline-flex items-center gap-2"
+                >
+                  <Phone size={16} />
+                  Call {SITE_CONFIG.phone}
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2 - Light: Stacey and her experience */}
-      {stacey && (
-        <section className="geometric-pattern-light" id="stacey">
-          <div className="section-container py-16 sm:py-20 lg:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-start max-w-6xl mx-auto">
-              <div className="lg:sticky lg:top-28">
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lg w-full max-w-sm mx-auto">
-                  <Image
-                    src={stacey.image}
-                    alt={stacey.imageAlt}
-                    fill
-                    quality={85}
-                    className="object-cover object-top"
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                  />
-                </div>
-                <ul className="flex flex-wrap justify-center gap-2 mt-6 max-w-sm mx-auto">
-                  {STACEY_FOCUS.map((focus) => (
-                    <li
-                      key={focus}
-                      className="px-3 py-1.5 rounded-full bg-white border border-teal/30 text-xs font-medium text-charcoal"
-                    >
-                      {focus}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <p className="text-teal text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] mb-3">
-                  Your Peptide Therapy Provider
-                </p>
-                <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-charcoal leading-tight mb-2">
-                  Meet {stacey.name},{" "}
-                  <span className="whitespace-nowrap text-teal">
-                    {stacey.credentials}
-                  </span>
-                </h2>
-                <p className="text-purple italic font-medium mb-6">
-                  {stacey.title}, Board Certified
-                </p>
-
-                <p className="text-gray-700 text-lg leading-relaxed mb-5">
-                  Every peptide plan at Perspective Health goes through
-                  Stacey. She is a board-certified Family Nurse Practitioner
-                  with over two decades of medical experience, eight of them
-                  in advanced practice.
-                </p>
-                <p className="text-gray-600 leading-relaxed mb-5">
-                  Her background covers emergency and trauma nursing at
-                  Nebraska Medical Center, seven years of practice along the
-                  Texas Gulf Coast, and work in family practice, chronic pain
-                  management, and functional medicine. She earned her BSN and
-                  MSN from Graceland University.
-                </p>
-                <p className="text-gray-600 leading-relaxed mb-8">
-                  That range matters for peptide therapy. A prescriber who has
-                  worked in emergency care, primary care, and functional
-                  medicine looks at the whole picture: your history, your
-                  medications, your labs, and what you want to feel different.
-                  Stacey meets patients where they are and works with them
-                  toward their most optimal life, and that includes telling
-                  you when a peptide is not the right fit.
-                </p>
-
-                <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-charcoal mb-4">
-                  Experience and background
-                </h3>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                  {STACEY_EXPERIENCE.map(({ icon: Icon, title, detail }) => (
-                    <li
-                      key={title}
-                      className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 flex items-start gap-4"
-                    >
-                      <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center">
-                        <Icon size={20} className="text-teal" />
-                      </span>
-                      <span>
-                        <span className="block font-semibold text-charcoal leading-snug">
-                          {title}
-                        </span>
-                        <span className="block text-sm text-gray-600 leading-relaxed mt-1">
-                          {detail}
-                        </span>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Outside the clinic, Stacey is a wife, a mother of four, and
-                  &ldquo;Grandma&rdquo; to five. You will likely find her in
-                  her vegetable garden, in the middle of a home renovation
-                  project, or on the golf course.
-                </p>
-
-                <Link
-                  href={`/about#${stacey.id}`}
-                  className="inline-flex items-center gap-1.5 text-teal font-semibold hover:underline"
-                >
-                  Meet the full Perspective Health team <ArrowRight size={16} />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Section 3 - Green: how a virtual visit works */}
+      {/* Section 2 - Green: how a consultation works */}
       <section className="geometric-pattern-green">
         <div className="section-container py-16 sm:py-20 lg:py-24 relative z-10">
           <div className="text-center mb-12">
@@ -354,8 +196,9 @@ export default function PeptideTherapyContent({
               How a Peptide Consultation Works
             </h2>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Peptide consultations happen by secure video, so you can meet
-              with Stacey from home, anywhere in Iowa.
+              Call our office to get started. Consultations happen by secure
+              video, so you can meet with your provider from home, anywhere in
+              Iowa.
             </p>
           </div>
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
@@ -520,7 +363,7 @@ export default function PeptideTherapyContent({
               ))}
             </ul>
             <p className="text-gray-600 leading-relaxed">
-              Because peptide consultations are virtual, Stacey can also see
+              Because peptide consultations are virtual, we can also see
               adults elsewhere in Iowa, as long as you are in the state during
               your visit. Not sure whether that covers you? Call us at{" "}
               <a
@@ -566,15 +409,13 @@ export default function PeptideTherapyContent({
             </div>
 
             <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
-              <Link
-                href="/contact#contact-form"
-                className="btn-teal px-7 py-3 inline-flex items-center gap-2"
-              >
-                Request a Consultation
-              </Link>
+              <p className="text-charcoal font-semibold">
+                Ready to learn more? Call our office to schedule a
+                consultation.
+              </p>
               <a
                 href={`tel:${SITE_CONFIG.phoneRaw}`}
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-teal border-2 border-teal hover:bg-teal hover:text-white transition-colors"
+                className="btn-teal px-7 py-3 inline-flex items-center gap-2"
               >
                 <Phone size={16} />
                 Call {SITE_CONFIG.phone}

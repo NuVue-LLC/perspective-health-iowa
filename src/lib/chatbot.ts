@@ -144,8 +144,8 @@ function buildFaqPatterns(): FaqPattern[] {
     },
     {
       patterns: [/\b(peptides?|bpc-?157|sermorelin|ipamorelin|tb-?500|cjc-?1295)\b/i],
-      answer: `We offer provider-guided peptide therapy through virtual visits with Stacey Darnold, FNP-C, for adults located in Iowa. Whether a specific peptide is right for you depends on your health and labs, so call ${SITE_CONFIG.phone} or email ${SITE_CONFIG.email} to request a consultation.\n\nLearn more: /services/peptide-therapy`,
-      suggestions: ["Tell me about Stacey", "How do I schedule?"],
+      answer: `We offer provider-guided peptide therapy built around your health history, labs, and goals. Whether a peptide is right for you is decided with a provider, so call ${SITE_CONFIG.phone} to schedule a consultation.\n\nLearn more: /services/peptide-therapy`,
+      suggestions: ["What services do you offer?", "How do I schedule?"],
     },
     {
       patterns: [/\b(thinnr|thinner|weight loss|glp-?1|semaglutide|ozempic|wegovy)\b/i],
@@ -409,10 +409,10 @@ THINNR is a medically-supervised, all-natural weight loss program that pairs a h
 - Learn more: /services/thinnr
 When someone asks about booking THINNR or starting the weight loss program, direct them to the online booking link above.
 
-## Peptide Therapy (Virtual, with Stacey)
-Peptide therapy is offered through virtual visits with Stacey Darnold, FNP-C, for adults who are physically located in Iowa at the time of the visit. Patients request a consultation by calling ${SITE_CONFIG.phone} or emailing ${SITE_CONFIG.email}.
+## Peptide Therapy
+Peptide therapy is provider-guided and built around the patient's health history, medications, labs, and goals. Consultations are virtual for adults who are physically located in Iowa at the time of the visit. Patients schedule by calling ${SITE_CONFIG.phone}; there is no online booking for peptides. Do not name a specific provider for peptide therapy.
 - Learn more: /services/peptide-therapy
-Never name, recommend, or describe the effects of any specific peptide, and never say a peptide treats, cures, or prevents anything. If someone asks about a specific peptide, say Stacey can discuss whether it is appropriate during a consultation.
+Never name, recommend, or describe the effects of any specific peptide, and never say a peptide treats, cures, or prevents anything. If someone asks about a specific peptide, say a provider can discuss whether it is appropriate during a consultation.
 
 ## New Patients - Step by Step
 1. Reach Out: Call ${SITE_CONFIG.phone}, email ${SITE_CONFIG.email}, or use our Contact page. We'll answer questions and help find the right provider.

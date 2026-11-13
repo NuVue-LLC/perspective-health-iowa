@@ -155,7 +155,7 @@ export default function ServicePage({ params }: Props) {
     },
     "peptide-therapy": {
       heading: "Curious Whether Peptides Are Right for You?",
-      subtext: "Request a virtual consultation with Stacey Darnold, FNP-C.",
+      subtext: "Call our office to schedule a consultation.",
     },
   };
   // Heroes with a button row need extra height so the script line clears the header.
@@ -185,7 +185,11 @@ export default function ServicePage({ params }: Props) {
             fill
             priority
             quality={90}
-            className="object-cover object-center"
+            className={`object-cover ${
+              service.slug === "peptide-therapy"
+                ? "object-[72%_20%]"
+                : "object-center"
+            }`}
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />
@@ -234,18 +238,12 @@ export default function ServicePage({ params }: Props) {
               </a>
             </div>
           )}
-          {/* Booking link is TBD from the clinic, so contact form + phone for now */}
+          {/* Clinic wants patients to call the office to schedule (no online booking yet) */}
           {service.slug === "peptide-therapy" && (
             <div className="flex flex-wrap gap-3 mt-6">
-              <Link
-                href="/contact#contact-form"
-                className="btn-teal text-base px-8 py-3.5"
-              >
-                Request a Consultation
-              </Link>
               <a
                 href={`tel:${SITE_CONFIG.phoneRaw}`}
-                className="inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold text-white border-2 border-white/70 hover:bg-white hover:text-teal transition-all duration-200"
+                className="btn-teal text-base px-8 py-3.5"
               >
                 Call {SITE_CONFIG.phone}
               </a>
@@ -1334,7 +1332,7 @@ export default function ServicePage({ params }: Props) {
                   <div>
                     <h4 className="font-bold text-charcoal mb-3">At-Home Injections</h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Our peptide therapy focuses on vitality, healthy weight, healthy aging, and sexual wellness. These prescription injections are done at home for convenience and use short chains of amino acids that act as signals in the body. Prescribed and monitored by Stacey Darnold, FNP-C, peptides may support energy and overall well-being as part of a comprehensive health plan.
+                      Our peptide therapy focuses on vitality, healthy weight, healthy aging, and sexual wellness. These prescription injections are done at home for convenience and use short chains of amino acids that act as signals in the body. Prescribed and monitored by a licensed provider, peptides may support energy and overall well-being as part of a comprehensive health plan.
                     </p>
                     <Link
                       href="/services/peptide-therapy"

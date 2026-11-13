@@ -151,9 +151,9 @@ export const SERVICES = [
     name: "Peptide Therapy",
     shortName: "Peptides",
     description:
-      "Provider-guided peptide therapy through virtual visits with Stacey Darnold, FNP-C, built around your goals, health history, and labs.",
-    image: "/images/hero-services.jpg",
-    imageAlt: "Peptide therapy at Perspective Health Iowa",
+      "Provider-guided peptide therapy built around your health history, labs, and goals. Personalized care, not a one-size-fits-all product.",
+    image: "/images/service-peptide-therapy.jpg",
+    imageAlt: "Fit, healthy couple outdoors - peptide therapy at Perspective Health Iowa",
   },
 ];
 
