@@ -174,9 +174,9 @@ export default function SchemaMarkup() {
       "@type": "Physician",
       "name": "Audrey Gries",
       "honorificSuffix": "PA-C",
-      "jobTitle": "Physician Assistant",
+      "jobTitle": "Primary Care Provider and Medical Director",
       "description":
-        "Audrey Gries, PA-C, is a physician assistant with 15 years of experience in primary care. She specializes in integrative and functional medicine approaches at Perspective Health Iowa in Urbandale.",
+        "Audrey Gries, PA-C, is a Primary Care Provider and the Medical Director of Perspective Health Iowa in Urbandale. She brings a strong background in primary care and connects conventional and integrative medicine.",
       "image": "https://perspectivehealthiowa.com/images/audrey-gries.jpg",
       "url": "https://perspectivehealthiowa.com/about#audrey-gries",
       "worksFor": {
@@ -185,7 +185,6 @@ export default function SchemaMarkup() {
       "medicalSpecialty": [
         "Primary Care",
         "Integrative Medicine",
-        "Hormone Health",
       ],
     },
     {
@@ -193,18 +192,17 @@ export default function SchemaMarkup() {
       "@type": "Physician",
       "name": "Stephanie Erdmann",
       "honorificSuffix": "DNP",
-      "jobTitle": "Nurse Practitioner",
+      "jobTitle": "Nurse Practitioner, Hormone Replacement and Thyroid Care",
       "description":
-        "Stephanie Erdmann, DNP, is a Doctor of Nursing Practice specializing in integrative approaches to chronic disease management and preventive wellness at Perspective Health Iowa.",
+        "Stephanie Erdmann, DNP, focuses on hormone replacement therapy and thyroid health at Perspective Health Iowa, helping patients through the hormonal changes that come with different stages of life.",
       "image": "https://perspectivehealthiowa.com/images/stephanie-erdmann.jpg",
       "url": "https://perspectivehealthiowa.com/about#stephanie-erdmann",
       "worksFor": {
         "@id": "https://perspectivehealthiowa.com/#organization",
       },
       "medicalSpecialty": [
-        "Integrative Medicine",
-        "Chronic Disease Management",
-        "Preventive Wellness",
+        "Hormone Replacement Therapy",
+        "Thyroid Health",
       ],
     },
     {

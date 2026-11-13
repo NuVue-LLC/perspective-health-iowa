@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { Eye, Sprout, Handshake, Microscope, ArrowRight } from "lucide-react";
+import { Eye, Sprout, Handshake, Microscope } from "lucide-react";
 import { PROVIDERS } from "@/lib/constants";
 import { CTABanner } from "@/components/home/CTABanner";
 
@@ -28,7 +27,7 @@ export default function AboutPage() {
             fill
             priority
             quality={90}
-            className="object-cover object-center"
+            className="object-cover object-[center_22%]"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />
@@ -190,21 +189,19 @@ export default function AboutPage() {
                   <p className="text-purple italic font-medium mt-1 mb-2">
                     {provider.title}
                   </p>
-                  <p className="text-teal text-sm font-semibold mb-4 uppercase tracking-wide">
-                    {provider.specialty}
-                  </p>
-                  <div className="w-12 h-1 bg-teal rounded-full mb-5" />
-                  <p className="text-gray-600 leading-relaxed">
-                    {provider.bio}
-                  </p>
-                  {provider.id === "stacey-darnold" && (
-                    <Link
-                      href="/services/peptide-therapy"
-                      className="inline-flex items-center gap-1.5 text-teal font-semibold hover:underline mt-5"
-                    >
-                      Peptide therapy with Stacey <ArrowRight size={16} />
-                    </Link>
+                  {provider.specialty && (
+                    <p className="text-teal text-sm font-semibold mb-4 uppercase tracking-wide">
+                      {provider.specialty}
+                    </p>
                   )}
+                  <div className={`w-12 h-1 bg-teal rounded-full mb-5${provider.specialty ? "" : " mt-4"}`} />
+                  <div className="space-y-4">
+                    {provider.bio.split("\n\n").map((para, i) => (
+                      <p key={i} className="text-gray-600 leading-relaxed">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </article>
             ))}
