@@ -164,9 +164,9 @@ export const PROVIDERS = [
     id: "stephanie-erdmann",
     name: "Stephanie Erdmann",
     credentials: "DNP",
-    // Wording supplied by the clinic, 2026-11-13. Do not edit without asking them.
+    // Wording supplied by the clinic, 2026-11-16. Do not edit without asking them.
     title: "Hormone Replacement & Thyroid Care",
-    bio: "Stephanie focuses on hormone replacement therapy and thyroid health. She helps patients through the hormonal changes that come with different stages of life, from perimenopause and menopause to shifts in energy, mood, metabolism, and overall well-being.\n\nStephanie believes informed patients make the best decisions for their health. She takes time to explain the evidence behind each treatment option in clear terms, so you understand your body, your lab results, and your choices. Together, you'll build a plan that fits your goals and your stage of life.",
+    bio: "Stephanie focuses on hormone replacement therapy and thyroid health for both women and men. She helps patients navigate hormonal changes throughout life, including perimenopause, menopause and andropause, as well as concerns related to energy, mood, metabolism, sexual health and overall well-being.\n\nStephanie believes informed patients are better equipped to make confident decisions about their health. She takes the time to explain your lab results, what they mean and the evidence behind your treatment options in clear, easy-to-understand terms. Together, you'll create a personalized plan that reflects your symptoms, health goals and stage of life.",
     image: "/images/stephanie-erdmann.jpg",
     imageAlt: "Stephanie Erdmann, DNP - Hormone Replacement and Thyroid Care at Perspective Health Iowa",
     specialty: "",
@@ -186,7 +186,8 @@ export const PROVIDERS = [
     name: "Stacey Darnold",
     credentials: "FNP-C",
     title: "Family Nurse Practitioner",
-    bio: "Stacey is a board-certified Family Nurse Practitioner with over two decades of medical experience, including emergency and trauma nursing, family practice, chronic pain management, and functional medicine. She meets patients where they are and works with them toward their most optimal life - offering compassionate, individual-focused care for new diagnoses, chronic conditions, and preventive wellness, with clinical expertise in hormone and peptide management, trigger point and joint injections, and therapeutic and cosmetic Botox.",
+    // Wording supplied by the clinic, 2026-11-16. Do not edit without asking them.
+    bio: "Stacey is a board-certified Family Nurse Practitioner with more than two decades of healthcare experience. She believes in meeting patients where they are, taking the time to understand their individual needs, goals and concerns, then working together toward optimal health and well-being.\n\nStacey provides compassionate, personalized care for chronic conditions, preventive wellness and overall health. Her clinical expertise includes hormone and peptide management, trigger point and joint injections and therapeutic and cosmetic Botox.",
     image: "/images/stacey-darnold.jpg",
     imageAlt: "Stacey Darnold, FNP-C - Family Nurse Practitioner at Perspective Health Iowa",
     specialty: "Hormone, Peptide & Injection Therapies",

@@ -92,7 +92,7 @@ function buildFaqPatterns(): FaqPattern[] {
     },
     {
       patterns: [/\bstephanie\b/i],
-      answer: `Stephanie Erdmann, DNP - focuses on hormone replacement therapy and thyroid health, helping patients through the hormonal changes that come with different stages of life.`,
+      answer: `Stephanie Erdmann, DNP - focuses on hormone replacement therapy and thyroid health for both women and men, helping patients navigate hormonal changes throughout life.`,
       suggestions: ["Tell me about Audrey", "Tell me about Tara", "How do I schedule?"],
     },
     {
@@ -372,7 +372,7 @@ ${providers}
 
 About our team:
 - Audrey Gries, PA-C is a Primary Care Provider and the clinic's Medical Director. She brings a strong background in primary care, pays close attention to detail, and connects conventional and integrative medicine into one plan.
-- Stephanie Erdmann, DNP focuses on hormone replacement therapy and thyroid health, including perimenopause and menopause. She explains the evidence behind each treatment option in clear terms.
+- Stephanie Erdmann, DNP focuses on hormone replacement therapy and thyroid health for both women and men, including perimenopause, menopause and andropause. She explains lab results and the evidence behind treatment options in clear terms.
 - Tara Sayer, RN, BSN, MSCN, CNSC has 20+ years of healthcare experience combining intensive care nursing expertise with integrative medicine. She focuses on the connection between nutrition and health outcomes.
 
 ## Insurance & Payment

@@ -187,7 +187,7 @@ export default function SchemaMarkup() {
       "honorificSuffix": "DNP",
       "jobTitle": "Nurse Practitioner, Hormone Replacement and Thyroid Care",
       "description":
-        "Stephanie Erdmann, DNP, focuses on hormone replacement therapy and thyroid health at Perspective Health Iowa, helping patients through the hormonal changes that come with different stages of life.",
+        "Stephanie Erdmann, DNP, focuses on hormone replacement therapy and thyroid health for both women and men at Perspective Health Iowa, helping patients navigate hormonal changes throughout life.",
       "image": "https://perspectivehealthiowa.com/images/stephanie-erdmann.jpg",
       "url": "https://perspectivehealthiowa.com/about#stephanie-erdmann",
       "worksFor": {
