@@ -69,7 +69,7 @@ export default function ForPatientsHubPage() {
             fill
             priority
             quality={90}
-            className="object-cover object-[30%_top]"
+            className="object-cover object-[30%_top] -scale-x-100"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />
