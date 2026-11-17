@@ -157,6 +157,13 @@ export const SERVICES = [
   },
 ];
 
+// Where each service photo is anchored when a banner or card crops it, so
+// faces stay in frame. Services not listed here crop from the center.
+export const SERVICE_IMAGE_POSITION: Record<string, string> = {
+  thinnr: "50% 10%",
+  "supplementary-services": "50% 0%",
+};
+
 export const PROVIDERS = [
   {
     id: "audrey-gries",

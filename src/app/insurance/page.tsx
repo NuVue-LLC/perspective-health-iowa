@@ -32,7 +32,7 @@ export default function InsurancePage() {
             fill
             priority
             quality={90}
-            className="object-cover object-center"
+            className="object-cover object-top"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />

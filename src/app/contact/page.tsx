@@ -201,7 +201,7 @@ export default function ContactPage() {
           src="/images/about-clinic.jpg"
           alt="Perspective Health Iowa clinic"
           fill
-          className="object-cover"
+          className="object-cover object-[center_15%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-charcoal/70" />

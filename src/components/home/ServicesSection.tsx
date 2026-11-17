@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SERVICES } from "@/lib/constants";
+import { SERVICES, SERVICE_IMAGE_POSITION } from "@/lib/constants";
 
 export function ServicesSection() {
   return (
@@ -32,6 +32,7 @@ export function ServicesSection() {
                 src={service.image}
                 alt={service.imageAlt}
                 fill
+                style={{ objectPosition: SERVICE_IMAGE_POSITION[service.slug] }}
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />

@@ -11,7 +11,7 @@ import {
   Video,
 } from "lucide-react";
 import type { ServiceData } from "@/lib/services-data";
-import { SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG, SERVICE_IMAGE_POSITION } from "@/lib/constants";
 
 /*
  * Peptide Therapy page body.
@@ -452,6 +452,7 @@ export default function PeptideTherapyContent({
                             src={related.image}
                             alt={related.imageAlt}
                             fill
+                            style={{ objectPosition: SERVICE_IMAGE_POSITION[related.slug] }}
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                             sizes="(max-width: 640px) 100vw, 33vw"
                           />

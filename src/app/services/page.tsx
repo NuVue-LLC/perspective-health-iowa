@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { SERVICES, INSURANCE_PARTNERS } from "@/lib/constants";
+import { SERVICES, INSURANCE_PARTNERS, SERVICE_IMAGE_POSITION } from "@/lib/constants";
 import { CTABanner } from "@/components/home/CTABanner";
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function ServicesPage() {
             fill
             priority
             quality={90}
-            className="object-cover object-center"
+            className="object-cover object-[center_10%]"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />
@@ -65,6 +65,7 @@ export default function ServicesPage() {
                     src={service.image}
                     alt={service.imageAlt}
                     fill
+                    style={{ objectPosition: SERVICE_IMAGE_POSITION[service.slug] }}
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     loading={idx < 3 ? "eager" : "lazy"}

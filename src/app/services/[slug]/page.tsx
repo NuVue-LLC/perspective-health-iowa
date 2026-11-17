@@ -29,7 +29,7 @@ import {
   getServiceBySlug,
   getAllServiceSlugs,
 } from "@/lib/services-data";
-import { SERVICES, SITE_CONFIG } from "@/lib/constants";
+import { SERVICES, SITE_CONFIG, SERVICE_IMAGE_POSITION } from "@/lib/constants";
 import { MedicalServiceSchema } from "@/components/seo/MedicalServiceSchema";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import SymptomExplorer from "@/components/SymptomExplorer";
@@ -190,6 +190,7 @@ export default function ServicePage({ params }: Props) {
                 ? "object-[72%_20%]"
                 : "object-center"
             }`}
+            style={{ objectPosition: SERVICE_IMAGE_POSITION[service.slug] }}
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />
@@ -373,7 +374,7 @@ export default function ServicePage({ params }: Props) {
                   {relatedServices.map((related) => related && (
                     <Link key={related.slug} href={`/services/${related.slug}`} className="group rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md hover:border-teal/40 transition-all">
                       <div className="relative h-40 overflow-hidden">
-                        <Image src={related.image} alt={related.imageAlt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 33vw" />
+                        <Image src={related.image} alt={related.imageAlt} fill style={{ objectPosition: SERVICE_IMAGE_POSITION[related.slug] }} className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 33vw" />
                         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 to-transparent" />
                       </div>
                       <div className="p-5">
@@ -567,6 +568,7 @@ export default function ServicePage({ params }: Props) {
                                 src={related.image}
                                 alt={related.imageAlt}
                                 fill
+                                style={{ objectPosition: SERVICE_IMAGE_POSITION[related.slug] }}
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 sizes="(max-width: 640px) 100vw, 33vw"
                               />
@@ -750,6 +752,7 @@ export default function ServicePage({ params }: Props) {
                                 src={related.image}
                                 alt={related.imageAlt}
                                 fill
+                                style={{ objectPosition: SERVICE_IMAGE_POSITION[related.slug] }}
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 sizes="(max-width: 640px) 100vw, 33vw"
                               />
@@ -1136,6 +1139,7 @@ export default function ServicePage({ params }: Props) {
                                 src={related.image}
                                 alt={related.imageAlt}
                                 fill
+                                style={{ objectPosition: SERVICE_IMAGE_POSITION[related.slug] }}
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 sizes="(max-width: 640px) 100vw, 33vw"
                               />
@@ -1269,6 +1273,7 @@ export default function ServicePage({ params }: Props) {
                                 src={related.image}
                                 alt={related.imageAlt}
                                 fill
+                                style={{ objectPosition: SERVICE_IMAGE_POSITION[related.slug] }}
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 sizes="(max-width: 640px) 100vw, 33vw"
                               />
@@ -1429,6 +1434,7 @@ export default function ServicePage({ params }: Props) {
                                 src={related.image}
                                 alt={related.imageAlt}
                                 fill
+                                style={{ objectPosition: SERVICE_IMAGE_POSITION[related.slug] }}
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 sizes="(max-width: 640px) 100vw, 33vw"
                               />
@@ -1759,7 +1765,7 @@ export default function ServicePage({ params }: Props) {
                     {relatedServices.map((related) => related && (
                       <Link key={related.slug} href={`/services/${related.slug}`} className="group rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md hover:border-teal/40 transition-all">
                         <div className="relative h-40 overflow-hidden">
-                          <Image src={related.image} alt={related.imageAlt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 33vw" />
+                          <Image src={related.image} alt={related.imageAlt} fill style={{ objectPosition: SERVICE_IMAGE_POSITION[related.slug] }} className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 33vw" />
                           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 to-transparent" />
                         </div>
                         <div className="p-5">
@@ -1957,6 +1963,7 @@ export default function ServicePage({ params }: Props) {
                                 src={related.image}
                                 alt={related.imageAlt}
                                 fill
+                                style={{ objectPosition: SERVICE_IMAGE_POSITION[related.slug] }}
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 sizes="(max-width: 640px) 100vw, 33vw"
                               />
