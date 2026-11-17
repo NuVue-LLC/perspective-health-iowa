@@ -32,9 +32,32 @@ export default function InsurancePage() {
             fill
             priority
             quality={90}
-            className="object-cover object-top"
+            className="object-cover object-[85%_top] lg:hidden"
             sizes="100vw"
           />
+          {/* Wide screens: the photo is a close-up, so filling the banner
+              edge to edge cuts her face. Show the whole photo on the right
+              over a blurred copy of itself instead. */}
+          <Image
+            src="/images/hero-insurance.jpg"
+            alt=""
+            aria-hidden
+            fill
+            quality={40}
+            className="hidden lg:block object-cover blur-3xl scale-125"
+            sizes="50vw"
+          />
+          <div className="hidden lg:block absolute inset-y-0 right-0 aspect-[3/2] [mask-image:linear-gradient(to_right,transparent,black_30%)]">
+            <Image
+              src="/images/hero-insurance.jpg"
+              alt="Smiling woman in warm golden sunlight - welcoming integrative healthcare at Perspective Health Iowa"
+              fill
+              priority
+              quality={90}
+              className="object-cover"
+              sizes="60vw"
+            />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />
         </div>
         <div className="relative z-10 px-6 sm:px-12 lg:px-20 pb-16 sm:pb-20 lg:pb-24">
