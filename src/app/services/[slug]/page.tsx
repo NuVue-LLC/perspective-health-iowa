@@ -187,7 +187,7 @@ export default function ServicePage({ params }: Props) {
             quality={90}
             className={`object-cover ${
               service.slug === "peptide-therapy"
-                ? "object-[72%_20%]"
+                ? "object-[72%_top]"
                 : "object-center"
             }`}
             style={{ objectPosition: SERVICE_IMAGE_POSITION[service.slug] }}
