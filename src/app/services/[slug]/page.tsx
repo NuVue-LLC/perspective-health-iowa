@@ -160,6 +160,15 @@ export default function ServicePage({ params }: Props) {
   };
   // Heroes with a button row need extra height so the script line clears the header.
   const hasHeroButtons = ["thinnr", "peptide-therapy"].includes(service.slug);
+  // Banner crops that need their own classes (a different anchor per screen
+  // size, which the inline SERVICE_IMAGE_POSITION style cannot express).
+  const heroPositionClass: string | undefined = (
+    {
+      "peptide-therapy": "object-[72%_top]",
+      // Phones: slide right so her face is centered in the narrow banner.
+      thinnr: "object-[80%_10%] md:object-[50%_10%]",
+    } as Record<string, string>
+  )[service.slug];
   // 3:2 photos shown whole on wide screens instead of cropped edge to edge.
   const fullPhotoHero = ["comprehensive-primary-care"].includes(service.slug);
   const ctaProps = ctaMap[service.slug] || {};
@@ -188,11 +197,13 @@ export default function ServicePage({ params }: Props) {
             priority
             quality={90}
             className={`object-cover ${
-              service.slug === "peptide-therapy"
-                ? "object-[72%_top]"
-                : "object-center"
+              heroPositionClass ?? "object-center"
             } ${fullPhotoHero ? "lg:hidden" : ""}`}
-            style={{ objectPosition: SERVICE_IMAGE_POSITION[service.slug] }}
+            style={
+              heroPositionClass
+                ? undefined
+                : { objectPosition: SERVICE_IMAGE_POSITION[service.slug] }
+            }
             sizes="100vw"
           />
           {/* Wide screens, for photos whose subject would land behind the
