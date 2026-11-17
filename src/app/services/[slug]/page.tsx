@@ -160,6 +160,8 @@ export default function ServicePage({ params }: Props) {
   };
   // Heroes with a button row need extra height so the script line clears the header.
   const hasHeroButtons = ["thinnr", "peptide-therapy"].includes(service.slug);
+  // 3:2 photos shown whole on wide screens instead of cropped edge to edge.
+  const fullPhotoHero = ["comprehensive-primary-care"].includes(service.slug);
   const ctaProps = ctaMap[service.slug] || {};
 
   return (
@@ -189,10 +191,37 @@ export default function ServicePage({ params }: Props) {
               service.slug === "peptide-therapy"
                 ? "object-[72%_top]"
                 : "object-center"
-            }`}
+            } ${fullPhotoHero ? "lg:hidden" : ""}`}
             style={{ objectPosition: SERVICE_IMAGE_POSITION[service.slug] }}
             sizes="100vw"
           />
+          {/* Wide screens, for photos whose subject would land behind the
+              headline or the nav when cropped edge to edge: show the whole
+              photo on the right over a blurred copy of itself. */}
+          {fullPhotoHero && (
+            <>
+              <Image
+                src={service.heroImage}
+                alt=""
+                aria-hidden
+                fill
+                quality={40}
+                className="hidden lg:block object-cover blur-3xl scale-125"
+                sizes="50vw"
+              />
+              <div className="hidden lg:block absolute inset-y-0 right-0 aspect-[3/2] [mask-image:linear-gradient(to_right,transparent,black_30%)]">
+                <Image
+                  src={service.heroImage}
+                  alt={service.heroImageAlt}
+                  fill
+                  priority
+                  quality={90}
+                  className="object-cover"
+                  sizes="60vw"
+                />
+              </div>
+            </>
+          )}
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />
         </div>
         <div
