@@ -45,12 +45,13 @@ export const SITE_CONFIG = {
       url: "https://square.link/u/NUIyVjnX",
     },
   ],
-  // HOCATT monthly membership (from Jess's flyer, 2026-10-16). Sign-up is by
-  // phone/email until there's a Square subscription link; set signupUrl then.
+  // HOCATT monthly membership (from Jess's flyer, 2026-10-16). signupUrl is the
+  // Square subscription checkout ($395 billed monthly), added 2026-11-20.
+  // Set it to null to fall back to "Call to Join".
   hocattMonthlyPlan: {
     price: 395,
     sessions: 4,
-    signupUrl: null as string | null,
+    signupUrl: "https://square.link/u/Jt9mZdPP" as string | null,
   },
   hugoPackages: [
     {
