@@ -150,7 +150,8 @@ export function Footer() {
                 rel="noopener"
                 className="text-gray-400 font-semibold hover:text-teal transition-colors"
               >
-                NuVue
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/nuvue-logo.png" alt="NuVue" width={390} height={141} loading="lazy" style={{ height: 24, width: "auto", display: "inline-block", verticalAlign: "middle" }} />
               </a>
             </span>
           </p>
