@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ChatWidget } from "@/components/chat/ChatWidget";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import SiteAnalytics from "@/components/SiteAnalytics";
+import { HideOnFunnel } from "@/components/funnel/HideOnFunnel";
 
 // Brand-guide body/heading font
 const jost = Jost({
@@ -88,10 +89,14 @@ export default function RootLayout({
     <html lang="en" className={`${jost.variable} ${dancingScript.variable}`}>
       <body className="min-h-screen flex flex-col">
         <SchemaMarkup />
-        <Header />
+        <HideOnFunnel>
+          <Header />
+        </HideOnFunnel>
         <main className="flex-grow">{children}</main>
-        <Footer />
-        {process.env.NEXT_PUBLIC_CHATBOT_ENABLED === "true" && <ChatWidget />}
+        <HideOnFunnel>
+          <Footer />
+          {process.env.NEXT_PUBLIC_CHATBOT_ENABLED === "true" && <ChatWidget />}
+        </HideOnFunnel>
         <SiteAnalytics />
       </body>
     </html>
