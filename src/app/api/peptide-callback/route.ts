@@ -18,7 +18,9 @@ const schema = z.object({
 });
 
 const CLINIC_EMAIL = process.env.PEPTIDE_CALLBACK_EMAIL || "info@perspectivehealthiowa.com";
-const FROM_EMAIL = "Perspective Health <website@perspectivehealthiowa.com>";
+// Sent from NuVue's shared, already-verified Resend sender so no DNS changes
+// are needed on the clinic's domain. Set RESEND_FROM to change it later.
+const FROM_EMAIL = process.env.RESEND_FROM || "Perspective Health <leads@mail.nuvuepro.com>";
 
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
 

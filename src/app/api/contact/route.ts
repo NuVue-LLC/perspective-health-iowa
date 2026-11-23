@@ -13,7 +13,9 @@ const contactSchema = z.object({
 });
 
 const CLINIC_EMAIL = "info@perspectivehealthiowa.com";
-const FROM_EMAIL = "Perspective Health <website@perspectivehealthiowa.com>";
+// Sent from NuVue's shared, already-verified Resend sender so no DNS changes
+// are needed on the clinic's domain. Set RESEND_FROM to change it later.
+const FROM_EMAIL = process.env.RESEND_FROM || "Perspective Health <leads@mail.nuvuepro.com>";
 
 export async function POST(request: NextRequest) {
   try {
@@ -28,12 +30,14 @@ export async function POST(request: NextRequest) {
         resend.emails.send({
           from: FROM_EMAIL,
           to: CLINIC_EMAIL,
+          replyTo: data.email,
           subject: `New Contact Form Submission - ${data.name}`,
           html: buildEmailHtml(data),
         }),
         resend.emails.send({
           from: FROM_EMAIL,
           to: data.email,
+          replyTo: CLINIC_EMAIL,
           subject: "We received your message - Perspective Health Iowa",
           html: buildContactAutoReplyHtml({ name: data.name }),
         }),
