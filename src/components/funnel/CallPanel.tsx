@@ -9,19 +9,25 @@ export function CallPanel({
   phoneRaw,
   hours,
   callbacks,
+  offer,
 }: {
   phone: string;
   phoneRaw: string;
   hours: string;
   callbacks: boolean;
+  offer?: string;
 }) {
   return (
     <div className="text-center">
-      <p className="text-sm font-bold uppercase tracking-[0.08em] text-purple">Take the next step</p>
+      {offer ? (
+        <p className="rounded-full bg-teal/10 px-3 py-0.5 text-sm font-bold text-teal-700 ring-1 ring-teal/30">{offer}</p>
+      ) : (
+        <p className="text-sm font-bold uppercase tracking-[0.08em] text-purple">Take the next step</p>
+      )}
       <a
         href={`tel:+${phoneRaw}`}
         onClick={() => pixelTrack("Contact")}
-        className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-purple px-5 py-4 text-xl font-semibold text-white shadow-lg shadow-purple/25 transition hover:bg-purple-600"
+        className="mt-1.5 flex w-full items-center justify-center gap-2 rounded-full bg-purple px-5 py-4 text-xl font-semibold text-white shadow-lg shadow-purple/25 transition hover:bg-purple-600"
       >
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
           <path

@@ -27,6 +27,8 @@ export const PEPTIDE_FUNNEL = {
     "Are you 18 or older?",
     "The consult is a medical visit. It isn't free, but it may be covered by insurance. OK?",
   ],
+  // Shown on the hook page and the call panel. Clinic-set discount; clear it to hide.
+  offer: "25% off your first peptide order",
   officeHours: "Mon, Tue, Thu, Fri 8 to 5 · Wed 8 to 12",
   video: {
     src: "/videos/peptide-call.mp4",

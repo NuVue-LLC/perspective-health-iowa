@@ -36,6 +36,7 @@ export default function PeptideCallPage() {
               phoneRaw={SITE_CONFIG.phoneRaw}
               hours={PEPTIDE_FUNNEL.officeHours}
               callbacks={CALLBACKS_ENABLED}
+              offer={PEPTIDE_FUNNEL.offer}
             />
           }
         />

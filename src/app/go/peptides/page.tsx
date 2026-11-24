@@ -19,6 +19,13 @@ export default function PeptideOfferPage() {
         Is peptide therapy <strong className="font-extrabold text-teal">right for you?</strong>
       </h1>
       <p className="mt-4 text-lg text-[#4A4A4A] sm:text-xl">Three quick questions, then a quick call with our clinic.</p>
+      {PEPTIDE_FUNNEL.offer && (
+        <p className="mt-5">
+          <span className="inline-block rounded-full bg-teal/10 px-5 py-2 text-base font-bold text-teal-700 ring-1 ring-teal/30 sm:text-lg">
+            {PEPTIDE_FUNNEL.offer}
+          </span>
+        </p>
+      )}
       <Link
         href="/go/peptides/start"
         className="mt-7 inline-block w-full rounded-full bg-purple px-10 py-4 text-xl font-semibold text-white shadow-lg shadow-purple/25 transition hover:bg-purple-600 sm:w-auto"
