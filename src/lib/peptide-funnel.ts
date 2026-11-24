@@ -29,6 +29,9 @@ export const PEPTIDE_FUNNEL = {
   ],
   // Shown on the hook page and the call panel. Clinic-set discount; clear it to hide.
   offer: "25% off your first peptide order",
+  // Same offer split for the big badge: headline number, then what it applies to.
+  offerBig: "25% off",
+  offerRest: "your first peptide order",
   officeHours: "Mon, Tue, Thu, Fri 8 to 5 · Wed 8 to 12",
   video: {
     src: "/videos/peptide-call.mp4",
